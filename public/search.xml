@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Angular Ivy performance comparison</title>
+      <link href="/2020/02/19/angular-ivy-perfomance-comparison/"/>
+      <url>/2020/02/19/angular-ivy-perfomance-comparison/</url>
+      
+        <content type="html"><![CDATA[<p>After Angular announces their new Ivy compiler, with smaller bundle sizes, I wanted to find out on a real project how much the bundle size and the overall application performance were improved.</p><p>After seeing this announcement, I asked myself if the bundle size can be improved more, so I found out that is possible by using compressing algorithms. After a little research, there is a library called <code>Express</code>, which run through all <code>.js</code>, <code>.html</code> and <code>.css</code> files and compress them using <code>gzip</code> and <code>brotli</code>. I will create an article to show how this can be done.<br>Before showing the data, I want to present the project specifications. The project is a smaller one, with oly 11 pages and it’s using Angular Material.<br>The test was run on a static page because I didn’t want to be affected by <code>HTTP</code> calls, and the browser used was Google Chrome.</p><p>First let’s take a look at the bundle size.<br><img src="main-bundle-size.png" alt="main-bundle-size" title="An image"></p><p>Page size:</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> angular </tag>
+            
+            <tag> ivy </tag>
+            
+            <tag> performance </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
