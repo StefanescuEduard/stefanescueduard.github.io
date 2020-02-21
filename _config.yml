@@ -100,6 +100,7 @@ theme: cactus
 deploy:
   type: git
   repo: https://github.com/StefanescuEduard/stefanescueduard.github.io.git
+  branch: gh-pages
 
 search:
   path: search.xml
