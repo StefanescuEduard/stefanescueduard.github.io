@@ -1,6 +1,6 @@
 ---
 layout: page
-title: about
+title: About
 date: 2020-02-20 09:14:03
 tags:
 ---
@@ -14,4 +14,4 @@ Currently, I’m working at iQuest, as a software engineer. My interest topics a
 - Mobile development
 - Electronics: building things with Arduino
 
-Notice that I also specified some frameworks, I like to think that I’m an agnostic programmer, that can craft a solution from anything at hand based on the requirements. For me, it’s much more important the logic behind, clean code and how the entires architecture looks like, rather than the framework used.
+You may notice that I also specified some frameworks, I like to think that I’m an agnostic programmer, that can craft a solution from anything at hand based on the requirements. For me, it’s much more important the logic behind, clean code and how the entire architecture looks like, rather than the framework used.
