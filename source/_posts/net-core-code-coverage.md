@@ -1,8 +1,8 @@
 ---
-title: ASP.NET Core Code Coverage
+title: .NET Core Code Coverage
 date: 2020-02-22 14:23:39
 tags:
-  - asp.net core
+  - .net core
   - code coverage
 ---
 
