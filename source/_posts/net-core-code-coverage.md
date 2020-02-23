@@ -49,6 +49,6 @@ The color code is the same as in the other tools, but what I like is that it als
 
 In conclusion, these two tools are great and don't cost anything, also can be configured to run through all test projects and generate more comprehensive code coverage.
 
-Here is the repository link with all the code from this article: https://github.com/StefanescuEduard/AspNetCoreCodeCoverage. I kept the Coverage folder on the repository just for testing purposes.
+Here is the repository link with all the code from this article: https://github.com/StefanescuEduard/NetCoreCodeCoverage. I kept the Coverage folder on the repository just for testing purposes.
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.
