@@ -113,3 +113,7 @@ sitemap:
 photozoom:
   enable: true
   caption: false
+
+feed:
+  type: atom
+  path: feed.xml
