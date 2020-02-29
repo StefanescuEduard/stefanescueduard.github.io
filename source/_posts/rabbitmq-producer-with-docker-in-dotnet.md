@@ -27,32 +27,6 @@ The `Exchange` can be one of four types in order to control the messages to the 
 
 To understand how messages are sent in this system, firstly the roles of the `routing` and `binding` keys needs to be explained. So the `routing key` will be attached to message and sent to the `Exchange`, the `Exchange` will determine in which direction to send the received message based on its `routing key` and the `binding key` between the `Exchange` and the `Queue`. The `binding key` is also known as the routing pattern.
 
-### Exchange types
-
-1.  `Direct Exchange` send messages to the `Queues` that have the `binding key` the same as the `routing key`.
-
-2.  `Fanout Exchange` send messages to all the `Queues`, in an indiscriminate way. It uses the Publish-Subscribe Pattern, which means that all `Queues` that are subscribed to an `Exchange` will receive the message, like a newsletter. Also, it will not take into account the `binding` or the `routing` key.
-
-3.  `Topic Exchange` send messages to the `Queues` using a pattern. The pattern can contain `*` or `#`. The first wildcard `*` means that it can match any word, and the second one `#` represents that no word is expected in that place.
-
-For example, if there are three `Queues`, and each one expects to get a 'word' based on the `binding key`, as follows:
-
-<pre>
-
-Queue1 > word1.*.*
-
-Queue2 > *.word2.*
-
-Queue3 > *.*.word3
-
-</pre>
-
-If the `Producer` sends the message `word1.word2.word3`, each `Queue` will receive only the expected message.
-
-A real-life example for this type of `Exchange` can be the different levels of logging (i.e. the errors and warns can be sent to the Database, and the info ones sent to a file).
-
-4.  `Header Exchange` send messages based on a header, this header is represented by a JSON object. This type of `Exchange` is useful when the message should follow the header values and not the `routing keys`. It's also associated with the `Topic Exchange`, but it's much more flexible, with the disadvantage that the message should be an object.
-
 ### Topology
 
 In the image below is the topology created with http://tryrabbitmq.com, which is a nice tool that helped me understand the core concepts of RabbitMQ.
@@ -97,7 +71,7 @@ This command will create a network that can be used to link the containers and n
 
 To check that the containers are running, the `docker ps` command can be used. In the following image is the RabbitMQ container that was just started.
 
-{% zoom rabbitmq-containers.png RabbitMQ Containers %}
+{% zoom rabbitmq-container.png RabbitMQ Container %}
 
 RabbitMQ Management it's a nice tool to monitor and manage the entire topology, it can be accessed from http://localhost:8080.
 
@@ -134,6 +108,7 @@ To create the connection between the `Exchange` and the `Producer`, the connecti
 Then the `BasicProperties` are created for starting an elementary channel. These properties can be used to specify the `Persistence` type or the `Expiration` time until the message will be deleted if no `Consumer` will received it; but there are many more and you can check them all here: https://www.rabbitmq.com/dotnet-api-guide.html.
 On line 9 the message is published to the `Exchange` with the `routing key` and with the `BasicProperties` that were created. I preferred to choose a constant name for the `Exchange` just for this article, this `Exchange` name will be also used for the other nodes.
 
-The entire Solution is available on Github: https://github.com/StefanescuEduard/RabbitMQ_POC. But stay close, there will be an article with explanations for each project.
+All code from this article can also be found on my Github account: https://github.com/StefanescuEduard/RabbitMQ_POC. There is the entire Solution, but stay close, there will be an article with explanations for each project.
+On the next article I will explain the `Exchange`.
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.
