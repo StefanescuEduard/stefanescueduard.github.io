@@ -17,11 +17,11 @@ RabbitMQ it's a messaging system that uses AMQP (Advanced Message Queue Protocol
 
 The AMQP it's delimited in the following three zones:
 
-1.  The `Producer` send a message to the `Message Broker`.
+1.  The `Producer` sends a message to the `Message Broker`.
 
-2.  The `Message Broker` consist of at least one `Exchange` and at least one `Queue`. Then the `Exchange` sent the message to the `Queue`.
+2.  The `Message Broker` consists of at least one `Exchange` and at least one `Queue`. Then the `Exchange` sent the message to the `Queue`.
 
-3.  And the `Consumer` receive the message from the `Queue`.
+3.  And the `Consumer` receives the message from the `Queue`.
 
 The `Exchange` can be one of four types in order to control the messages to the `Queues`. That's a great way to handle messages when the system has multiple `Exchanges` and uses a `Queue` for multiple purposes (i.e. a Logger(`Producer`) send a log using a Service(`Exchange`) to a PersistenceAPI and an AuditAPI both using the same `Queue`, but both APIs saving the log in the same Database(`Consumer`)). Maybe that's a silly example but I want to describe a possible way of using a single `Queue` with multiple `Exchanges`. And the can be easily reversed, the configuration can be whatever you wish, at least it will also have sense and respects the RabbitMQ's concepts.
 
@@ -95,7 +95,7 @@ The `ConnectionTimeout` property is used to avoid the protocol operations time o
 
 ### User interaction
 
-Then, in the `while` loop the user is constantly asked to introduce the `routing key` and the message that will be published.
+Then, in the `while` loop, the user is constantly asked to introduce the `routing key` and the message that will be published.
 
 <script src="https://gist.github.com/StefanescuEduard/0f4ec653ae405a3ae9cd4c0b522b3d30.js"></script>
 
@@ -105,7 +105,7 @@ To create the connection between the `Exchange` and the `Producer`, the connecti
 
 <script src="https://gist.github.com/StefanescuEduard/3e301b944e453a58e924a21d394a6077.js"></script>
 
-Then the `BasicProperties` are created for starting an elementary channel. These properties can be used to specify the `Persistence` type or the `Expiration` time until the message will be deleted if no `Consumer` will received it; but there are many more and you can check them all here: https://www.rabbitmq.com/dotnet-api-guide.html.
+Then the `BasicProperties` are created for starting an elementary channel. These properties can be used to specify the `Persistence` type or the `Expiration` time until the message will be deleted if no `Consumer` will receive it; but there are many more and you can check them all here: https://www.rabbitmq.com/dotnet-api-guide.html.
 On line 9 the message is published to the `Exchange` with the `routing key` and with the `BasicProperties` that were created. I preferred to choose a constant name for the `Exchange` just for this article, this `Exchange` name will be also used for the other nodes.
 
 All code from this article can also be found on my Github account: https://github.com/StefanescuEduard/RabbitMQ_POC. There is the entire Solution, but stay close, there will be an article with explanations for each project.
