@@ -6,6 +6,7 @@ tags:
   - angular
   - ivy
   - performance
+  - benchmark
 ---
 
 Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved.

@@ -5,6 +5,8 @@ date: 2020-02-29 21:07:28
 
 tags:
   - rabbitmq
+  - amqp
+  - producer
   - docker
   - dotnet core
 ---

@@ -2,7 +2,8 @@
 title: .NET Core Code Coverage
 date: 2020-02-22 14:23:39
 tags:
-  - .net core
+  - dotnet core
+  - dotnet
   - code coverage
 ---
 
