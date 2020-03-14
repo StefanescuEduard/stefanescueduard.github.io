@@ -39,17 +39,17 @@ An `Exchange` can be one of these four types:
 
     A real-life example for this type of `Exchange` can be the different levels of logging (i.e. the errors and warns can be sent to the Database, and the info ones sent to a file).
 
-4.  `Header Exchange` send messages based on a header, this header is represented by a JSON object. This type of `Exchange` is useful when the message should follow the header values and not the `routing keys`. It's also associated with the `Topic Exchange`, but it's much more flexible, with the disadvantage that the message should be an object.
+4.  `Headers Exchange` send messages based on a header, this header is represented by a required property `x-match` and one more properties that will be bound to the `Queue` as a `routing-key`. This type of `Exchange` is useful when the message should follow the header values and not the `routing keys`. It's also associated with the `Topic Exchange`, but it's much more flexible, with the disadvantage that the message should be an object.
 
 A topology can have multiple `Exchanges` connected to the multiple `Producers` and `Queues`, as in the example below, made using http://tryrabbitmq.com.
 
 {% zoom exchange-multiple-connections.png Exchange Multiple Connections %}
 
-Short explanation, the `Producers` can be seen as Clients, the `Queues` as Buffers or as Preprocessor and the `Consumers` are the applications that receive the messages. In this example the Clients can be considered as a mobile application that sent two requests to the server in order to persist some data, the Buffers are like a middleware which scan the data, and the `Consumers` are different storages that save the data based on its file type.
+Short explanation; the `Producers` can be seen as Clients, the `Queues` as Buffers or as Preprocessor and the `Consumers` are the applications that receive the messages. In this example the Clients can be considered as a mobile application that sent two requests to the server in order to persist some data, the Buffers are like a middleware which scan the data, and the `Consumers` are different storages that save the data based on its file type.
 
 ## Creating the `Exchange`
 
-This project only covers the first tree `Exchange` types (i.e. Direct, Fanout and Topic), because the Header type is a little more special I want to make another article just for it.
+This project only covers the first tree `Exchange` types (i.e. Direct, Fanout and Topic), because the Headers type is a little more special I want to make another article just for it.
 
 This, like the rest of the projects, is a Console Application. First of all, the user is asked which of `Exchange` wants to create:
 
