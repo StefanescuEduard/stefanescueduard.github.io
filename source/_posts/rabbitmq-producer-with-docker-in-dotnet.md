@@ -11,7 +11,7 @@ tags:
   - dotnet core
 ---
 
-This is the first article from a series of four, where I will explain each RabbitMQ graph node. This article will also contain the environment setup with Docker.
+This is the first article from a series of four, where I will explain each RabbitMQ graph node, the environment setup with Docker and the `Producer` creation in .NET.
 
 ## Introduction
 

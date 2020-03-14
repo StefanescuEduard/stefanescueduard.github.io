@@ -9,7 +9,7 @@ tags:
   - dotnet core
 ---
 
-This is the second article from a series of four about RabbitMQ `Exchange` in .NET. In the first part of the article, the fundamentals and the types of the `Exchange` will be explained. In the second part, each line of code will be explained about the creation of an `Exchange` and there will be some screenshots from the RabbitMQ Management plugin. The first article contains a short introduction into RabbitMQ concepts and the Environment setup with Docker, you can check the article here: https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/.
+This is the second article from a series of four about RabbitMQ `Exchange` in .NET. In the first part of this article, the fundamentals and the types of the `Exchange` will be presented. And in the second part, each line of code will be explained about how the `Exchange` it will be created. The first article, https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/, contains a short introduction into RabbitMQ concepts, the Environment setup with Docker and `Producer` creation in .NET.
 
 ## Introduction
 
@@ -91,5 +91,7 @@ On the `test-exchange` dashboard, there a message can be published, as we did in
 {% zoom test-exchange-page.png test-exchange page %}
 
 Because the topology currently doesn't have connected all needed components, on the `Message rates` the `Idle` message is displayed, but we'll see that after the entire system is running, there will be a chart that will show the messages flow, as Publish (In) and Publish (Out).
+
+All the code from the entire solution is available on my Github account: https://github.com/StefanescuEduard/RabbitMQ_POC. But stay close because in the next articles I will explain the core concepts about each RabbitMQ node.
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.
