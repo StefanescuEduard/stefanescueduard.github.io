@@ -39,7 +39,7 @@ An `Exchange` can be one of these four types:
 
     A real-life example for this type of `Exchange` can be the different levels of logging (i.e. the errors and warns can be sent to the Database, and the info ones sent to a file).
 
-4.  `Headers Exchange` send messages based on a header, this header is represented by a required property `x-match` and one more properties that will be bound to the `Queue` like a `routing-key`. This type of `Exchange` is useful when the message should follow the header values and not the `routing keys`. It's also associated with the `Topic Exchange`, but it's much more flexible, with the disadvantage that the message should be an object.
+4.  `Headers Exchange` send messages based on a header, this header is represented by a required property `x-match` and one or more properties that will be bound to the `Queue` like a `routing-key`. This type of `Exchange` is useful when the message should follow the header values and not the `routing keys`. It's also associated with the `Topic Exchange`, but it's much more flexible, with the disadvantage that the message should be an object.
 
 A topology can have multiple `Exchanges` connected to the multiple `Producers` and `Queues`, as in the example below, made using http://tryrabbitmq.com.
 
