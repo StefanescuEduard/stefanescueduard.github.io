@@ -49,13 +49,13 @@ Let's dig a little bit deep into the parameters of the `QueueDeclare`:
 - `queue` it's self-evident that it refers to the `Queue` name;
 - `durable` represents the lifetime of the `Queue` in the `Broker`, if it's set to false the `Queue` will end when the `Broker` does too;
 - `autoDelete` is used to specify the lifetime of the `Queue` based on its subscriptions. The `Queue` will be deleted if the last `Consumer` subscribed to it, unsubscribes;
-- `arguments` are used to sent information about the `Queue` (e.g. length limit) to send `Broker`;
+- `arguments` are used to sent information about the `Queue` (e.g. length limit) to the `Broker`;
 
 `QueueBind`'s parameters are self-explanatory, the first one refers to the `queueName`, the second to the `exchangeName` and the last one to the `routingKey`.
 
 #### The result
 
-After the `Queues` are created the messages is prompted to the user with how many `Queues` were created.
+After the `Queues` are created, a message is prompted to the user with how many `Queues` were created.
 
 {% zoom rabbitmq-queue-created-console.png RabbitMQ Queue Created Console %}
 
