@@ -8,7 +8,7 @@ tags:
   - amqp
   - producer
   - docker
-  - dotnet core
+  - dotnetcore
 ---
 
 This is the first article from a series of four, where I will explain each RabbitMQ graph node, the environment setup with Docker and the `Producer` creation in .NET.

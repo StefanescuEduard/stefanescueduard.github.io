@@ -6,7 +6,7 @@ tags:
   - amqp
   - consumer
   - docker
-  - dotnet core
+  - dotnetcore
 ---
 
 This is the last article from the RabbitMQ series. In this series, I explained all the RabbitMQ nodes using .NET and Docker. There will be other two articles, the first one is dedicated just for the `Headers Exchange`, because this type of `Exchange` needs more attention, considering that the sent messages need to be binding to the `Exchange` using `x-match` property and to the `Queue` using defined properties. And in the second one, I will explain a safer way of consuming messages and closing the connection, because this series is more educational oriented and plain methods were used for a better understanding.

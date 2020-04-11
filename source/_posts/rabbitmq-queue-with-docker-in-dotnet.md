@@ -6,7 +6,7 @@ tags:
   - amqp
   - queue
   - docker
-  - dotnet core
+  - dotnetcore
 ---
 
 This is the third article from a series of four about RabbitMQ `Queue`. The first part contains a brief introduction into the `Queue` concepts and in the second part, each line of the code is explained. You can check the first article where the RabbitMQ core concepts are presented and also the environment setup with Docker and the `Producer` are explained step by step.

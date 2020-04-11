@@ -6,7 +6,7 @@ tags:
   - amqp
   - exchange
   - docker
-  - dotnet core
+  - dotnetcore
 ---
 
 This is the second article from a series of four about RabbitMQ `Exchange` in .NET. In the first part of this article, the fundamentals and the types of the `Exchange` will be presented. And in the second part, each line of code will be explained about how the `Exchange` it will be created. The first article, https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/, contains a short introduction into RabbitMQ concepts, the Environment setup with Docker and `Producer` creation in .NET.

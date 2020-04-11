@@ -6,7 +6,7 @@ tags:
   - amqp
   - consumer
   - docker
-  - dotnet core
+  - dotnetcore
 ---
 
 This article contains another approach of consuming messages. The first part will be a comparison between the several types of consuming messages and in the second part, each line of code will be explained.

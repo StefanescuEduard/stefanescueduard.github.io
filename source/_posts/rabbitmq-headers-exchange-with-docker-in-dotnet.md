@@ -6,7 +6,7 @@ tags:
   - amqp
   - exchange
   - docker
-  - dotnet core
+  - dotnetcore
 ---
 
 
