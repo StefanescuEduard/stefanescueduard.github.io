@@ -1,5 +1,39 @@
 {
   "cSpell.words": [
+    "Saml",
     "nuget"
+  ],
+  "grammarly.userWords": [
+    "`exp",
+    "`iat",
+    "`nbf",
+    "iat",
+    "jwt",
+    "securityToken"
+  ],
+  "grammarly.overrides": [
+    {
+      "files": [
+        "**/source/_posts/jwt-token-claims-in-asp-dotnet-core.md"
+      ],
+      "config": {
+        "audience": "expert",
+        "dialect": "american",
+        "domain": "technical",
+        "emotions": [
+          "confident",
+          "optimistic",
+          "respectful",
+          "friendly",
+          "analytical"
+        ],
+        "goals": [
+          "inform",
+          "describe",
+          "tellStory"
+        ],
+        "emotion": "mild"
+      }
+    }
   ]
 }
