@@ -1,1 +1,389 @@
-<html><head></head><body></body></html>
+<!DOCTYPE html><html lang="en"><head>
+  <!-- so meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z6yCtJdtAEJhoqcK8R36N2xR5ULTuk3G4NcUGqdTqyc">
+  <meta name="specificfeeds-verification-code" content="wVuTRqQ9R0Ez1dk7HVKj">
+  <meta name="description" content="Code coverage tools are a great way to improve the code quality, but there are a lot of tools that require a paid license to use it like dotCover, the Enterprise version of Visual Studio or Visual Stu">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET Core Code Coverage">
+<meta property="og:url" content="https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/index.html">
+<meta property="og:site_name" content="Eduard Stefanescu">
+<meta property="og:description" content="Code coverage tools are a great way to improve the code quality, but there are a lot of tools that require a paid license to use it like dotCover, the Enterprise version of Visual Studio or Visual Stu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/code-coverage-overview.png">
+<meta property="og:image" content="https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/code-coverage-user-service-class.png">
+<meta property="article:published_time" content="2020-02-22T12:23:39.000Z">
+<meta property="article:modified_time" content="2020-08-09T13:53:25.106Z">
+<meta property="article:author" content="Eduard Stefanescu">
+<meta property="article:tag" content="dotnetcore">
+<meta property="article:tag" content="dotnet">
+<meta property="article:tag" content="code coverage">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/code-coverage-overview.png">
+<meta name="twitter:creator" content="@1231489693130334200">
+  
+  
+  
+  
+  <link rel="shortcut icon" href="/images/favicon.png">
+  
+  
+  
+  
+  
+  <!-- title -->
+  <title>.NET Core Code Coverage</title>
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  
+<link rel="stylesheet" href="/css/rtl.css">
+
+  
+  <!-- rss -->
+  
+  
+  <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body class="max-width mx-auto px3 ltr">
+    <div class="container">
+      
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/subscribe/">Subscribe</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(&apos;#i-prev&apos;).toggle();" onmouseout="$(&apos;#i-prev&apos;).toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/02/19/angular-ivy-perfomance-comparison/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$(&apos;#i-next&apos;).toggle();" onmouseout="$(&apos;#i-next&apos;).toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$(&apos;#i-top&apos;).toggle();" onmouseout="$(&apos;#i-top&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$(&apos;#i-share&apos;).toggle();" onmouseout="$(&apos;#i-share&apos;).toggle();" onclick="$(&apos;#share&apos;).toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;text=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;title=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;is_video=false&amp;description=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=.NET Core Code Coverage&amp;body=Check out this article: https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;title=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;title=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;title=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;title=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;name=.NET Core Code Coverage&amp;description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;t=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        .NET Core Code Coverage
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Eduard Stefanescu</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-02-22T12:23:39.000Z" itemprop="datePublished">22-02-2020</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/code-coverage/" rel="tag">code coverage</a>, <a class="tag-link" href="/tags/dotnet/" rel="tag">dotnet</a>, <a class="tag-link" href="/tags/dotnetcore/" rel="tag">dotnetcore</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Code coverage tools are a great way to improve the code quality, but there are a lot of tools that require a paid license to use it like dotCover, the Enterprise version of Visual Studio or Visual Studio extensions. After some research, I found out that two free tools that combined can generate code coverage reports. The first tool is called <a href="https://github.com/tonerdo/coverlet" target="_blank" rel="noopener">Coverlet</a> which generates the code coverage as I wanted and it&#x2019;s also working with .NET Framework. Essentially is creating an <code>XML</code> report file that covers the lines, branches, and methods. And the second tool is <a href="https://github.com/danielpalme/ReportGenerator" target="_blank" rel="noopener">ReportGenerator</a> which is used for parsing the generated <code>XML</code> and expose the data in a friendly format.</p>
+<p>For this article, I created a small project to demonstrate how is working.<br>Let&#x2019;s begin with the Business layer; which contains two classes, a dummy <code>User</code> that only has two properties <code>Roles</code> and <code>ManagedCountries</code>.</p>
+<script src="https://gist.github.com/StefanescuEduard/dcbeb1fcdaa4e019c9764ab5ec8df0fb.js"></script>
+
+<p>And a <code>UserService</code> that checks if the <code>User</code> has sufficient rights to delete a country.</p>
+<script src="https://gist.github.com/StefanescuEduard/6e13369330c8e1a32d424da04d94ba2e.js"></script>
+
+<p>I know that the return of the <code>CanDeleteCountry</code> method can be simplified, but I will keep as it is, just for the sake of this example.</p>
+<p>The Tests project uses <code>NUnit</code>, but I saw that <code>Coverlet</code> and <code>ReportGenerator</code> also work with <code>MSBuild</code> and <code>xUnit</code>, for those you only need another TestAdapter and TestLogger. The packages installed for this project are:</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/NUnit" target="_blank" rel="noopener">NUnit</a></li>
+<li><a href="https://www.nuget.org/packages/NUnit3TestAdapter" target="_blank" rel="noopener">NUnit3TestAdapter</a></li>
+<li><a href="https://www.nuget.org/packages/NunitXml.TestLogger" target="_blank" rel="noopener">NunitXml.TestLogger</a></li>
+<li><a href="https://www.nuget.org/packages/Microsoft.NET.Test.Sdk" target="_blank" rel="noopener">Microsoft.NET.Test.Sdk</a></li>
+<li><a href="https://www.nuget.org/packages/Microsoft.CodeCoverage" target="_blank" rel="noopener">Microsoft.CodeCoverage</a></li>
+<li><a href="https://www.nuget.org/packages/coverlet.msbuild" target="_blank" rel="noopener">coverlet.msbuild</a></li>
+<li><a href="https://www.nuget.org/packages/ReportGenerator" target="_blank" rel="noopener">ReportGenerator</a></li>
+</ul>
+<p>In order to get the code coverage, a script is needed that will run the tests, create the <code>XML</code> file report and generate an <code>HTML</code> file with the reports.</p>
+<script src="https://gist.github.com/StefanescuEduard/d7b91fa0c49c422b22b5911de2bd9566.js"></script>
+
+<p>I&#x2019;ve created a batch file to be more easy to run all the commands in a single unit. Also please note that if you are using Mac or Linux, the <code>nuget</code> packages path, it would be: <code>~/.nuget/packages</code>.<br>The first command will run the tests and will generate the <code>XML</code> file used by the second command to generate the report. And the third command will open <code>index.html</code>.<br>Please consider adding the <code>Coverage</code> folder into <code>.gitignore</code> if you are working on a team, this is just for local purposes and it would be nice if the project you are working on has on the CI build process a step where the code coverage is generated.</p>
+<p>So now, with all that in place, let&#x2019;s see the results. I wanted to test only if the <code>User</code> is not a <code>CountryManager</code> and skip the other conditions that will also check for the managed countries because I wanted to generate a report with all the available covered areas.</p>
+<script src="https://gist.github.com/StefanescuEduard/efe808ad09dfbbd596fcc7afc2219f76.js"></script>
+
+<p>Let&#x2019;s take a look at the code coverage report. When the <code>index.html</code> file is open, the first page contains an overview of the ran tests, it offers a brief summary of the report and a grouping feature, that can be used to view the files on different layers (i.e. No grouping, By assembly, By namespace, Level: 1 and By namespace, Level: 2).</p>
+
+    <div>
+      <img src="code-coverage-overview.png" alt="Code coverage overview" data-action="zoom" class="photozoom">
+      
+    </div>
+<p>The test report for <code>UserService</code> class looks something like this:</p>
+
+    <div>
+      <img src="code-coverage-user-service-class.png" alt="Code coverage of UserService class" data-action="zoom" class="photozoom">
+      
+    </div>
+<p>The color code is the same as in the other tools, but what I like is that it also have the branch coverage, which in the above picture is the yellow area.</p>
+<p>In conclusion, these two tools are great and don&#x2019;t cost anything, also can be configured to run through all test projects and generate more comprehensive code coverage.</p>
+<p>Here is the repository link with all the code from this article: <a href="https://github.com/StefanescuEduard/NetCoreCodeCoverage" target="_blank" rel="noopener">https://github.com/StefanescuEduard/NetCoreCodeCoverage</a>. I kept the Coverage folder on the repository just for testing purposes.</p>
+<p>Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+        <div id="footer-post-container">
+  <div id="footer-post">
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+        <li><a href="/">Home</a></li>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/archives/">Archive</a></li>
+        
+        <li><a href="/search/">Search</a></li>
+        
+        <li><a href="/subscribe/">Subscribe</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;text=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;title=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;is_video=false&amp;description=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=.NET Core Code Coverage&amp;body=Check out this article: https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;title=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;title=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;title=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;title=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;name=.NET Core Code Coverage&amp;description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/&amp;t=.NET Core Code Coverage" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <a id="menu" class="icon" href="#" onclick="$(&apos;#nav-footer&apos;).toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <a id="toc" class="icon" href="#" onclick="$(&apos;#toc-footer&apos;).toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+      <a id="share" class="icon" href="#" onclick="$(&apos;#share-footer&apos;).toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+      <a id="top" style="display:none" class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript">
+  function isTocAvailable() {
+    var $headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    var $tocFooter = document.getElementById('toc-footer');
+    if ($headers.length === 1) {
+      $tocFooter.style.display = 'none';
+    }
+
+    console.log($headers);
+  }
+</script>
+<script>isTocAvailable();</script>
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &#xA9; 2020 Eduard Stefanescu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/subscribe/">Subscribe</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      </div>
+      <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+      <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-158632313-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'stefanescueduard';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+    </div>
+  
+
+  <script type="text/javascript">/**
+ * Pure JavaScript implementation of zoom.js.
+ *
+ * Original preamble:
+ * zoom.js - It's the best way to zoom an image
+ * @version v0.0.2
+ * @link https://github.com/fat/zoom.js
+ * @license MIT
+ *
+ * This is a fork of the original zoom.js implementation by @fat.
+ * Copyrights for the original project are held by @fat. All other copyright
+ * for changes in the fork are held by Nishanth Shanmugham.
+ *
+ * Copyright (c) 2013 @fat
+ * The MIT License. Copyright © 2016 Nishanth Shanmugham.
+ */
+!function(){"use strict";var t=function(){function t(t,e){for(var n=0;n<e.length;n++){var i=e[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(t,i.key,i)}}return function(e,n,i){return n&&t(e.prototype,n),i&&t(e,i),e}}();function e(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}!function(t){var e={};function n(i){if(e[i])return e[i].exports;var o=e[i]={i:i,l:!1,exports:{}};return t[i].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=t,n.c=e,n.i=function(t){return t},n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:i})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=3)}([function(t,e,n){n.d(e,"a",function(){return i}),n.d(e,"b",function(){return o}),n.d(e,"c",function(){return r}),n.d(e,"d",function(){return a});var i=function(){return document.documentElement.clientWidth},o=function(){return document.documentElement.clientHeight},r=function(t){var e=t.getBoundingClientRect(),n=document.documentElement,i=window;return{top:e.top+i.pageYOffset-n.clientTop,left:e.left+i.pageXOffset-n.clientLeft}},a=function(t,e,n){t.addEventListener(e,function t(i){i.target.removeEventListener(e,t),n()})}},function(t,e,n){var i=n(2),o=n(0);n.d(e,"a",function(){return g});var r=null,a=-1,s=-1,c=function(t){document.body.classList.contains("zoom-overlay-open")||(t.metaKey||t.ctrlKey?window.open(t.target.getAttribute("data-original")||t.target.src,"_blank"):t.target.width>=n.i(o.a)()-80||(u(!0),(r=new i.a(t.target,80)).zoom(),l()))},u=function(t){null!=r&&(t?r.dispose():r.close(),d(),r=null)},l=function(){document.addEventListener("scroll",m),document.addEventListener("keyup",f),document.addEventListener("touchstart",h),document.addEventListener("click",v,!0)},d=function(){document.removeEventListener("scroll",m),document.removeEventListener("keyup",f),document.removeEventListener("touchstart",h),document.removeEventListener("click",v,!0)},m=function(){-1==a&&(a=window.pageYOffset),Math.abs(a-window.pageYOffset)>=40&&u()},f=function(t){27==t.keyCode&&u()},h=function(t){var e=t.touches[0];null!=e&&(s=e.pageY,t.target.addEventListener("touchmove",p))},p=function t(e){var n=e.touches[0];null!=n&&Math.abs(n.pageY-s)>10&&(u(),e.target.removeEventListener("touchmove",t))},v=function(){u()},g=Object.create(null);g.setup=function(t){t.addEventListener("click",c)}},function(n,i,o){var r=o(0),a=function t(n,i){e(this,t),this.w=n,this.h=i},s=function(){function n(t,i){e(this,n),this.img=t,this.preservedTransform=t.style.transform,this.wrap=null,this.caption=null,this.overlay=null,this.offset=i}return t(n,[{key:"forceRepaint",value:function(){this.img.offsetWidth}},{key:"zoom",value:function(){var t=new a(this.img.naturalWidth,this.img.naturalHeight);this.wrap=document.createElement("div"),this.wrap.classList.add("zoom-img-wrap"),this.img.parentNode.insertBefore(this.wrap,this.img),this.wrap.appendChild(this.img),this.img.classList.add("zoom-img"),this.img.setAttribute("data-action","zoom-out"),this.overlay=document.createElement("div"),this.overlay.classList.add("zoom-overlay"),this.caption=document.createElement("span"),this.caption.innerHTML=this.img.getAttribute("alt"),this.caption.classList.add("zoom-caption"),this.overlay.appendChild(this.caption),document.body.appendChild(this.overlay),this.forceRepaint();var e=this.calculateScale(t);this.forceRepaint(),this.animate(e),document.body.classList.add("zoom-overlay-open")}},{key:"calculateScale",value:function(t){var e=t.w/this.img.width,n=o.i(r.a)()-this.offset,i=o.i(r.b)()-this.offset,a=t.w/t.h,s=n/i;return t.w<n&&t.h<i?e:a<s?i/t.h*e:n/t.w*e}},{key:"animate",value:function(t){var e=o.i(r.c)(this.img),n=window.pageYOffset,i=o.i(r.a)()/2,a=n+o.i(r.b)()/2,s="scale("+t+")",c="translate3d("+(i-(e.left+this.img.width/2))+"px, "+(a-(e.top+this.img.height/2))+"px, 0px)";this.img.style.transform=s,this.wrap.style.transform=c}},{key:"dispose",value:function(){null!=this.wrap&&null!=this.wrap.parentNode&&(this.img.classList.remove("zoom-img"),this.img.setAttribute("data-action","zoom"),this.wrap.parentNode.insertBefore(this.img,this.wrap),this.wrap.parentNode.removeChild(this.wrap),document.body.removeChild(this.overlay),document.body.classList.remove("zoom-overlay-transitioning"))}},{key:"close",value:function(){var t=this;document.body.classList.add("zoom-overlay-transitioning"),this.img.style.transform=this.preservedTransform,0===this.img.style.length&&this.img.removeAttribute("style"),this.wrap.style.transform="none",o.i(r.d)(this.img,"transitionend",function(){t.dispose(),document.body.classList.remove("zoom-overlay-open")})}}]),n}();i.a=s},function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0});var i=n(1);document.addEventListener("DOMContentLoaded",function(){for(var t=document.querySelectorAll("img[data-action='zoom']"),e=0;e<t.length;e++)i.a.setup(t[e])})}])}();</script><style>img[data-action=zoom]{cursor:pointer;cursor:-webkit-zoom-in;cursor:-moz-zoom-in}.zoom-img,.zoom-img-wrap{position:relative;z-index:666;-webkit-transition:all .3s;-o-transition:all .3s;transition:all .3s}img.zoom-img{cursor:pointer;cursor:-webkit-zoom-out;cursor:-moz-zoom-out}.zoom-overlay{z-index:420;text-align:center;background:#fff;position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;filter:"alpha(opacity=0)";opacity:0;-webkit-transition:opacity .3s;-o-transition:opacity .3s;transition:opacity .3s}.zoom-overlay-open .zoom-overlay{filter:"alpha(opacity=100)";opacity:1}.zoom-overlay-open,.zoom-overlay-transitioning{cursor:default}.body-wrap-zoom{width:100vw}.zoom-caption{z-index:667;bottom:10px;position:fixed;left:10px;right:10px}.zoom-initial-caption{color:#999;display:block;font-size:.9em;margin-top:.5em;position:relative;text-align:center;}</style></body></html>

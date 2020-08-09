@@ -1,1 +1,389 @@
-<html><head></head><body></body></html>
+<!DOCTYPE html><html lang="en"><head>
+  <!-- so meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z6yCtJdtAEJhoqcK8R36N2xR5ULTuk3G4NcUGqdTqyc">
+  <meta name="specificfeeds-verification-code" content="wVuTRqQ9R0Ez1dk7HVKj">
+  <meta name="description" content="Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved. After see">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular Ivy performance comparison">
+<meta property="og:url" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/index.html">
+<meta property="og:site_name" content="Eduard Stefanescu">
+<meta property="og:description" content="Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved. After see">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/main-bundle-size.png">
+<meta property="og:image" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/page-size.png">
+<meta property="og:image" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/full-page-load.png">
+<meta property="og:image" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/time-to-build.png">
+<meta property="article:published_time" content="2020-02-19T19:12:13.000Z">
+<meta property="article:modified_time" content="2020-08-09T13:53:25.105Z">
+<meta property="article:author" content="Eduard Stefanescu">
+<meta property="article:tag" content="angular">
+<meta property="article:tag" content="ivy">
+<meta property="article:tag" content="performance">
+<meta property="article:tag" content="benchmark">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/main-bundle-size.png">
+<meta name="twitter:creator" content="@1231489693130334200">
+  
+  
+  
+  
+  <link rel="shortcut icon" href="/images/favicon.png">
+  
+  
+  
+  
+  
+  <!-- title -->
+  <title>Angular Ivy performance comparison</title>
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  
+<link rel="stylesheet" href="/css/rtl.css">
+
+  
+  <!-- rss -->
+  
+  
+  <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body class="max-width mx-auto px3 ltr">
+    <div class="container">
+      
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/subscribe/">Subscribe</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/02/22/dotnet-core-code-coverage/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(&apos;#i-prev&apos;).toggle();" onmouseout="$(&apos;#i-prev&apos;).toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$(&apos;#i-top&apos;).toggle();" onmouseout="$(&apos;#i-top&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$(&apos;#i-share&apos;).toggle();" onmouseout="$(&apos;#i-share&apos;).toggle();" onclick="$(&apos;#share&apos;).toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;text=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;title=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;is_video=false&amp;description=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Angular Ivy performance comparison&amp;body=Check out this article: https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;title=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;title=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;title=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;title=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;name=Angular Ivy performance comparison&amp;description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;t=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#gzip"><span class="toc-number">1.</span> <span class="toc-text">gzip:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#brotli"><span class="toc-number">2.</span> <span class="toc-text">brotli:</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Angular Ivy performance comparison
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Eduard Stefanescu</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-02-19T19:12:13.000Z" itemprop="datePublished">19-02-2020</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/angular/" rel="tag">angular</a>, <a class="tag-link" href="/tags/benchmark/" rel="tag">benchmark</a>, <a class="tag-link" href="/tags/ivy/" rel="tag">ivy</a>, <a class="tag-link" href="/tags/performance/" rel="tag">performance</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved.</p>
+<p>After seeing the Angular 9 release notes, I asked if the bundle size can be improved more. I found out that is possible by using compressing algorithms. After a little research, there are two libraries <a href="https://www.npmjs.com/package/zlib" target="_blank" rel="noopener">zlib</a> and <a href="https://www.npmjs.com/package/brotli" target="_blank" rel="noopener">brotli</a>, which run through all <code>.js</code>, <code>.html</code> and <code>.css</code> files and compress them using <code>gzip</code> and <code>brotli</code> compressing algorithms. I will create an article to show how this can be done.<br>But before showing the data, I want to present the project specifications. The project is a smaller one, with only 11 pages and it&#x2019;s using Angular Material.<br>The test was run on a static page because I didn&#x2019;t want to be affected by <code>HTTP</code> calls, and the browser used was Google Chrome. I tested the page size, the full load time of the page, time to build and the main bundle size. Another important thing that I want to mention is that the compressing algorithms were run through Angular 9 build files.</p>
+<p>First, let&#x2019;s take a look at the bundle size.</p>
+
+    <div>
+      <img src="main-bundle-size.png" alt="Main bundle size" data-action="zoom" class="photozoom">
+      
+    </div>
+<p>There is a huge difference between Angular 8 bundle size and Angular 9 with brotli, and we&#x2019;ll also see that on page size comparison.</p>
+
+    <div>
+      <img src="page-size.png" alt="Page size" data-action="zoom" class="photozoom">
+      
+    </div>
+<p>The page size matches my expectations, it&#x2019;s normal to have smaller sizes on the compressed files rather than uncompressed ones.<br>But let&#x2019;s keep this in mind for a while, and let&#x2019;s take look at the <strong>full page load</strong> time diagram, where the overall performance of this application was not significantly improved, and I will explain why.</p>
+
+    <div>
+      <img src="full-page-load.png" alt="Full page load" data-action="zoom" class="photozoom">
+      
+    </div>
+<p>As the diagram shows, the difference between Angular 8 and Angular 9 with the compression algorithms is only a few milliseconds, exactly 249ms, which is relatively OK for an application of this size, but I expected a little bit more also considering the results in the other diagrams.<br>The explanation for this is due to the Tree Shaking process, where the unused libraries are deleted, based on the tested project setup that doesn&#x2019;t have a lot of imports and Tree Shaking didn&#x2019;t have unwanted libraries to delete caused a very close time between the 4 samples. But the main factor of this smaller gaps is because of the project size and after that the Tree Shaking process.<br>Smaller page size means faster download which will decrease the page loading time. I will expect on a large application the time to be much more improved.</p>
+
+    <div>
+      <img src="time-to-build.png" alt="Time to build" data-action="zoom" class="photozoom">
+      
+    </div>
+<p>From a developer point of view, this is nice, Angular Ivy builds faster, and that is a nice advantage where the project is quite large. I want to mention that the times for the two compressing algorithm samples shouldn&#x2019;t be here. In fact it&#x2019;s the compressing time, it would have been unusual if the building plus the compressing time were smaller.<br><br>Let&#x2019;s calculate the building time for this two compressing algorithms:</p>
+<h5 id="gzip"><a href="#gzip" class="headerlink" title="gzip:"></a>gzip:</h5><pre>Building time:    17481ms
+Compressing time: 14913ms
+Total:            32394ms
+</pre>
+
+<h5 id="brotli"><a href="#brotli" class="headerlink" title="brotli:"></a>brotli:</h5><pre>Building time:    14913ms
+Compressing time: 14859ms
+Total:            29772ms
+</pre>
+
+<p>The building time for Angular 8 was 29889ms, which means Angular 9 with brotli obtained lower building times. I know that is not a huge difference between these two, but it will scale up on larger projects.</p>
+<p>In conclusion, the performance of Angular 9 is there and can be noticed on larger projects, still is a nice improvement compared to the previous Angular versions.</p>
+<p>Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+        <div id="footer-post-container">
+  <div id="footer-post">
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+        <li><a href="/">Home</a></li>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/archives/">Archive</a></li>
+        
+        <li><a href="/search/">Search</a></li>
+        
+        <li><a href="/subscribe/">Subscribe</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#gzip"><span class="toc-number">1.</span> <span class="toc-text">gzip:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#brotli"><span class="toc-number">2.</span> <span class="toc-text">brotli:</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;text=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;title=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;is_video=false&amp;description=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Angular Ivy performance comparison&amp;body=Check out this article: https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;title=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;title=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;title=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;title=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;name=Angular Ivy performance comparison&amp;description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/&amp;t=Angular Ivy performance comparison" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <a id="menu" class="icon" href="#" onclick="$(&apos;#nav-footer&apos;).toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <a id="toc" class="icon" href="#" onclick="$(&apos;#toc-footer&apos;).toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+      <a id="share" class="icon" href="#" onclick="$(&apos;#share-footer&apos;).toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+      <a id="top" style="display:none" class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript">
+  function isTocAvailable() {
+    var $headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    var $tocFooter = document.getElementById('toc-footer');
+    if ($headers.length === 1) {
+      $tocFooter.style.display = 'none';
+    }
+
+    console.log($headers);
+  }
+</script>
+<script>isTocAvailable();</script>
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &#xA9; 2020 Eduard Stefanescu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/subscribe/">Subscribe</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      </div>
+      <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+      <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-158632313-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'stefanescueduard';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+    </div>
+  
+
+  <script type="text/javascript">/**
+ * Pure JavaScript implementation of zoom.js.
+ *
+ * Original preamble:
+ * zoom.js - It's the best way to zoom an image
+ * @version v0.0.2
+ * @link https://github.com/fat/zoom.js
+ * @license MIT
+ *
+ * This is a fork of the original zoom.js implementation by @fat.
+ * Copyrights for the original project are held by @fat. All other copyright
+ * for changes in the fork are held by Nishanth Shanmugham.
+ *
+ * Copyright (c) 2013 @fat
+ * The MIT License. Copyright © 2016 Nishanth Shanmugham.
+ */
+!function(){"use strict";var t=function(){function t(t,e){for(var n=0;n<e.length;n++){var i=e[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(t,i.key,i)}}return function(e,n,i){return n&&t(e.prototype,n),i&&t(e,i),e}}();function e(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}!function(t){var e={};function n(i){if(e[i])return e[i].exports;var o=e[i]={i:i,l:!1,exports:{}};return t[i].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=t,n.c=e,n.i=function(t){return t},n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:i})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=3)}([function(t,e,n){n.d(e,"a",function(){return i}),n.d(e,"b",function(){return o}),n.d(e,"c",function(){return r}),n.d(e,"d",function(){return a});var i=function(){return document.documentElement.clientWidth},o=function(){return document.documentElement.clientHeight},r=function(t){var e=t.getBoundingClientRect(),n=document.documentElement,i=window;return{top:e.top+i.pageYOffset-n.clientTop,left:e.left+i.pageXOffset-n.clientLeft}},a=function(t,e,n){t.addEventListener(e,function t(i){i.target.removeEventListener(e,t),n()})}},function(t,e,n){var i=n(2),o=n(0);n.d(e,"a",function(){return g});var r=null,a=-1,s=-1,c=function(t){document.body.classList.contains("zoom-overlay-open")||(t.metaKey||t.ctrlKey?window.open(t.target.getAttribute("data-original")||t.target.src,"_blank"):t.target.width>=n.i(o.a)()-80||(u(!0),(r=new i.a(t.target,80)).zoom(),l()))},u=function(t){null!=r&&(t?r.dispose():r.close(),d(),r=null)},l=function(){document.addEventListener("scroll",m),document.addEventListener("keyup",f),document.addEventListener("touchstart",h),document.addEventListener("click",v,!0)},d=function(){document.removeEventListener("scroll",m),document.removeEventListener("keyup",f),document.removeEventListener("touchstart",h),document.removeEventListener("click",v,!0)},m=function(){-1==a&&(a=window.pageYOffset),Math.abs(a-window.pageYOffset)>=40&&u()},f=function(t){27==t.keyCode&&u()},h=function(t){var e=t.touches[0];null!=e&&(s=e.pageY,t.target.addEventListener("touchmove",p))},p=function t(e){var n=e.touches[0];null!=n&&Math.abs(n.pageY-s)>10&&(u(),e.target.removeEventListener("touchmove",t))},v=function(){u()},g=Object.create(null);g.setup=function(t){t.addEventListener("click",c)}},function(n,i,o){var r=o(0),a=function t(n,i){e(this,t),this.w=n,this.h=i},s=function(){function n(t,i){e(this,n),this.img=t,this.preservedTransform=t.style.transform,this.wrap=null,this.caption=null,this.overlay=null,this.offset=i}return t(n,[{key:"forceRepaint",value:function(){this.img.offsetWidth}},{key:"zoom",value:function(){var t=new a(this.img.naturalWidth,this.img.naturalHeight);this.wrap=document.createElement("div"),this.wrap.classList.add("zoom-img-wrap"),this.img.parentNode.insertBefore(this.wrap,this.img),this.wrap.appendChild(this.img),this.img.classList.add("zoom-img"),this.img.setAttribute("data-action","zoom-out"),this.overlay=document.createElement("div"),this.overlay.classList.add("zoom-overlay"),this.caption=document.createElement("span"),this.caption.innerHTML=this.img.getAttribute("alt"),this.caption.classList.add("zoom-caption"),this.overlay.appendChild(this.caption),document.body.appendChild(this.overlay),this.forceRepaint();var e=this.calculateScale(t);this.forceRepaint(),this.animate(e),document.body.classList.add("zoom-overlay-open")}},{key:"calculateScale",value:function(t){var e=t.w/this.img.width,n=o.i(r.a)()-this.offset,i=o.i(r.b)()-this.offset,a=t.w/t.h,s=n/i;return t.w<n&&t.h<i?e:a<s?i/t.h*e:n/t.w*e}},{key:"animate",value:function(t){var e=o.i(r.c)(this.img),n=window.pageYOffset,i=o.i(r.a)()/2,a=n+o.i(r.b)()/2,s="scale("+t+")",c="translate3d("+(i-(e.left+this.img.width/2))+"px, "+(a-(e.top+this.img.height/2))+"px, 0px)";this.img.style.transform=s,this.wrap.style.transform=c}},{key:"dispose",value:function(){null!=this.wrap&&null!=this.wrap.parentNode&&(this.img.classList.remove("zoom-img"),this.img.setAttribute("data-action","zoom"),this.wrap.parentNode.insertBefore(this.img,this.wrap),this.wrap.parentNode.removeChild(this.wrap),document.body.removeChild(this.overlay),document.body.classList.remove("zoom-overlay-transitioning"))}},{key:"close",value:function(){var t=this;document.body.classList.add("zoom-overlay-transitioning"),this.img.style.transform=this.preservedTransform,0===this.img.style.length&&this.img.removeAttribute("style"),this.wrap.style.transform="none",o.i(r.d)(this.img,"transitionend",function(){t.dispose(),document.body.classList.remove("zoom-overlay-open")})}}]),n}();i.a=s},function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0});var i=n(1);document.addEventListener("DOMContentLoaded",function(){for(var t=document.querySelectorAll("img[data-action='zoom']"),e=0;e<t.length;e++)i.a.setup(t[e])})}])}();</script><style>img[data-action=zoom]{cursor:pointer;cursor:-webkit-zoom-in;cursor:-moz-zoom-in}.zoom-img,.zoom-img-wrap{position:relative;z-index:666;-webkit-transition:all .3s;-o-transition:all .3s;transition:all .3s}img.zoom-img{cursor:pointer;cursor:-webkit-zoom-out;cursor:-moz-zoom-out}.zoom-overlay{z-index:420;text-align:center;background:#fff;position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;filter:"alpha(opacity=0)";opacity:0;-webkit-transition:opacity .3s;-o-transition:opacity .3s;transition:opacity .3s}.zoom-overlay-open .zoom-overlay{filter:"alpha(opacity=100)";opacity:1}.zoom-overlay-open,.zoom-overlay-transitioning{cursor:default}.body-wrap-zoom{width:100vw}.zoom-caption{z-index:667;bottom:10px;position:fixed;left:10px;right:10px}.zoom-initial-caption{color:#999;display:block;font-size:.9em;margin-top:.5em;position:relative;text-align:center;}</style></body></html>

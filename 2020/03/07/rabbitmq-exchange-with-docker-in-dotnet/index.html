@@ -1,1 +1,421 @@
-<html><head></head><body></body></html>
+<!DOCTYPE html><html lang="en"><head>
+  <!-- so meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z6yCtJdtAEJhoqcK8R36N2xR5ULTuk3G4NcUGqdTqyc">
+  <meta name="specificfeeds-verification-code" content="wVuTRqQ9R0Ez1dk7HVKj">
+  <meta name="description" content="This is the second article from a series of four about RabbitMQ Exchange in .NET. In the first part of this article, the fundamentals and the types of the Exchange will be presented. And in the second">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ Exchange with Docker in .NET">
+<meta property="og:url" content="https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/index.html">
+<meta property="og:site_name" content="Eduard Stefanescu">
+<meta property="og:description" content="This is the second article from a series of four about RabbitMQ Exchange in .NET. In the first part of this article, the fundamentals and the types of the Exchange will be presented. And in the second">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/exchange-multiple-connections.png">
+<meta property="og:image" content="https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/exchange-created-successfully.png">
+<meta property="og:image" content="https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/rabbitmq-management-exchange-created.png">
+<meta property="og:image" content="https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/test-exchange-page.png">
+<meta property="article:published_time" content="2020-03-07T10:42:02.000Z">
+<meta property="article:modified_time" content="2020-08-09T13:53:25.121Z">
+<meta property="article:author" content="Eduard Stefanescu">
+<meta property="article:tag" content="dotnetcore">
+<meta property="article:tag" content="rabbitmq">
+<meta property="article:tag" content="amqp">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="exchange">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/exchange-multiple-connections.png">
+<meta name="twitter:creator" content="@1231489693130334200">
+  
+  
+  
+  
+  <link rel="shortcut icon" href="/images/favicon.png">
+  
+  
+  
+  
+  
+  <!-- title -->
+  <title>RabbitMQ Exchange with Docker in .NET</title>
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  
+<link rel="stylesheet" href="/css/rtl.css">
+
+  
+  <!-- rss -->
+  
+  
+  <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body class="max-width mx-auto px3 ltr">
+    <div class="container">
+      
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/subscribe/">Subscribe</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(&apos;#i-prev&apos;).toggle();" onmouseout="$(&apos;#i-prev&apos;).toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$(&apos;#i-next&apos;).toggle();" onmouseout="$(&apos;#i-next&apos;).toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$(&apos;#i-top&apos;).toggle();" onmouseout="$(&apos;#i-top&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$(&apos;#i-share&apos;).toggle();" onmouseout="$(&apos;#i-share&apos;).toggle();" onclick="$(&apos;#share&apos;).toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;text=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;title=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;is_video=false&amp;description=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ Exchange with Docker in .NET&amp;body=Check out this article: https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;title=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;title=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;title=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;title=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;name=RabbitMQ Exchange with Docker in .NET&amp;description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;t=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Exchange-types"><span class="toc-number">1.1.</span> <span class="toc-text">Exchange types</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creating-the-Exchange"><span class="toc-number">2.</span> <span class="toc-text">Creating the Exchange</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Exchange-definition"><span class="toc-number">2.1.</span> <span class="toc-text">Exchange definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompting-the-definition-result"><span class="toc-number">2.2.</span> <span class="toc-text">Prompting the definition result</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-result"><span class="toc-number">2.3.</span> <span class="toc-text">The result</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        RabbitMQ Exchange with Docker in .NET
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Eduard Stefanescu</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-03-07T10:42:02.000Z" itemprop="datePublished">07-03-2020</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/amqp/" rel="tag">amqp</a>, <a class="tag-link" href="/tags/docker/" rel="tag">docker</a>, <a class="tag-link" href="/tags/dotnetcore/" rel="tag">dotnetcore</a>, <a class="tag-link" href="/tags/exchange/" rel="tag">exchange</a>, <a class="tag-link" href="/tags/rabbitmq/" rel="tag">rabbitmq</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>This is the second article from a series of four about RabbitMQ <code>Exchange</code> in .NET. In the first part of this article, the fundamentals and the types of the <code>Exchange</code> will be presented. And in the second part, each line of code will be explained about how the <code>Exchange</code> it will be created. The first article, <a href="https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/">https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</a>, contains a short introduction into RabbitMQ concepts, the Environment setup with Docker and <code>Producer</code> creation in .NET.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The RabbitMQ <code>Exchange</code> is used to route the messages received from the <code>Producer</code> and sending them to the <code>Queue</code> based on the <code>routing key</code> key and <code>binding key</code>. Those two keys were explained in the first article, so if you want to find the explanation behind them, read the first article.<br>An <code>Exchange</code> can be one of these four types:</p>
+<h3 id="Exchange-types"><a href="#Exchange-types" class="headerlink" title="Exchange types"></a><code>Exchange</code> types</h3><ol>
+<li><p><code>Direct Exchange</code> send messages to the <code>Queues</code> that have the <code>binding key</code> the same as the <code>routing key</code>.</p>
+</li>
+<li><p><code>Fanout Exchange</code> send messages to all the <code>Queues</code>, in an indiscriminate way. It uses the Publish-Subscribe Pattern, which means that all <code>Queues</code> that are subscribed to an <code>Exchange</code> will receive the message, like a newsletter. Also, it will not take into account the <code>binding</code> or the <code>routing</code> key.</p>
+</li>
+<li><p><code>Topic Exchange</code> send messages to the <code>Queues</code> using a pattern. The pattern can contain <code>*</code> or <code>#</code>. The first wildcard <code>*</code> means that it can match any word, and the second one <code>#</code> represents that no word is expected in that place.</p>
+<p>For example, if there are three <code>Queues</code>, and each one expects to get a &#x2018;word&#x2019; based on the <code>binding key</code>, as follows:</p>
+<pre>Queue1 &gt; word1._._
+
+Queue2 &gt; _.word2._
+
+Queue3 &gt; _._.word3
+
+</pre>
+
+<p>If the <code>Producer</code> sends the message <code>word1.word2.word3</code>, each <code>Queue</code> will receive only the expected message.</p>
+<p>A real-life example for this type of <code>Exchange</code> can be the different levels of logging (i.e. the errors and warns can be sent to the Database, and the info ones sent to a file).</p>
+</li>
+<li><p><code>Headers Exchange</code> send messages based on a header, this header is represented by a required property <code>x-match</code> and one or more properties that will be bound to the <code>Queue</code> like a <code>routing-key</code>. This type of <code>Exchange</code> is useful when the message should follow the header values and not the <code>routing keys</code>. It&#x2019;s also associated with the <code>Topic Exchange</code>, but it&#x2019;s much more flexible, with the disadvantage that the message should be an object.</p>
+</li>
+</ol>
+<p>A topology can have multiple <code>Exchanges</code> connected to the multiple <code>Producers</code> and <code>Queues</code>, as in the example below, made using <a href="http://tryrabbitmq.com" target="_blank" rel="noopener">http://tryrabbitmq.com</a>.</p>
+
+    <div>
+      <img src="exchange-multiple-connections.png" alt="Exchange Multiple Connections" data-action="zoom" class="photozoom">
+      
+    </div>
+
+<p>Short explanation; the <code>Producers</code> can be seen as Clients, the <code>Queues</code> as Buffers or as Preprocessor and the <code>Consumers</code> are the applications that receive the messages. In this example the Clients can be considered as a mobile application that sent two requests to the server in order to persist some data, the Buffers are like a middleware which scan the data, and the <code>Consumers</code> are different storages that save the data based on its file type.</p>
+<h2 id="Creating-the-Exchange"><a href="#Creating-the-Exchange" class="headerlink" title="Creating the Exchange"></a>Creating the <code>Exchange</code></h2><p>This project only covers the first tree <code>Exchange</code> types (i.e. Direct, Fanout and Topic), because the Headers type is a little more special I want to make another article just for it.</p>
+<p>This, like the rest of the projects, is a Console Application. First of all, the user is asked which of <code>Exchange</code> wants to create:</p>
+<script src="https://gist.github.com/StefanescuEduard/b97cae8daf78df512889292c15a1df93.js"></script>
+
+<p>Then the connection to the RabbitMQ Server is created using the URI.</p>
+<script src="https://gist.github.com/StefanescuEduard/e8570a4d26624b032c13558e22575d65.js"></script>
+
+<p>In the first article, the connection is created by specifying each property needed. Here the <code>URI</code> consists of following parts: the first one is the protocol used, in this case, <code>AMQP</code>, then the <code>username</code> and the <code>password</code>, and the last section is the <code>hostname</code> or the <code>IP</code> of the RabbitMQ server. The <code>URI</code> can also contain the port, here the default one is 5672.<br>The <code>ConnectionTimeout</code> is set to the maximum value because the application is desired to run indefinitely, and this value is used to bypass the connection time out.</p>
+<h3 id="Exchange-definition"><a href="#Exchange-definition" class="headerlink" title="Exchange definition"></a><code>Exchange</code> definition</h3><p>In order to establish the connection between our machine and the RabbitMQ Server, the stream must be opened, and through this stream, the information is sent using a Channel.</p>
+<script src="https://gist.github.com/StefanescuEduard/28993423b205b545df54dca70d3c92a1.js"></script>
+
+<p>The exchange name will have the same name for all four projects but is just for this article presentation purposes. On line 6 a safety deletion is executed in order, to ensure that on the next line when the Exchange will be created, there is no other <code>Exchange</code> with the same name. The <code>ExchangeDeclare</code> method will create an instance of an <code>Exchange</code> based on what type of <code>Exchange</code> the user has chosen.</p>
+<h3 id="Prompting-the-definition-result"><a href="#Prompting-the-definition-result" class="headerlink" title="Prompting the definition result"></a>Prompting the definition result</h3><p>On the last section of the code, the user is informed that the required <code>Exchange</code> was created. You may notice that I didn&#x2019;t do any type of exception handling, that&#x2019;s because it&#x2019;s only for this article presentation. But in a real-world application, I recommend to implement a strong exception handling system and make the other services involved aware if that happens.</p>
+<h3 id="The-result"><a href="#The-result" class="headerlink" title="The result"></a>The result</h3><p>Let&#x2019;s create a <code>Direct Exchange</code>, which will also appear on the RabbitMQ Management plugin.</p>
+
+    <div>
+      <img src="exchange-created-successfully.png" alt="Exchange Created Successfully" data-action="zoom" class="photozoom">
+      
+    </div>
+
+<p>And now let&#x2019;s check the Management Exchange page.</p>
+
+    <div>
+      <img src="rabbitmq-management-exchange-created.png" alt="RabbitMQ Management Exchange Created" data-action="zoom" class="photozoom">
+      
+    </div>
+
+<p>As is showed in this page the <code>test-exchange</code> <code>Exchange</code> was created with the type that the user wanted and is ready to be used.</p>
+<p>On the <code>test-exchange</code> dashboard, there a message can be published, as we did in the first article with the <code>Producer</code>. I will demonstrate both ways of publishing the messages in the last article, where the entire system will be connected. And also the <code>Exchange</code> can be deleted.</p>
+
+    <div>
+      <img src="test-exchange-page.png" alt="test-exchange page" data-action="zoom" class="photozoom">
+      
+    </div>
+
+<p>Because the topology currently doesn&#x2019;t have connected all needed components, on the <code>Message rates</code> the <code>Idle</code> message is displayed, but we&#x2019;ll see that after the entire system is running, there will be a chart that will show the messages flow, as Publish (In) and Publish (Out).</p>
+<p>All the code from the entire solution is available on my Github account: <a href="https://github.com/StefanescuEduard/RabbitMQ_POC" target="_blank" rel="noopener">https://github.com/StefanescuEduard/RabbitMQ_POC</a>. But stay close because in the next articles I will explain the core concepts about each RabbitMQ node.</p>
+<p>Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+        <div id="footer-post-container">
+  <div id="footer-post">
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+        <li><a href="/">Home</a></li>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/archives/">Archive</a></li>
+        
+        <li><a href="/search/">Search</a></li>
+        
+        <li><a href="/subscribe/">Subscribe</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Exchange-types"><span class="toc-number">1.1.</span> <span class="toc-text">Exchange types</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creating-the-Exchange"><span class="toc-number">2.</span> <span class="toc-text">Creating the Exchange</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Exchange-definition"><span class="toc-number">2.1.</span> <span class="toc-text">Exchange definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompting-the-definition-result"><span class="toc-number">2.2.</span> <span class="toc-text">Prompting the definition result</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-result"><span class="toc-number">2.3.</span> <span class="toc-text">The result</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;text=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;title=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;is_video=false&amp;description=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RabbitMQ Exchange with Docker in .NET&amp;body=Check out this article: https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;title=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;title=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;title=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;title=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;name=RabbitMQ Exchange with Docker in .NET&amp;description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/&amp;t=RabbitMQ Exchange with Docker in .NET" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <a id="menu" class="icon" href="#" onclick="$(&apos;#nav-footer&apos;).toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <a id="toc" class="icon" href="#" onclick="$(&apos;#toc-footer&apos;).toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+      <a id="share" class="icon" href="#" onclick="$(&apos;#share-footer&apos;).toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+      <a id="top" style="display:none" class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript">
+  function isTocAvailable() {
+    var $headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    var $tocFooter = document.getElementById('toc-footer');
+    if ($headers.length === 1) {
+      $tocFooter.style.display = 'none';
+    }
+
+    console.log($headers);
+  }
+</script>
+<script>isTocAvailable();</script>
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &#xA9; 2020 Eduard Stefanescu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Archive</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/subscribe/">Subscribe</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      </div>
+      <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+      <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-158632313-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'stefanescueduard';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+    </div>
+  
+
+  <script type="text/javascript">/**
+ * Pure JavaScript implementation of zoom.js.
+ *
+ * Original preamble:
+ * zoom.js - It's the best way to zoom an image
+ * @version v0.0.2
+ * @link https://github.com/fat/zoom.js
+ * @license MIT
+ *
+ * This is a fork of the original zoom.js implementation by @fat.
+ * Copyrights for the original project are held by @fat. All other copyright
+ * for changes in the fork are held by Nishanth Shanmugham.
+ *
+ * Copyright (c) 2013 @fat
+ * The MIT License. Copyright © 2016 Nishanth Shanmugham.
+ */
+!function(){"use strict";var t=function(){function t(t,e){for(var n=0;n<e.length;n++){var i=e[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(t,i.key,i)}}return function(e,n,i){return n&&t(e.prototype,n),i&&t(e,i),e}}();function e(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}!function(t){var e={};function n(i){if(e[i])return e[i].exports;var o=e[i]={i:i,l:!1,exports:{}};return t[i].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=t,n.c=e,n.i=function(t){return t},n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:i})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=3)}([function(t,e,n){n.d(e,"a",function(){return i}),n.d(e,"b",function(){return o}),n.d(e,"c",function(){return r}),n.d(e,"d",function(){return a});var i=function(){return document.documentElement.clientWidth},o=function(){return document.documentElement.clientHeight},r=function(t){var e=t.getBoundingClientRect(),n=document.documentElement,i=window;return{top:e.top+i.pageYOffset-n.clientTop,left:e.left+i.pageXOffset-n.clientLeft}},a=function(t,e,n){t.addEventListener(e,function t(i){i.target.removeEventListener(e,t),n()})}},function(t,e,n){var i=n(2),o=n(0);n.d(e,"a",function(){return g});var r=null,a=-1,s=-1,c=function(t){document.body.classList.contains("zoom-overlay-open")||(t.metaKey||t.ctrlKey?window.open(t.target.getAttribute("data-original")||t.target.src,"_blank"):t.target.width>=n.i(o.a)()-80||(u(!0),(r=new i.a(t.target,80)).zoom(),l()))},u=function(t){null!=r&&(t?r.dispose():r.close(),d(),r=null)},l=function(){document.addEventListener("scroll",m),document.addEventListener("keyup",f),document.addEventListener("touchstart",h),document.addEventListener("click",v,!0)},d=function(){document.removeEventListener("scroll",m),document.removeEventListener("keyup",f),document.removeEventListener("touchstart",h),document.removeEventListener("click",v,!0)},m=function(){-1==a&&(a=window.pageYOffset),Math.abs(a-window.pageYOffset)>=40&&u()},f=function(t){27==t.keyCode&&u()},h=function(t){var e=t.touches[0];null!=e&&(s=e.pageY,t.target.addEventListener("touchmove",p))},p=function t(e){var n=e.touches[0];null!=n&&Math.abs(n.pageY-s)>10&&(u(),e.target.removeEventListener("touchmove",t))},v=function(){u()},g=Object.create(null);g.setup=function(t){t.addEventListener("click",c)}},function(n,i,o){var r=o(0),a=function t(n,i){e(this,t),this.w=n,this.h=i},s=function(){function n(t,i){e(this,n),this.img=t,this.preservedTransform=t.style.transform,this.wrap=null,this.caption=null,this.overlay=null,this.offset=i}return t(n,[{key:"forceRepaint",value:function(){this.img.offsetWidth}},{key:"zoom",value:function(){var t=new a(this.img.naturalWidth,this.img.naturalHeight);this.wrap=document.createElement("div"),this.wrap.classList.add("zoom-img-wrap"),this.img.parentNode.insertBefore(this.wrap,this.img),this.wrap.appendChild(this.img),this.img.classList.add("zoom-img"),this.img.setAttribute("data-action","zoom-out"),this.overlay=document.createElement("div"),this.overlay.classList.add("zoom-overlay"),this.caption=document.createElement("span"),this.caption.innerHTML=this.img.getAttribute("alt"),this.caption.classList.add("zoom-caption"),this.overlay.appendChild(this.caption),document.body.appendChild(this.overlay),this.forceRepaint();var e=this.calculateScale(t);this.forceRepaint(),this.animate(e),document.body.classList.add("zoom-overlay-open")}},{key:"calculateScale",value:function(t){var e=t.w/this.img.width,n=o.i(r.a)()-this.offset,i=o.i(r.b)()-this.offset,a=t.w/t.h,s=n/i;return t.w<n&&t.h<i?e:a<s?i/t.h*e:n/t.w*e}},{key:"animate",value:function(t){var e=o.i(r.c)(this.img),n=window.pageYOffset,i=o.i(r.a)()/2,a=n+o.i(r.b)()/2,s="scale("+t+")",c="translate3d("+(i-(e.left+this.img.width/2))+"px, "+(a-(e.top+this.img.height/2))+"px, 0px)";this.img.style.transform=s,this.wrap.style.transform=c}},{key:"dispose",value:function(){null!=this.wrap&&null!=this.wrap.parentNode&&(this.img.classList.remove("zoom-img"),this.img.setAttribute("data-action","zoom"),this.wrap.parentNode.insertBefore(this.img,this.wrap),this.wrap.parentNode.removeChild(this.wrap),document.body.removeChild(this.overlay),document.body.classList.remove("zoom-overlay-transitioning"))}},{key:"close",value:function(){var t=this;document.body.classList.add("zoom-overlay-transitioning"),this.img.style.transform=this.preservedTransform,0===this.img.style.length&&this.img.removeAttribute("style"),this.wrap.style.transform="none",o.i(r.d)(this.img,"transitionend",function(){t.dispose(),document.body.classList.remove("zoom-overlay-open")})}}]),n}();i.a=s},function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0});var i=n(1);document.addEventListener("DOMContentLoaded",function(){for(var t=document.querySelectorAll("img[data-action='zoom']"),e=0;e<t.length;e++)i.a.setup(t[e])})}])}();</script><style>img[data-action=zoom]{cursor:pointer;cursor:-webkit-zoom-in;cursor:-moz-zoom-in}.zoom-img,.zoom-img-wrap{position:relative;z-index:666;-webkit-transition:all .3s;-o-transition:all .3s;transition:all .3s}img.zoom-img{cursor:pointer;cursor:-webkit-zoom-out;cursor:-moz-zoom-out}.zoom-overlay{z-index:420;text-align:center;background:#fff;position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;filter:"alpha(opacity=0)";opacity:0;-webkit-transition:opacity .3s;-o-transition:opacity .3s;transition:opacity .3s}.zoom-overlay-open .zoom-overlay{filter:"alpha(opacity=100)";opacity:1}.zoom-overlay-open,.zoom-overlay-transitioning{cursor:default}.body-wrap-zoom{width:100vw}.zoom-caption{z-index:667;bottom:10px;position:fixed;left:10px;right:10px}.zoom-initial-caption{color:#999;display:block;font-size:.9em;margin-top:.5em;position:relative;text-align:center;}</style></body></html>
