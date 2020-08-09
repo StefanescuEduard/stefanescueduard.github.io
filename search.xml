@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Notes on Sandro Mancuso — Software Craftsmanship @Talk</title>
+      <link href="/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/"/>
+      <url>/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/</url>
+      
+        <content type="html"><![CDATA[<p>Talk: <a href="https://www.youtube.com/watch?v=9OhXqBlCmrM" target="_blank" rel="noopener">https://www.youtube.com/watch?v=9OhXqBlCmrM</a></p><hr><h2 id="Highlights"><a href="#Highlights" class="headerlink" title="Highlights"></a>Highlights</h2><ul><li>The attitude of software craftsmanship should be: passion, career ownership, “perfect” practice and boy scout rule;</li><li>We should produce more to receive more, and not waiting to receive something from our company because we are owning our career;</li><li>When we are working on an organization don’t excuse, like “No one does that, so I’m not going to do it also”. Either you do it or you leave the company;</li><li>A good developer is not Java, C# or Ruby developer. A good developer is a developer. We use the tools that we find useful for our job;</li></ul><hr><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><ul><li>In February 2001, 17 people meet in a ski resort in Utah to create an Agile Methodology. The people there were people like Uncle Bob, Martin Fowler;</li><li>In agile processes and tools became more important than technical practices and excellence;</li><li>In the beginning there, were more “shits” scrum masters than developers. Some of those scrum masters know nothing about software development;</li><li>Without agile processes there will be no good delivered software;</li><li>“Insanity: doing the same thing over and over again, and expecting different results” — Albert Einstein;</li><li>When we are under pressure we tend to cut corners, by thinking that we deliver faster, even when the managers do not push us;</li><li>We think that we don’t have, but we do. Is our fault that we think that we don’t have, and by doing so, we are delivering low-quality products;</li><li>Agile is about shorting the feedback loop;</li><li>By reacting to that feedback is what gives us the agility;</li><li>Agility is reacting constantly to feedback;</li><li>We don’t do agile, because it’s not logical. We are agile;</li><li>The most important deliver is the software itself;</li><li>To have good software, we need to have a good process;</li><li>Businesses are hostages of their software;</li><li>The business will move as fast as we developers create or change software;</li><li>As the software grows and no attention paid to the quality of it, the thing is that will become much harder;</li><li>In agile we are splitting stories, but delivering all the user stories doesn’t mean that the delivered software is it the required one or at the quality that we want;</li><li>Every bug found by the QA team, is something we developers haven’t done; QA should contribute in defining user stories and read newspapers;</li><li>We don’t want software that breaks, we want software that makes us happy to work with;</li><li>Software that makes us happy is not about beautiful code, but instead is easy to maintain, to change and to test;</li><li>For him, the software is an asset, a huge investment that we need to care about because costs a fortune;</li><li>It doesn’t matter the contract type, the relationship shouldn’t be employer and employee, it should be a partnership;</li><li>We are not keeping the heads down and doing what we are told as in a factory because we are creative people;</li><li>Every craftsman or professional that are working on a project, he or she should strive to make it a success;</li><li>Software craftsmanship in his opinion is professionalism in software development;</li><li>Feedback in software development is based on XP Practices;</li><li>We should not need the authorization to use practices that improve the quality of the product, like Unit Tests, we should just do it;</li><li>Managers are interested in value, we are adding value through practices like: TDD, Continuous Integration, Refactoring, Pair Programming, and Automated Tests;</li><li>When we are talking about business, we should not discuss practices, instead, we should discuss about the value;</li><li>On a new project, at the beginning we will be slower until we will be better and faster;</li><li>Quality depends on who is doing the job, not the time or money;</li><li>“Developers are not football players” and should not cost millions of euros to create quality software;</li><li>Quality cannot be measure and defined precisely because there are so many variables, it means different people, in different places and different points in time;</li><li>Code coverage is a dangerous metric and should never be used as a target or management tool because the percentage of tested code is not the same as the percentage of the executed code. For example, we can have 80% tested code from a 50% executed code;</li><li>“How it is done is as important as having it done” — Eduardo Namur;</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JWT Token Claims in ASP.NET Core</title>
       <link href="/2020/05/02/jwt-token-claims-in-asp-dotnet-core/"/>
       <url>/2020/05/02/jwt-token-claims-in-asp-dotnet-core/</url>
@@ -47,9 +60,9 @@
             
             <tag> asp </tag>
             
-            <tag> encryption </tag>
-            
             <tag> asymmetric </tag>
+            
+            <tag> encryption </tag>
             
         </tags>
       
@@ -74,9 +87,9 @@
             
             <tag> asp </tag>
             
-            <tag> symmetric </tag>
-            
             <tag> encryption </tag>
+            
+            <tag> symmetric </tag>
             
         </tags>
       
