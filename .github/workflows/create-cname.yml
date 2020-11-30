@@ -6,7 +6,7 @@ on:
   deployment_status:
   push:	
     branches:	
-    - master
+      - master
 
 jobs:
   create-cname:
