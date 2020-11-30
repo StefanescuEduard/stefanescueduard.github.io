@@ -60,9 +60,9 @@
             
             <tag> asp </tag>
             
-            <tag> asymmetric </tag>
-            
             <tag> encryption </tag>
+            
+            <tag> asymmetric </tag>
             
         </tags>
       
@@ -87,9 +87,9 @@
             
             <tag> asp </tag>
             
-            <tag> encryption </tag>
-            
             <tag> symmetric </tag>
+            
+            <tag> encryption </tag>
             
         </tags>
       
