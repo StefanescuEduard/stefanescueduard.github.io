@@ -21,7 +21,7 @@ jobs:
       with:
         add: CNAME
         branch: master
-        cwd: '../'
+        cwd: '..'
         message: 'Added CNAME'
         pull_strategy: '--rebase'
       env:
