@@ -54,15 +54,15 @@
       
         <tags>
             
-            <tag> authentication </tag>
-            
             <tag> dotnetcore </tag>
+            
+            <tag> authentication </tag>
             
             <tag> asp </tag>
             
-            <tag> asymmetric </tag>
-            
             <tag> encryption </tag>
+            
+            <tag> asymmetric </tag>
             
         </tags>
       
@@ -81,15 +81,15 @@
       
         <tags>
             
-            <tag> authentication </tag>
-            
             <tag> dotnetcore </tag>
+            
+            <tag> authentication </tag>
             
             <tag> asp </tag>
             
-            <tag> encryption </tag>
-            
             <tag> symmetric </tag>
+            
+            <tag> encryption </tag>
             
         </tags>
       
