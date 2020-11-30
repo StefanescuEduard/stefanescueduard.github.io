@@ -1,7 +1,9 @@
 name: Add CNAME
 
 on:
-  deployment:
+  push:	
+    branches:	
+      - master
 
 jobs:
   create-cname:
