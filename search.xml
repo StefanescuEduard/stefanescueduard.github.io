@@ -27,15 +27,15 @@
       
         <tags>
             
+            <tag> dotnetcore </tag>
+            
+            <tag> asp </tag>
+            
             <tag> authorization </tag>
             
             <tag> claims </tag>
             
             <tag> roles </tag>
-            
-            <tag> asp </tag>
-            
-            <tag> dotnetcore </tag>
             
         </tags>
       
@@ -54,11 +54,11 @@
       
         <tags>
             
-            <tag> asp </tag>
-            
             <tag> dotnetcore </tag>
             
             <tag> authentication </tag>
+            
+            <tag> asp </tag>
             
             <tag> asymmetric </tag>
             
@@ -81,11 +81,11 @@
       
         <tags>
             
-            <tag> asp </tag>
-            
             <tag> dotnetcore </tag>
             
             <tag> authentication </tag>
+            
+            <tag> asp </tag>
             
             <tag> encryption </tag>
             

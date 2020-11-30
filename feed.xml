@@ -60,15 +60,15 @@
     
     
     
+      <category term="dotnetcore" scheme="https://stefanescueduard.github.io/tags/dotnetcore/"/>
+    
+      <category term="asp" scheme="https://stefanescueduard.github.io/tags/asp/"/>
+    
       <category term="authorization" scheme="https://stefanescueduard.github.io/tags/authorization/"/>
     
       <category term="claims" scheme="https://stefanescueduard.github.io/tags/claims/"/>
     
       <category term="roles" scheme="https://stefanescueduard.github.io/tags/roles/"/>
-    
-      <category term="asp" scheme="https://stefanescueduard.github.io/tags/asp/"/>
-    
-      <category term="dotnetcore" scheme="https://stefanescueduard.github.io/tags/dotnetcore/"/>
     
   </entry>
   
@@ -92,11 +92,11 @@
     
     
     
-      <category term="asp" scheme="https://stefanescueduard.github.io/tags/asp/"/>
-    
       <category term="dotnetcore" scheme="https://stefanescueduard.github.io/tags/dotnetcore/"/>
     
       <category term="authentication" scheme="https://stefanescueduard.github.io/tags/authentication/"/>
+    
+      <category term="asp" scheme="https://stefanescueduard.github.io/tags/asp/"/>
     
       <category term="asymmetric" scheme="https://stefanescueduard.github.io/tags/asymmetric/"/>
     
@@ -124,11 +124,11 @@
     
     
     
-      <category term="asp" scheme="https://stefanescueduard.github.io/tags/asp/"/>
-    
       <category term="dotnetcore" scheme="https://stefanescueduard.github.io/tags/dotnetcore/"/>
     
       <category term="authentication" scheme="https://stefanescueduard.github.io/tags/authentication/"/>
+    
+      <category term="asp" scheme="https://stefanescueduard.github.io/tags/asp/"/>
     
       <category term="encryption" scheme="https://stefanescueduard.github.io/tags/encryption/"/>
     

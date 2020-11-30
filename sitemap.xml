@@ -137,34 +137,6 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/authorization/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/claims/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/roles/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/asp/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://stefanescueduard.github.io/tags/dotnetcore/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
@@ -193,6 +165,13 @@
   </url>
   
   <url>
+    <loc>https://stefanescueduard.github.io/tags/asp/</loc>
+    <lastmod>2020-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://stefanescueduard.github.io/tags/asymmetric/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
@@ -208,6 +187,27 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/symmetric/</loc>
+    <lastmod>2020-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/authorization/</loc>
+    <lastmod>2020-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/claims/</loc>
+    <lastmod>2020-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/roles/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
