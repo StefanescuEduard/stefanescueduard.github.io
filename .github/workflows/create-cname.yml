@@ -1,6 +1,9 @@
 name: Add CNAME
 
-on: [push]
+on:
+  push:	
+    branches:	
+      - master
 
 jobs:
   create-cname:

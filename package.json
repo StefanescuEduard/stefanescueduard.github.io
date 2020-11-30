@@ -5,7 +5,7 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "deploy": "hexo clean & hexo generate & Powershell.exe -File copy-deploy-git.ps1 & hexo deploy",
     "server": "hexo server"
   },
   "hexo": {
