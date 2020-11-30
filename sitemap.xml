@@ -172,7 +172,7 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/symmetric/</loc>
+    <loc>https://stefanescueduard.github.io/tags/asymmetric/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -180,6 +180,13 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/encryption/</loc>
+    <lastmod>2020-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/symmetric/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -201,13 +208,6 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/roles/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/asymmetric/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

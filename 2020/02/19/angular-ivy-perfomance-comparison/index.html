@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="Z6yCtJdtAEJhoqcK8R36N2xR5ULTuk3G4NcUGqdTqyc">
   <meta name="specificfeeds-verification-code" content="wVuTRqQ9R0Ez1dk7HVKj">
-  <meta name="description" content="Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved. After see">
+  <meta name="description" content="123Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved. After">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular Ivy performance comparison">
 <meta property="og:url" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/index.html">
 <meta property="og:site_name" content="Eduard Stefanescu">
-<meta property="og:description" content="Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved. After see">
+<meta property="og:description" content="123Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved. After">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/main-bundle-size.png">
 <meta property="og:image" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/page-size.png">
 <meta property="og:image" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/full-page-load.png">
 <meta property="og:image" content="https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/time-to-build.png">
 <meta property="article:published_time" content="2020-02-19T19:12:13.000Z">
-<meta property="article:modified_time" content="2020-11-30T14:36:13.864Z">
+<meta property="article:modified_time" content="2020-11-30T14:48:33.265Z">
 <meta property="article:author" content="Eduard Stefanescu">
 <meta property="article:tag" content="angular">
 <meta property="article:tag" content="ivy">
@@ -161,7 +161,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved.</p>
+    <p>123Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved.</p>
 <p>After seeing the Angular 9 release notes, I asked if the bundle size can be improved more. I found out that is possible by using compressing algorithms. After a little research, there are two libraries <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/zlib">zlib</a> and <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/brotli">brotli</a>, which run through all <code>.js</code>, <code>.html</code> and <code>.css</code> files and compress them using <code>gzip</code> and <code>brotli</code> compressing algorithms. I will create an article to show how this can be done.<br>But before showing the data, I want to present the project specifications. The project is a smaller one, with only 11 pages and it&#x2019;s using Angular Material.<br>The test was run on a static page because I didn&#x2019;t want to be affected by <code>HTTP</code> calls, and the browser used was Google Chrome. I tested the page size, the full load time of the page, time to build and the main bundle size. Another important thing that I want to mention is that the compressing algorithms were run through Angular 9 build files.</p>
 <p>First, let&#x2019;s take a look at the bundle size.</p>
 
