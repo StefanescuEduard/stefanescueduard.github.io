@@ -20,6 +20,9 @@ jobs:
       uses: EndBug/add-and-commit@v5.2.0
       with:
         branch: master
+        cwd: './'
+        add: CNAME
         pull_strategy: '--rebase'
+        message: 'Added CNAME'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
