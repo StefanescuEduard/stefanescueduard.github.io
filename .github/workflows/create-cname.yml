@@ -1,6 +1,6 @@
 name: Add CNAME
 
-on:  deployment
+on: deployment
 
 jobs:
   create-cname:
