@@ -109,27 +109,6 @@
 
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/dotnetcore/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/dotnet/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://stefanescueduard.github.io/tags/angular/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
@@ -165,6 +144,13 @@
   </url>
   
   <url>
+    <loc>https://stefanescueduard.github.io/tags/dotnetcore/</loc>
+    <lastmod>2020-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://stefanescueduard.github.io/tags/asp/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
@@ -180,6 +166,20 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/encryption/</loc>
+    <lastmod>2020-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/dotnet/</loc>
+    <lastmod>2020-11-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -242,14 +242,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/exchange/</loc>
+    <loc>https://stefanescueduard.github.io/tags/producer/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/producer/</loc>
+    <loc>https://stefanescueduard.github.io/tags/exchange/</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
