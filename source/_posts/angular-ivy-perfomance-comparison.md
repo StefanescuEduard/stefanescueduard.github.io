@@ -9,7 +9,7 @@ tags:
   - benchmark
 ---
 
-Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved.
+123Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved.
 
 After seeing the Angular 9 release notes, I asked if the bundle size can be improved more. I found out that is possible by using compressing algorithms. After a little research, there are two libraries [zlib](https://www.npmjs.com/package/zlib) and [brotli](https://www.npmjs.com/package/brotli), which run through all `.js`, `.html` and `.css` files and compress them using `gzip` and `brotli` compressing algorithms. I will create an article to show how this can be done.
 But before showing the data, I want to present the project specifications. The project is a smaller one, with only 11 pages and it’s using Angular Material.
