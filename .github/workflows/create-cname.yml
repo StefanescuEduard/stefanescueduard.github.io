@@ -1,6 +1,12 @@
 name: Add CNAME
 
-on: [page_build, deployment, deployment_status]
+on:
+  page_build:
+  deployment:
+  deployment_status:
+  push:	
+    branches:	
+    - master
 
 jobs:
   create-cname:
