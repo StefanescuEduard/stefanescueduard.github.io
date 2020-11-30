@@ -12,7 +12,7 @@ jobs:
     
     steps:
     - name: Create CNAME file
-    - uses: "finnp/create-file-action@master"
+      uses: "finnp/create-file-action@master"
       env:
         FILE_NAME: "CNAME"
         FILE_DATA: "eduardstefanescu.dev"
