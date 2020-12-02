@@ -52,3 +52,5 @@ Talk: https://www.youtube.com/watch?v=9OhXqBlCmrM
 * Quality cannot be measure and defined precisely because there are so many variables, it means different people, in different places and different points in time;
 * Code coverage is a dangerous metric and should never be used as a target or management tool because the percentage of tested code is not the same as the percentage of the executed code. For example, we can have 80% tested code from a 50% executed code;
 * “How it is done is as important as having it done” — Eduardo Namur;
+
+<a href="https://www.buymeacoffee.com/edstefanescu" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>

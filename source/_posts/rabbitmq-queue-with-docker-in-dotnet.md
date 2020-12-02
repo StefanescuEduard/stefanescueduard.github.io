@@ -66,3 +66,5 @@ The created `Queues` can also be seen on the RabbitMQ Management page.
 Now, all we have to do is to create the `Consumer`, and the entire topology will be ready to be used. The `Consumer` will be created in the next article, this being the last one from this series.
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.
+
+<a href="https://www.buymeacoffee.com/edstefanescu" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>

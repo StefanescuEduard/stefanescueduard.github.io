@@ -80,3 +80,5 @@ In the picture above can be seen, that the first two messages which had the head
 The entire code for this topology and the RabbitMQ series can be found on my GitHub account: https://github.com/StefanescuEduard/RabbitMQ_POC.
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.
+
+<a href="https://www.buymeacoffee.com/edstefanescu" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
