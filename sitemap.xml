@@ -2,16 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/</loc>
+    <loc>https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/</loc>
     
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/04/25/jwt-authentication-with-asymmetric-encryption-in-asp-dotnet-core/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/05/02/jwt-token-claims-in-asp-dotnet-core/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/</loc>
     
-    <lastmod>2020-08-09</lastmod>
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/02/19/angular-ivy-perfomance-comparison/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
     
   </url>
   
@@ -29,80 +99,10 @@
     
   </url>
   
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/05/02/jwt-token-claims-in-asp-dotnet-core/</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/04/25/jwt-authentication-with-asymmetric-encryption-in-asp-dotnet-core/</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>https://stefanescueduard.github.io/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -110,154 +110,154 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/angular/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/ivy/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/performance/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/benchmark/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/dotnetcore/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/dotnet/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/authentication/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/asp/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/symmetric/</loc>
-    <lastmod>2020-11-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/encryption/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/asymmetric/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/encryption/</loc>
+    <lastmod>2020-12-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/symmetric/</loc>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/authorization/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/claims/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/roles/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/rabbitmq/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/amqp/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/consumer/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/docker/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/exchange/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/producer/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/queue/</loc>
-    <lastmod>2020-11-30</lastmod>
+    <lastmod>2020-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
