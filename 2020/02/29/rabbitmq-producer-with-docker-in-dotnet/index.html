@@ -169,16 +169,16 @@
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>RabbitMQ it&#x2019;s a messaging system that uses AMQP (Advanced Message Queue Protocol) to deliver messages between communication levels. The main idea is that RabbitMQ uses the following 4 layers: <code>Producer</code>, <code>Exchange</code>, <code>Queue</code> and <code>Consumer</code> to send messages over AMQP.</p>
 <p>The AMQP it&#x2019;s delimited in the following three zones:</p>
 <ol>
-<li><p>The <code>Producer</code> sends a message to the <code>Message Broker</code>.</p>
+<li><p> The <code>Producer</code> sends a message to the <code>Message Broker</code>.</p>
 </li>
-<li><p>The <code>Message Broker</code> consists of at least one <code>Exchange</code> and at least one <code>Queue</code>. Then the <code>Exchange</code> sent the message to the <code>Queue</code>.</p>
+<li><p> The <code>Message Broker</code> consists of at least one <code>Exchange</code> and at least one <code>Queue</code>. Then the <code>Exchange</code> sent the message to the <code>Queue</code>.</p>
 </li>
-<li><p>And the <code>Consumer</code> receives the message from the <code>Queue</code>.</p>
+<li><p> And the <code>Consumer</code> receives the message from the <code>Queue</code>.</p>
 </li>
 </ol>
 <p>The <code>Exchange</code> can be one of four types in order to control the messages to the <code>Queues</code>. That&#x2019;s a great way to handle messages when the system has multiple <code>Exchanges</code> and uses a <code>Queue</code> for multiple purposes (i.e. a Logger(<code>Producer</code>) send a log using a Service(<code>Exchange</code>) to a PersistenceAPI and an AuditAPI both using the same <code>Queue</code>, but both APIs saving the log in the same Database(<code>Consumer</code>)). Maybe that&#x2019;s a silly example but I want to describe a possible way of using a single <code>Queue</code> with multiple <code>Exchanges</code>. And the can be easily reversed, the configuration can be whatever you wish, at least it will also have sense and respects the RabbitMQ&#x2019;s concepts.</p>
 <p>To understand how messages are sent in this system, firstly the roles of the <code>routing</code> and <code>binding</code> keys needs to be explained. So the <code>routing key</code> will be attached to message and sent to the <code>Exchange</code>, the <code>Exchange</code> will determine in which direction to send the received message based on its <code>routing key</code> and the <code>binding key</code> between the <code>Exchange</code> and the <code>Queue</code>. The <code>binding key</code> is also known as the routing pattern.</p>
-<h3 id="Topology"><a href="#Topology" class="headerlink" title="Topology"></a>Topology</h3><p>In the image below is the topology created with <a target="_blank" rel="noopener" href="http://tryrabbitmq.com">http://tryrabbitmq.com</a>, which is a nice tool that helped me understand the core concepts of RabbitMQ.</p>
+<h3 id="Topology"><a href="#Topology" class="headerlink" title="Topology"></a>Topology</h3><p>In the image below is the topology created with <a target="_blank" rel="noopener" href="http://tryrabbitmq.com/">http://tryrabbitmq.com</a>, which is a nice tool that helped me understand the core concepts of RabbitMQ.</p>
 
     <div>
       <img src="used-topology.png" alt="Topology" data-action="zoom" class="photozoom">
@@ -217,7 +217,7 @@
       
     </div>
 
-<p>RabbitMQ Management it&#x2019;s a nice tool to monitor and manage the entire topology, it can be accessed from <a target="_blank" rel="noopener" href="http://localhost:8080">http://localhost:8080</a>.</p>
+<p>RabbitMQ Management it&#x2019;s a nice tool to monitor and manage the entire topology, it can be accessed from <a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080</a>.</p>
 
     <div>
       <img src="rabbitmq-management-login.png" alt="RabbitMQ Management Login" data-action="zoom" class="photozoom">
