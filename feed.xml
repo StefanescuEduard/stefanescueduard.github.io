@@ -152,9 +152,9 @@
     
     <category term="amqp" scheme="https://stefanescueduard.github.io/tags/amqp/"/>
     
-    <category term="docker" scheme="https://stefanescueduard.github.io/tags/docker/"/>
-    
     <category term="consumer" scheme="https://stefanescueduard.github.io/tags/consumer/"/>
+    
+    <category term="docker" scheme="https://stefanescueduard.github.io/tags/docker/"/>
     
   </entry>
   
@@ -182,9 +182,9 @@
     
     <category term="amqp" scheme="https://stefanescueduard.github.io/tags/amqp/"/>
     
-    <category term="exchange" scheme="https://stefanescueduard.github.io/tags/exchange/"/>
-    
     <category term="docker" scheme="https://stefanescueduard.github.io/tags/docker/"/>
+    
+    <category term="exchange" scheme="https://stefanescueduard.github.io/tags/exchange/"/>
     
   </entry>
   
@@ -212,9 +212,9 @@
     
     <category term="amqp" scheme="https://stefanescueduard.github.io/tags/amqp/"/>
     
-    <category term="docker" scheme="https://stefanescueduard.github.io/tags/docker/"/>
-    
     <category term="consumer" scheme="https://stefanescueduard.github.io/tags/consumer/"/>
+    
+    <category term="docker" scheme="https://stefanescueduard.github.io/tags/docker/"/>
     
   </entry>
   
@@ -272,9 +272,9 @@
     
     <category term="amqp" scheme="https://stefanescueduard.github.io/tags/amqp/"/>
     
-    <category term="exchange" scheme="https://stefanescueduard.github.io/tags/exchange/"/>
-    
     <category term="docker" scheme="https://stefanescueduard.github.io/tags/docker/"/>
+    
+    <category term="exchange" scheme="https://stefanescueduard.github.io/tags/exchange/"/>
     
   </entry>
   
