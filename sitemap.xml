@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -249,14 +249,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/producer/</loc>
+    <loc>https://stefanescueduard.github.io/tags/queue/</loc>
     <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/queue/</loc>
+    <loc>https://stefanescueduard.github.io/tags/producer/</loc>
     <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
