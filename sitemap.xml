@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/04/25/jwt-authentication-with-asymmetric-encryption-in-asp-dotnet-core/</loc>
+    <loc>https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/</loc>
+    <loc>https://stefanescueduard.github.io/2020/04/25/jwt-authentication-with-asymmetric-encryption-in-asp-dotnet-core/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -30,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/</loc>
+    <loc>https://stefanescueduard.github.io/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -137,14 +137,28 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/authentication/</loc>
+    <loc>https://stefanescueduard.github.io/tags/dotnetcore/</loc>
     <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/dotnetcore/</loc>
+    <loc>https://stefanescueduard.github.io/tags/dotnet/</loc>
+    <lastmod>2021-02-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
+    <lastmod>2021-02-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/authentication/</loc>
     <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -166,20 +180,6 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/encryption/</loc>
-    <lastmod>2021-02-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/dotnet/</loc>
-    <lastmod>2021-02-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
     <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -249,14 +249,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/queue/</loc>
+    <loc>https://stefanescueduard.github.io/tags/producer/</loc>
     <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/producer/</loc>
+    <loc>https://stefanescueduard.github.io/tags/queue/</loc>
     <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
