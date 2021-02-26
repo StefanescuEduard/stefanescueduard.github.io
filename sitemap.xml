@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -228,7 +228,7 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/consumer/</loc>
+    <loc>https://stefanescueduard.github.io/tags/exchange/</loc>
     <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -242,7 +242,7 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/exchange/</loc>
+    <loc>https://stefanescueduard.github.io/tags/consumer/</loc>
     <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

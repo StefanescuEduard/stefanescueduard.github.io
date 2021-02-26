@@ -114,9 +114,9 @@
             
             <tag> amqp </tag>
             
-            <tag> consumer </tag>
-            
             <tag> docker </tag>
+            
+            <tag> consumer </tag>
             
         </tags>
       
@@ -141,9 +141,9 @@
             
             <tag> amqp </tag>
             
-            <tag> docker </tag>
-            
             <tag> exchange </tag>
+            
+            <tag> docker </tag>
             
         </tags>
       
@@ -168,9 +168,9 @@
             
             <tag> amqp </tag>
             
-            <tag> consumer </tag>
-            
             <tag> docker </tag>
+            
+            <tag> consumer </tag>
             
         </tags>
       
@@ -222,9 +222,9 @@
             
             <tag> amqp </tag>
             
-            <tag> docker </tag>
-            
             <tag> exchange </tag>
+            
+            <tag> docker </tag>
             
         </tags>
       
