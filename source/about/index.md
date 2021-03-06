@@ -7,7 +7,7 @@ tags:
 
 Hello! I’m Eduard Stefanescu, from Romania, an enthusiast programmer that likes to work with backend frameworks, but also enjoys to work with new web-application frameworks. From time to time I want to learn new ones, that I will also blog about.
 
-Currently, I’m working at iQuest, as a software engineer. My interest topics are focused in the following directions:
+Currently, I’m working at Nagarro (former iQuest), as a software engineer. My interest topics are focused in the following directions:
 
 - Backend: .NET, Java, Python
 - Frontend: AngularJS, Angular, React
