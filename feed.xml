@@ -86,15 +86,15 @@
     
     
     
-    <category term="authentication" scheme="https://stefanescueduard.github.io/tags/authentication/"/>
-    
     <category term="dotnetcore" scheme="https://stefanescueduard.github.io/tags/dotnetcore/"/>
+    
+    <category term="authentication" scheme="https://stefanescueduard.github.io/tags/authentication/"/>
     
     <category term="asp" scheme="https://stefanescueduard.github.io/tags/asp/"/>
     
-    <category term="asymmetric" scheme="https://stefanescueduard.github.io/tags/asymmetric/"/>
-    
     <category term="encryption" scheme="https://stefanescueduard.github.io/tags/encryption/"/>
+    
+    <category term="asymmetric" scheme="https://stefanescueduard.github.io/tags/asymmetric/"/>
     
   </entry>
   
@@ -116,15 +116,15 @@
     
     
     
-    <category term="authentication" scheme="https://stefanescueduard.github.io/tags/authentication/"/>
-    
     <category term="dotnetcore" scheme="https://stefanescueduard.github.io/tags/dotnetcore/"/>
+    
+    <category term="authentication" scheme="https://stefanescueduard.github.io/tags/authentication/"/>
     
     <category term="asp" scheme="https://stefanescueduard.github.io/tags/asp/"/>
     
-    <category term="encryption" scheme="https://stefanescueduard.github.io/tags/encryption/"/>
-    
     <category term="symmetric" scheme="https://stefanescueduard.github.io/tags/symmetric/"/>
+    
+    <category term="encryption" scheme="https://stefanescueduard.github.io/tags/encryption/"/>
     
   </entry>
   

@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://stefanescueduard.github.io/newsletter/index.html</loc>
+    <loc>https://stefanescueduard.github.io/about/index.html</loc>
     
-    <lastmod>2021-02-28</lastmod>
+    <lastmod>2021-03-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/04/25/jwt-authentication-with-asymmetric-encryption-in-asp-dotnet-core/</loc>
+    <loc>https://stefanescueduard.github.io/newsletter/index.html</loc>
     
-    <lastmod>2020-12-02</lastmod>
+    <lastmod>2021-02-28</lastmod>
     
   </url>
   
@@ -24,6 +24,13 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/</loc>
+    
+    <lastmod>2020-12-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/04/25/jwt-authentication-with-asymmetric-encryption-in-asp-dotnet-core/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -58,14 +65,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</loc>
     
     <lastmod>2020-12-02</lastmod>
     
@@ -94,13 +101,6 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/search/index.html</loc>
-    
-    <lastmod>2020-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/about/index.html</loc>
     
     <lastmod>2020-08-09</lastmod>
     
@@ -144,35 +144,7 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/authentication/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://stefanescueduard.github.io/tags/dotnetcore/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/asp/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/asymmetric/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/encryption/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -193,7 +165,35 @@
   </url>
   
   <url>
+    <loc>https://stefanescueduard.github.io/tags/authentication/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/asp/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://stefanescueduard.github.io/tags/symmetric/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/encryption/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/asymmetric/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
