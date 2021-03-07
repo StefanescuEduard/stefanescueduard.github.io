@@ -32,7 +32,6 @@ An `Exchange` can be one of these four types:
     Queue2 > _.word2._
 
     Queue3 > _._.word3
-
     </pre>
 
     If the `Producer` sends the message `word1.word2.word3`, each `Queue` will receive only the expected message.
