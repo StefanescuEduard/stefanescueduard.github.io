@@ -53,5 +53,3 @@ The building time for Angular 8 was 29889ms, which means Angular 9 with brotli o
 In conclusion, the performance of Angular 9 is there and can be noticed on larger projects, still is a nice improvement compared to the previous Angular versions.
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.
-
-<a href="https://www.buymeacoffee.com/edstefanescu" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
