@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://stefanescueduard.github.io/2021/03/26/notes-on-day-1-the-one-with-dotnet-codecamp-romania/</loc>
+    <loc>https://stefanescueduard.github.io/2021/03/26/notes-on-day-1-the-one-with-dotnet-codecamp-romania-2021/</loc>
     
     <lastmod>2021-03-26</lastmod>
     
@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/</loc>
+    <loc>https://stefanescueduard.github.io/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/</loc>
     
     <lastmod>2021-03-07</lastmod>
     
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/</loc>
     
     <lastmod>2021-03-07</lastmod>
     
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/</loc>
     
     <lastmod>2021-03-07</lastmod>
     
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</loc>
     
     <lastmod>2021-03-07</lastmod>
     
