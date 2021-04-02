@@ -7,7 +7,7 @@ tags:
 - codecamp
 ---
 
-There was a small talk when Raffaele tell us what he did in this corona time. So he started working with ML and also Code Generation driven by ML.
+There was a small talk when Raffaele told us what he did in this corona time. So he started working with ML and also Code Generation driven by ML.
 
 There was also a talk about how ML was involved in the industry. For example, every machine now starts having more user-friendly interfaces and through this more things can be automated to provide a much greater experience to end customers. And also to the factories that can apply ML to simulate a result before creating and applying those concepts.
 
