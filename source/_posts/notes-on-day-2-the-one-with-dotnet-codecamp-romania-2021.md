@@ -11,7 +11,7 @@ There was a small talk when Raffaele told us what he did in this corona time. So
 
 There was also a talk about how ML was involved in the industry. For example, every machine now starts having more user-friendly interfaces and through this more things can be automated to provide a much greater experience to end customers. And also to the factories that can apply ML to simulate a result before creating and applying those concepts.
 
-**Power your .NET application with the new generation of diagnostics - March 25 14:00 - 14:45 - Raffaele Rialdi**
+## Power your .NET application with the new generation of diagnostics - March 25 14:00 - 14:45 - Raffaele Rialdi
 
 The session goal was to show how to automate the diagnostic process in production.
 
@@ -39,7 +39,7 @@ The app can also load a dump saved before and that dump can be investigated as d
 
 .NET 5 introduces reversed communication protocol, which can be used to diagnose apps, like subscribing to them and when an event occurs, the diagnosis app can read them.
 
-**The (too) Many Faces of Architecture - March 25 15:00 - 15:45 - Mihaela Ghidersa**
+## The (too) Many Faces of Architecture - March 25 15:00 - 15:45 - Mihaela Ghidersa
 
 This presentation was a generic one about architecture, discussing different types of architecture.
 
@@ -53,7 +53,7 @@ The architect is not about the title, he or she has a flexible role, that can co
 
 {% zoom Untitled.png %}
 
-**Telemetry in .NET distributed applications - March 25 16:00 - 16:45 - Constantin-Ariton Lazar  /  Mihai Detesan**
+## Telemetry in .NET distributed applications - March 25 16:00 - 16:45 - Constantin-Ariton Lazar  /  Mihai Detesan
 
 The presentation was focusing on automotive telemetry by using Bosch sensors. 
 
@@ -81,7 +81,7 @@ The final id is composed of the Trace Id and the Parent Id.
 
 Elasticsearch was used to store the logs with Timestamp, Service context like IP or the microservice name, the operation context like the stack trace, and the Trace Id.
 
-**What's New in C# - March 25 17:00 - 17:45 - Chris Sienkiewicz  /  Fred Silberberg**
+## What's New in C# - March 25 17:00 - 17:45 - Chris Sienkiewicz  /  Fred Silberberg
 
 In C# there are top-level statements, before declaring usings, namespace, and declaring classes. And those lines are executed. The compiler will take it and put it in a form to execute it.
 Even async calls will work in top-level statements because the main method that runs these lines is an async one.
@@ -135,7 +135,7 @@ There can be required properties that uses the *required* keyword that requires 
 
 The IAddable interface can be used to "override" the plus sign to perform add operation with which type is needed. 
 
-**Recipe for Modern Applications: .NET, Azure SQL, Functions, Geospatial, JSON - March 25 18:00 - 18:45 - Anna Hoffman**
+## Recipe for Modern Applications: .NET, Azure SQL, Functions, Geospatial, JSON - March 25 18:00 - 18:45 - Anna Hoffman
 
 The presentation was about creating an application to be notified when a bus arrives.
 
