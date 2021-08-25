@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://stefanescueduard.github.io/2021/08/25/asp-dotnet-core-swagger-documentation/</loc>
+    
+    <lastmod>2021-08-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://stefanescueduard.github.io/2021/04/02/notes-on-day-2-the-one-with-dotnet-codecamp-romania-2021/</loc>
     
     <lastmod>2021-04-02</lastmod>
@@ -30,6 +37,13 @@
   </url>
   
   <url>
+    <loc>https://stefanescueduard.github.io/2020/05/02/jwt-token-claims-in-asp-dotnet-core/</loc>
+    
+    <lastmod>2021-03-07</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://stefanescueduard.github.io/2020/02/22/dotnet-core-code-coverage/</loc>
     
     <lastmod>2021-03-07</lastmod>
@@ -51,14 +65,7 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/05/02/jwt-token-claims-in-asp-dotnet-core/</loc>
-    
-    <lastmod>2021-03-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/</loc>
+    <loc>https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/</loc>
     
     <lastmod>2021-03-07</lastmod>
     
@@ -72,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/</loc>
+    <loc>https://stefanescueduard.github.io/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/</loc>
     
     <lastmod>2021-03-07</lastmod>
     
@@ -123,176 +130,190 @@
 
   <url>
     <loc>https://stefanescueduard.github.io/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/angular/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/ivy/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/performance/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/benchmark/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <loc>https://stefanescueduard.github.io/tags/dotnet/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/dotnetcore/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/dotnet/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <loc>https://stefanescueduard.github.io/tags/swagger/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/authentication/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/asp/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/asymmetric/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/encryption/</loc>
-    <lastmod>2021-05-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/symmetric/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <loc>https://stefanescueduard.github.io/tags/documentation/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/authorization/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/claims/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/roles/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/asp/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/authentication/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/asymmetric/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/encryption/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/conference/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/codecamp/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/symmetric/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/rabbitmq/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/amqp/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/consumer/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/docker/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/exchange/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/producer/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/queue/</loc>
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/angular/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/ivy/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/performance/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/benchmark/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

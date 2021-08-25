@@ -192,9 +192,7 @@
 <h3 id="Displaying-the-received-message"><a href="#Displaying-the-received-message" class="headerlink" title="Displaying the received message"></a>Displaying the received message</h3><p>The <code>DisplayQueueMessage</code> has the following parameters:</p>
 <ul>
 <li>The <code>queueName</code> which will listen to;</li>
-<li>And the <code>cancellationToken</code> which represents the listener thread lifetime;<script src="https://gist.github.com/StefanescuEduard/c84eb5e70cd2ae7dc41a0f16fd5aac1c.js"></script>
-
-</li>
+<li>And the <code>cancellationToken</code> which represents the listener thread lifetime;<script src="https://gist.github.com/StefanescuEduard/c84eb5e70cd2ae7dc41a0f16fd5aac1c.js"></script></li>
 </ul>
 <h4 id="DisplayQueueMessage-method-explanation"><a href="#DisplayQueueMessage-method-explanation" class="headerlink" title="DisplayQueueMessage method explanation"></a><code>DisplayQueueMessage</code> method explanation</h4><p>As is described earlier, the listener will exist until the <code>cancellationToken</code> is not requested.<br>On line 5 the message is retrieved from the <code>Queue</code> and is checked if it&#x2019;s <code>null</code>. If it&#x2019;s not <code>null</code>, the message body which is an array of bytes will be decoded using the same encoding format as it was used to encode the message.<br>After displaying the retrieved message, the result is acknowledged in order to be deleted from the <code>Queue</code> and to display the next message.<br>This is not the nicest way to listen to the messages and can cause performance issues, that&#x2019;s why I will create another article about listening events, that will be raised only when a message is published and redirected to a specific <code>Queue</code>.</p>
 <h3 id="Ending-the-connection"><a href="#Ending-the-connection" class="headerlink" title="Ending the connection"></a>Ending the connection</h3><p>After the thread was created for each <code>Queue</code>, a message is prompt in order to display how many <code>Queues</code> are listening to the <code>Consumer</code>.</p>
@@ -230,16 +228,13 @@
     <div>
       <img src="producer-creation.png" alt="Producer creation" data-action="zoom" class="photozoom">
       
-    </div>
-</li>
+    </div></li>
 <li><p>Checking <code>Consumer</code> to see the sent messages:</p>
 
     <div>
       <img src="consumer-listening.png" alt="Consumer listening" data-action="zoom" class="photozoom">
       
-    </div>
-
-</li>
+    </div></li>
 </ul>
 <p>Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.</p>
 

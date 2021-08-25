@@ -18,8 +18,8 @@
 <meta property="article:modified_time" content="2021-03-07T07:09:36.000Z">
 <meta property="article:author" content="Eduard Stefanescu">
 <meta property="article:tag" content="dotnetcore">
-<meta property="article:tag" content="authentication">
 <meta property="article:tag" content="asp">
+<meta property="article:tag" content="authentication">
 <meta property="article:tag" content="asymmetric">
 <meta property="article:tag" content="encryption">
 <meta name="twitter:card" content="summary_large_image">
@@ -184,23 +184,21 @@
 </pre>
 <p>After configuring OpenSSL, the private and public key have to be generated using the following commands:</p>
 <ul>
-<li><p>For the private key: <code>openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048</code></p>
-<ul>
+<li>For the private key: <code>openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048</code><ul>
 <li><code>genpkey</code> specifying that we&#x2019;ll generate a private key;</li>
 <li><code>-algorithm RSA</code> the algorithm used, in this case RSA;</li>
 <li><code>-out private_key.pem</code> the output argument and path;</li>
 <li><code>-pkeyopt rsa_keygen_bits:2048</code> set the public key algorithm and the key size;</li>
 </ul>
 </li>
-<li><p>For the public key: <code>openssl rsa -pubout -in private_key.pem -out public_key.pem</code></p>
-<ul>
+<li>For the public key: <code>openssl rsa -pubout -in private_key.pem -out public_key.pem</code><ul>
 <li><code>rsa</code> specifying that the command will process RSA keys;</li>
 <li><code>-pubout -in private_key.pem</code> the private key and the path of it;</li>
 <li><code>-out public_key.pem</code> the output argument and path;</li>
 </ul>
-<p>Before starting into code, the generated PEM keys have to be converted into XML files. That was the easiest way to read them using the <code>System.Security.Cryptography</code> package.<br>To convert them into XML you can use this site: <a target="_blank" rel="noopener" href="https://superdry.apphb.com/tools/online-rsa-key-converter">https://superdry.apphb.com/tools/online-rsa-key-converter</a>, then copy the converted text into two files with the XML extension in the project folder.</p>
 </li>
 </ul>
+<p>Before starting into code, the generated PEM keys have to be converted into XML files. That was the easiest way to read them using the <code>System.Security.Cryptography</code> package.<br>To convert them into XML you can use this site: <a target="_blank" rel="noopener" href="https://superdry.apphb.com/tools/online-rsa-key-converter">https://superdry.apphb.com/tools/online-rsa-key-converter</a>, then copy the converted text into two files with the XML extension in the project folder.</p>
 <p>The Setup is the same as in the previous article, so check it out here: <a href="https://stefanescueduard.github.io/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/#Setup">https://stefanescueduard.github.io/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/#Setup</a>. TL;DR you have to install the following package: <code>Microsoft.AspNetCore.Authentication.JwtBearer</code>.</p>
 <h2 id="Startup"><a href="#Startup" class="headerlink" title="Startup"></a><code>Startup</code></h2><p>As in the previous article, the Authentication service has to be added in the <code>ConfigureServices</code> method from the <code>Startup</code> class. For Authentication, an extension method called <code>AddAsymmetricAuthentication</code> will setup the service with the basic settings.<br>It may be a little bit confusing to switch between this and the previous article, but the only thing that is changed here compared to the previous article is the <code>IssuerSigningKey</code> property, which now receives the <code>SigningKey</code>. The previous article contains a comprehensive explanation of each property that it&#x2019;s used: <a href="https://stefanescueduard.github.io/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/#Startup">https://stefanescueduard.github.io/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/#Startup</a>.</p>
 <p>The <code>SigningIssuerCertificate</code> is used to get the <code>IssuerCertificate</code> or the public key; I will return to this class in a moment. The code below contains only what is necessary to use the public key in the Authentication service.</p>
