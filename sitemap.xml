@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://stefanescueduard.github.io/2021/03/26/notes-on-day-1-the-one-with-dotnet-codecamp-romania-2021/</loc>
+    
+    <lastmod>2021-08-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2021/04/02/notes-on-day-2-the-one-with-dotnet-codecamp-romania-2021/</loc>
+    
+    <lastmod>2021-08-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/</loc>
+    
+    <lastmod>2021-08-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/about/index.html</loc>
+    
+    <lastmod>2021-08-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/newsletter/index.html</loc>
+    
+    <lastmod>2021-08-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</loc>
     
     <lastmod>2021-08-29</lastmod>
@@ -38,27 +73,6 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/</loc>
-    
-    <lastmod>2021-08-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2020/05/05/notes-on-sandro-mancuso-software-craftsmanship-talk/</loc>
-    
-    <lastmod>2021-08-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2021/04/02/notes-on-day-2-the-one-with-dotnet-codecamp-romania-2021/</loc>
-    
-    <lastmod>2021-08-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/2021/03/26/notes-on-day-1-the-one-with-dotnet-codecamp-romania-2021/</loc>
     
     <lastmod>2021-08-29</lastmod>
     
@@ -103,20 +117,6 @@
     <loc>https://stefanescueduard.github.io/2021/08/25/asp-dotnet-core-swagger-documentation/</loc>
     
     <lastmod>2021-08-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/about/index.html</loc>
-    
-    <lastmod>2021-03-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/newsletter/index.html</loc>
-    
-    <lastmod>2021-02-28</lastmod>
     
   </url>
   
@@ -264,6 +264,13 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/codecamp/</loc>
+    <lastmod>2021-08-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stefanescueduard.github.io/tags/notes/</loc>
     <lastmod>2021-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
