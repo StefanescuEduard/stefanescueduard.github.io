@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://eduardstefanescu.dev/images/social-preview.jpg">
 <meta property="article:published_time" content="2021-04-02T07:24:22.000Z">
-<meta property="article:modified_time" content="2021-04-02T10:11:25.411Z">
+<meta property="article:modified_time" content="2021-08-29T09:02:36.361Z">
 <meta property="article:author" content="Eduard Stefanescu">
 <meta property="article:tag" content="dotnet">
 <meta property="article:tag" content="conference">
@@ -174,7 +174,7 @@
 <p>There is also another problem with dumps because there might be sensitive data, for example, the application could be installed in a hospital, so those data can be constrained by privacy and EU regulation like GDPR.</p>
 <p>The presented scenario was an <a target="_blank" rel="noopener" href="http://asp.net/">ASP.NET</a> Core application and many clients that use the app. There is also a console application used to stress the web service, that can make concurrent requests. The diagnostic application is receiving TraceEvents from the web service. This application uses two libraries: DiagnosticClient and ClrMD 2.0 (the investigating library, that grabs data). When an issue occurs a snapshot with the web service is created by this diagnostic app. By doing so we can capture the exact moment when the problem occurred.</p>
 <p>The communication between web service and diag app is the communication that can be made with every .NET application starting with .NET Core 3.0.</p>
-<p>The library recommended is <a target="_blank" rel="noopener" href="https://github.com/raffaeler/PowerDiagnostics">https://github.com/raffaeler/PowerDiagnostics</a>. </p>
+<p>The library recommended is <a target="_blank" rel="noopener" href="https://github.com/raffaeler/PowerDiagnostics">https://github.com/raffaeler/PowerDiagnostics</a>.</p>
 <p>Diagnostic Demo app was used to capture snapshots and also run different queries to display the root cause of the problem. For example, discovering a big byte array that uses too much memory. Or querying duplicate strings, getting strings by size, list of modules or threads stacks.</p>
 <p>The app can also load a dump saved before and that dump can be investigated as dump saved at the runtime.</p>
 <p>.NET 5 introduces reversed communication protocol, which can be used to diagnose apps, like subscribing to them and when an event occurs, the diagnosis app can read them.</p>
@@ -189,20 +189,20 @@
       
     </div>
 
-<h2 id="Telemetry-in-NET-distributed-applications-March-25-16-00-16-45-Constantin-Ariton-Lazar-Mihai-Detesan"><a href="#Telemetry-in-NET-distributed-applications-March-25-16-00-16-45-Constantin-Ariton-Lazar-Mihai-Detesan" class="headerlink" title="Telemetry in .NET distributed applications - March 25 16:00 - 16:45 - Constantin-Ariton Lazar  /  Mihai Detesan"></a>Telemetry in .NET distributed applications - March 25 16:00 - 16:45 - Constantin-Ariton Lazar  /  Mihai Detesan</h2><p>The presentation was focusing on automotive telemetry by using Bosch sensors. </p>
+<h2 id="Telemetry-in-NET-distributed-applications-March-25-16-00-16-45-Constantin-Ariton-Lazar-Mihai-Detesan"><a href="#Telemetry-in-NET-distributed-applications-March-25-16-00-16-45-Constantin-Ariton-Lazar-Mihai-Detesan" class="headerlink" title="Telemetry in .NET distributed applications - March 25 16:00 - 16:45 - Constantin-Ariton Lazar  /  Mihai Detesan"></a>Telemetry in .NET distributed applications - March 25 16:00 - 16:45 - Constantin-Ariton Lazar  /  Mihai Detesan</h2><p>The presentation was focusing on automotive telemetry by using Bosch sensors.</p>
 <p>There was a comparison between the Monolith application and the new way of developing products with microservices.</p>
 <p>One of a problem with microservices is with the coherence, which can be difficult to track because each microservice creates request between them. And for example, if an error occurred is a bit hard to know from where it comes.</p>
 <p>And also another problem comes from debugging and is also difficult to locate.</p>
 <p>In monolith application scaling represents adding more hardware resources, instead of on microservices scaling represents adding more instances of a specific or many microservices.</p>
 <p>The &#x201C;telemetry&#x201D; word comes from Greek, tele = distance and metron = measure. The &#x201C;sum&#x201D; of this to words can be translated as a process of recording and transmitting some logs or reading of a sensor or even a machine.</p>
-<p>OpenTelemtry is an observability framework that combines traces and metrics.</p>
+<p>OpenTelemetry is an observability framework that combines traces and metrics.</p>
 <p>Jaeger and Zipkin were used for tracing.</p>
 <p>To trace all microservices, each of them has a Trace Id that uniquely identifies each microservice.</p>
 <p>The trace collector creates some sort of graph from all traces.</p>
 <p>All the Trace IDs are sent from a microservice to another when creating a request, to know which microservice called another one.</p>
 <p>The final id is composed of the Trace Id and the Parent Id.</p>
 <p>Elasticsearch was used to store the logs with Timestamp, Service context like IP or the microservice name, the operation context like the stack trace, and the Trace Id.</p>
-<h2 id="What&#x2019;s-New-in-C-March-25-17-00-17-45-Chris-Sienkiewicz-Fred-Silberberg"><a href="#What&#x2019;s-New-in-C-March-25-17-00-17-45-Chris-Sienkiewicz-Fred-Silberberg" class="headerlink" title="What&#x2019;s New in C# - March 25 17:00 - 17:45 - Chris Sienkiewicz  /  Fred Silberberg"></a>What&#x2019;s New in C# - March 25 17:00 - 17:45 - Chris Sienkiewicz  /  Fred Silberberg</h2><p>In C# there are top-level statements, before declaring usings, namespace, and declaring classes. And those lines are executed. The compiler will take it and put it in a form to execute it.<br>Even async calls will work in top-level statements because the main method that runs these lines is an async one.<br>For not including the namespace in the statements we can use using before them.<br>In top-level statements functions can also be declared. But the functions can be used only in the local top statements. So for example, if there are classes under, those top functions can&#x2019;t be called in. </p>
+<h2 id="What&#x2019;s-New-in-C-March-25-17-00-17-45-Chris-Sienkiewicz-Fred-Silberberg"><a href="#What&#x2019;s-New-in-C-March-25-17-00-17-45-Chris-Sienkiewicz-Fred-Silberberg" class="headerlink" title="What&#x2019;s New in C# - March 25 17:00 - 17:45 - Chris Sienkiewicz  /  Fred Silberberg"></a>What&#x2019;s New in C# - March 25 17:00 - 17:45 - Chris Sienkiewicz  /  Fred Silberberg</h2><p>In C# there are top-level statements, before declaring the usings, namespace, and declaring classes. And those lines are executed. The compiler will take it and put it in a form to execute it.<br>Even async calls will work in top-level statements because the main method that runs these lines is an async one.<br>For not including the namespace in the statements we can use using before them.<br>In top-level statements functions can also be declared. But the functions can be used only in the local top statements. So for example, if there are classes under, those top functions can&#x2019;t be called in.</p>
 
     <div>
       <img src="Untitled1.png" alt data-action="zoom" class="photozoom">
@@ -259,8 +259,8 @@
 <p>Nullable types can be used in if.</p>
 <p>There can be semi-auto properties that have a backing field, that doesn&#x2019;t need to be declared.</p>
 <p>The records can be also structs (record struct), similar to the current record for classes.</p>
-<p>There can be required properties that uses the <em>required</em> keyword that requires the user to set it. </p>
-<p>The IAddable interface can be used to &#x201C;override&#x201D; the plus sign to perform add operation with which type is needed. </p>
+<p>There can be required properties that uses the <em>required</em> keyword that requires the user to set it.</p>
+<p>The IAddable interface can be used to &#x201C;override&#x201D; the plus sign to perform add operation with which type is needed.</p>
 <h2 id="Recipe-for-Modern-Applications-NET-Azure-SQL-Functions-Geospatial-JSON-March-25-18-00-18-45-Anna-Hoffman"><a href="#Recipe-for-Modern-Applications-NET-Azure-SQL-Functions-Geospatial-JSON-March-25-18-00-18-45-Anna-Hoffman" class="headerlink" title="Recipe for Modern Applications: .NET, Azure SQL, Functions, Geospatial, JSON - March 25 18:00 - 18:45 - Anna Hoffman"></a>Recipe for Modern Applications: .NET, Azure SQL, Functions, Geospatial, JSON - March 25 18:00 - 18:45 - Anna Hoffman</h2><p>The presentation was about creating an application to be notified when a bus arrives.</p>
 <p>The data are imported from the public transportation data. Azure was used for all the below &#x201C;pieces&#x201D;.</p>
 

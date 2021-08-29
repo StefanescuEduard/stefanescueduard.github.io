@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="Z6yCtJdtAEJhoqcK8R36N2xR5ULTuk3G4NcUGqdTqyc">
   <meta name="specificfeeds-verification-code" content="wVuTRqQ9R0Ez1dk7HVKj">
-  <meta name="description" content="This is the second article from a series of four about RabbitMQ Exchange in .NET. In the first part of this article, the fundamentals and the types of the Exchange will be presented. And in the second">
+  <meta name="description" content="This is the second article from a series of four about RabbitMQ Exchange in .NET. In the first part of this article, the fundamentals and the types of the Exchange will be presented. And in the seco">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ Exchange with Docker in .NET">
 <meta property="og:url" content="https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/index.html">
 <meta property="og:site_name" content="Eduard Stefanescu">
-<meta property="og:description" content="This is the second article from a series of four about RabbitMQ Exchange in .NET. In the first part of this article, the fundamentals and the types of the Exchange will be presented. And in the second">
+<meta property="og:description" content="This is the second article from a series of four about RabbitMQ Exchange in .NET. In the first part of this article, the fundamentals and the types of the Exchange will be presented. And in the seco">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://eduardstefanescu.dev/images/social-preview.jpg">
 <meta property="article:published_time" content="2020-03-07T10:42:02.000Z">
-<meta property="article:modified_time" content="2021-03-07T09:45:04.000Z">
+<meta property="article:modified_time" content="2021-08-29T09:03:27.083Z">
 <meta property="article:author" content="Eduard Stefanescu">
 <meta property="article:tag" content="dotnetcore">
 <meta property="article:tag" content="rabbitmq">
@@ -165,12 +165,14 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>This is the second article from a series of four about RabbitMQ <code>Exchange</code> in .NET. In the first part of this article, the fundamentals and the types of the <code>Exchange</code> will be presented. And in the second part, each line of code will be explained about how the <code>Exchange</code> it will be created. The first article, <a href="https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/">https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</a>, contains a short introduction into RabbitMQ concepts, the Environment setup with Docker and <code>Producer</code> creation in .NET.</p>
+    <!-- markdownlint-disable MD033 -->
+
+<p>This is the second article from a series of four about RabbitMQ <code>Exchange</code> in .NET. In the first part of this article, the fundamentals and the types of the <code>Exchange</code> will be presented. And in the second part, each line of code will be explained about how the <code>Exchange</code> it will be created. The first article, <a href="https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/">https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</a>, contains a short introduction into RabbitMQ concepts, the Environment setup with Docker and <code>Producer</code> creation in .NET.</p>
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The RabbitMQ <code>Exchange</code> is used to route the messages received from the <code>Producer</code> and sending them to the <code>Queue</code> based on the <code>routing key</code> key and <code>binding key</code>. Those two keys were explained in the first article, so if you want to find the explanation behind them, read the first article.<br>An <code>Exchange</code> can be one of these four types:</p>
 <h3 id="Exchange-types"><a href="#Exchange-types" class="headerlink" title="Exchange types"></a><code>Exchange</code> types</h3><ol>
-<li><p> <code>Direct Exchange</code> send messages to the <code>Queues</code> that have the <code>binding key</code> the same as the <code>routing key</code>.</p>
+<li><p><code>Direct Exchange</code> send messages to the <code>Queues</code> that have the <code>binding key</code> the same as the <code>routing key</code>.</p>
 </li>
-<li><p> <code>Fanout Exchange</code> send messages to all the <code>Queues</code>, in an indiscriminate way. It uses the Publish-Subscribe Pattern, which means that all <code>Queues</code> that are subscribed to an <code>Exchange</code> will receive the message, like a newsletter. Also, it will not take into account the <code>binding</code> or the <code>routing</code> key.</p>
+<li><p><code>Fanout Exchange</code> send messages to all the <code>Queues</code>, in an indiscriminate way. It uses the Publish-Subscribe Pattern, which means that all <code>Queues</code> that are subscribed to an <code>Exchange</code> will receive the message, like a newsletter. Also, it will not take into account the <code>binding</code> or the <code>routing</code> key.</p>
 </li>
 <li><p><code>Topic Exchange</code> send messages to the <code>Queues</code> using a pattern. The pattern can contain <code>*</code> or <code>#</code>. The first wildcard <code>*</code> means that it can match any word, and the second one <code>#</code> represents that no word is expected in that place.</p>
 <p> For example, if there are three <code>Queues</code>, and each one expects to get a &#x2018;word&#x2019; based on the <code>binding key</code>, as follows:</p>
@@ -184,7 +186,7 @@
 <p> If the <code>Producer</code> sends the message <code>word1.word2.word3</code>, each <code>Queue</code> will receive only the expected message.</p>
 <p> A real-life example for this type of <code>Exchange</code> can be the different levels of logging (i.e. the errors and warns can be sent to the Database, and the info ones sent to a file).</p>
 </li>
-<li><p> <code>Headers Exchange</code> send messages based on a header, this header is represented by a required property <code>x-match</code> and one or more properties that will be bound to the <code>Queue</code> like a <code>routing-key</code>. This type of <code>Exchange</code> is useful when the message should follow the header values and not the <code>routing keys</code>. It&#x2019;s also associated with the <code>Topic Exchange</code>, but it&#x2019;s much more flexible, with the disadvantage that the message should be an object.</p>
+<li><p><code>Headers Exchange</code> send messages based on a header, this header is represented by a required property <code>x-match</code> and one or more properties that will be bound to the <code>Queue</code> like a <code>routing-key</code>. This type of <code>Exchange</code> is useful when the message should follow the header values and not the <code>routing keys</code>. It&#x2019;s also associated with the <code>Topic Exchange</code>, but it&#x2019;s much more flexible, with the disadvantage that the message should be an object.</p>
 </li>
 </ol>
 <p>A topology can have multiple <code>Exchanges</code> connected to the multiple <code>Producers</code> and <code>Queues</code>, as in the example below, made using <a target="_blank" rel="noopener" href="http://tryrabbitmq.com/">http://tryrabbitmq.com</a>.</p>

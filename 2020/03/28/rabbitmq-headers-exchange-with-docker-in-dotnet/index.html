@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="Z6yCtJdtAEJhoqcK8R36N2xR5ULTuk3G4NcUGqdTqyc">
   <meta name="specificfeeds-verification-code" content="wVuTRqQ9R0Ez1dk7HVKj">
-  <meta name="description" content="This article is about Headers Exchange, I chose to create an article just for this type of Exchange because it needs a little more attention compared to the other three types (i.e. fanout, direct, top">
+  <meta name="description" content="This article is about Headers Exchange, I chose to create an article just for this type of Exchange because it needs a little more attention compared to the other three types (i.e. fanout, direct, t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ Headers Exchange with Docker in .NET">
 <meta property="og:url" content="https://stefanescueduard.github.io/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/index.html">
 <meta property="og:site_name" content="Eduard Stefanescu">
-<meta property="og:description" content="This article is about Headers Exchange, I chose to create an article just for this type of Exchange because it needs a little more attention compared to the other three types (i.e. fanout, direct, top">
+<meta property="og:description" content="This article is about Headers Exchange, I chose to create an article just for this type of Exchange because it needs a little more attention compared to the other three types (i.e. fanout, direct, t">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://eduardstefanescu.dev/images/social-preview.jpg">
 <meta property="article:published_time" content="2020-03-28T09:33:05.000Z">
-<meta property="article:modified_time" content="2021-03-07T07:09:36.000Z">
+<meta property="article:modified_time" content="2021-08-29T09:03:35.099Z">
 <meta property="article:author" content="Eduard Stefanescu">
 <meta property="article:tag" content="dotnetcore">
 <meta property="article:tag" content="rabbitmq">
@@ -165,7 +165,9 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>This article is about <code>Headers Exchange</code>, I chose to create an article just for this type of <code>Exchange</code> because it needs a little more attention compared to the other three types (i.e. fanout, direct, topic).<br>In this article, I will use the setup environment with Docker from the first article, so if you want a good starting point, you can begin with the first article: <a href="https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/">https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</a>.</p>
+    <!-- markdownlint-disable MD033 -->
+
+<p>This article is about <code>Headers Exchange</code>, I chose to create an article just for this type of <code>Exchange</code> because it needs a little more attention compared to the other three types (i.e. fanout, direct, topic).<br>In this article, I will use the setup environment with Docker from the first article, so if you want a good starting point, you can begin with the first article: <a href="https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/">https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</a>.</p>
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><code>Headers Exchange</code> is routing the messages based on the bindings that are applied to the <code>Producer</code> and <code>Queue</code>.<br>In order to produce a message, that message should be published with defined properties that are also bound to the <code>Queue</code> - this is why it&#x2019;s called <code>Headers Exchange</code> - and can also be seen as the <code>routing key</code>.<br>Another mandatory property that must be bound to the <code>Queue</code> is <code>x-match</code>. This property specifies the matching criteria, as follows:</p>
 <ul>
 <li><code>x-match=all</code> means that all the header pairs must match;</li>

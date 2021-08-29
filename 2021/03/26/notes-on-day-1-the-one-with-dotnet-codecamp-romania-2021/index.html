@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://eduardstefanescu.dev/images/social-preview.jpg">
 <meta property="article:published_time" content="2021-03-26T06:32:22.000Z">
-<meta property="article:modified_time" content="2021-03-26T07:30:32.146Z">
+<meta property="article:modified_time" content="2021-08-29T09:00:42.796Z">
 <meta property="article:author" content="Eduard Stefanescu">
 <meta property="article:tag" content="dotnet">
 <meta property="article:tag" content="conference">
@@ -185,7 +185,7 @@
 <li>The ML Engineer should write good software, applying best practices, and being comfortable with web services technologies like API or gRPC. The ML engineer should also incorporate a trained model into a client application.</li>
 <li>Two interesting ideas about how knowledge can be spread:<ul>
 <li>T-shaped knowledge is a deep vertical in one area and basic knowledge of several other side areas.</li>
-<li>Y-shaped is a deep vertical in one area and good knowledge good enough in a small number of side areas. </li>
+<li>Y-shaped is a deep vertical in one area and good knowledge good enough in a small number of side areas.</li>
 </ul>
 </li>
 <li>ML.NET comes as a framework to be helpful to data engineers and ML engineers rather than data scientists. ML.NET can manage up to 1TB of data. Is a tool that helps to integrate ML solution inside of existing or new .NET application. ML.NET is not a Microsoft version of Python is a tool for Data Scientists and Data Engineers.</li>
@@ -199,11 +199,12 @@
       <img src="tenant.png" alt data-action="zoom" class="photozoom">
       
     </div>
+
 <ul>
 <li>Was a discussion about multiple clients that access a load balancer, which redirects them to a cluster that contains an app, and that app shares multiple databases (tenants) to each client.</li>
 <li>The old version of this was by creating an app for each client, that involves too many resources.</li>
 <li>The new architecture looks something like in the above picture.</li>
-<li>The problem with this architecture is that it should be too many instances of the Web API and also the deployment takes half a week. The deployment for aproximetely 120 customers takes 2 to 3 hours.</li>
+<li>The problem with this architecture is that it should be too many instances of the Web API and also the deployment takes half a week. The deployment for approximately 120 customers takes 2 to 3 hours.</li>
 <li>To being fixing that problem, she started with the Web API by using multiple tenants. The tenant can be identified by the subdomain, the domain, or a path.</li>
 <li>The later you do it, the easier it is to get it wrong.</li>
 <li>On a previous company all that logic was on-premises and then to a local cloud provider. But now on the current company, the application became tenant agnostic that runs on the cloud and also has a load balancer.</li>
@@ -269,7 +270,7 @@
 <li>To understand software, we should not look at the code because it is time-consuming. We should look at the traffic pattern, such as HTTP requests, load balancing, how many requests supports.</li>
 <li>We need to ask the right question to be turned into meaningful metrics. For example knowing who to protect, for multiple-factor authentication.</li>
 <li>Before reinventing the wheel search for an existing library, for example from nuget.</li>
-<li>Diagrams should be clear, showing exactly what each of the entries should look like. Add more details to the diagrams to be easily understood. </li>
+<li>Diagrams should be clear, showing exactly what each of the entries should look like. Add more details to the diagrams to be easily understood.</li>
 <li>I recommend following Dylan Beattie on Twitter (<a target="_blank" rel="noopener" href="https://twitter.com/dylanbeattie">https://twitter.com/dylanbeattie</a>) and the conferences he is attending.</li>
 </ul>
 
