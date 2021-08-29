@@ -11,6 +11,8 @@ tags:
   - dotnetcore
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 This is the first article from a series of four, where I will explain each RabbitMQ graph node, the environment setup with Docker and the `Producer` creation in .NET.
 
 ## Introduction
@@ -19,11 +21,11 @@ RabbitMQ it's a messaging system that uses AMQP (Advanced Message Queue Protocol
 
 The AMQP it's delimited in the following three zones:
 
-1.  The `Producer` sends a message to the `Message Broker`.
+1. The `Producer` sends a message to the `Message Broker`.
 
-2.  The `Message Broker` consists of at least one `Exchange` and at least one `Queue`. Then the `Exchange` sent the message to the `Queue`.
+2. The `Message Broker` consists of at least one `Exchange` and at least one `Queue`. Then the `Exchange` sent the message to the `Queue`.
 
-3.  And the `Consumer` receives the message from the `Queue`.
+3. And the `Consumer` receives the message from the `Queue`.
 
 The `Exchange` can be one of four types in order to control the messages to the `Queues`. That's a great way to handle messages when the system has multiple `Exchanges` and uses a `Queue` for multiple purposes (i.e. a Logger(`Producer`) send a log using a Service(`Exchange`) to a PersistenceAPI and an AuditAPI both using the same `Queue`, but both APIs saving the log in the same Database(`Consumer`)). Maybe that's a silly example but I want to describe a possible way of using a single `Queue` with multiple `Exchanges`. And the can be easily reversed, the configuration can be whatever you wish, at least it will also have sense and respects the RabbitMQ's concepts.
 
@@ -31,7 +33,7 @@ To understand how messages are sent in this system, firstly the roles of the `ro
 
 ### Topology
 
-In the image below is the topology created with http://tryrabbitmq.com, which is a nice tool that helped me understand the core concepts of RabbitMQ.
+In the image below is the topology created with <http://tryrabbitmq.com>, which is a nice tool that helped me understand the core concepts of RabbitMQ.
 
 {% zoom used-topology.png Topology %}
 
@@ -41,7 +43,7 @@ This example will also be used to create the RabbitMQ topology using .NET Core.
 
 RabbitMQ can be installed locally without Docker, but I like to use Docker because is much faster and it's a lot easier to make changes without breaking too many things.
 
-In order to run RabbitMQ on Docker, we need the RabbitMQ Server and the Management Plugin, more information about the RabbitMQ images can be found here: https://hub.docker.com/_/rabbitmq.
+In order to run RabbitMQ on Docker, we need the RabbitMQ Server and the Management Plugin, more information about the RabbitMQ images can be found here: <https://hub.docker.com/_/rabbitmq>.
 
 Firstly the RabbitMQ image needs to be downloaded locally with the following command:
 
@@ -61,7 +63,7 @@ The `--detach` parameter means that the container will run in the background, bu
 
 The `--name` parameter assign a name to the container to be easily identifiable. I choose the rabbitmq-blog name just for this article, but you can give it a name much more intuitive.
 
-The `--publish` parameter will publish the container using the specified port, the first one is the port that we are expecting to access locally, and the second one is the container port. For this example, the container needs only two ports, the AMQP port (5672) and the Management port (15672). All available ports are listed here: https://www.rabbitmq.com/networking.html#ports. By default the Management plugin supports the `15672`, you can leave it like that or it can be changed, read more about this here: https://www.rabbitmq.com/management.html.
+The `--publish` parameter will publish the container using the specified port, the first one is the port that we are expecting to access locally, and the second one is the container port. For this example, the container needs only two ports, the AMQP port (5672) and the Management port (15672). All available ports are listed here: <https://www.rabbitmq.com/networking.html#ports>. By default the Management plugin supports the `15672`, you can leave it like that or it can be changed, read more about this here: <https://www.rabbitmq.com/management.html>.
 
 And the last argument is the RabbitMQ image. Using the colon (:) specify which version of that image to be used.
 
@@ -75,7 +77,7 @@ To check that the containers are running, the `docker ps` command can be used. I
 
 {% zoom rabbitmq-container.png RabbitMQ Container %}
 
-RabbitMQ Management it's a nice tool to monitor and manage the entire topology, it can be accessed from http://localhost:8080.
+RabbitMQ Management it's a nice tool to monitor and manage the entire topology, it can be accessed from <http://localhost:8080>.
 
 {% zoom rabbitmq-management-login.png RabbitMQ Management Login %}
 
@@ -107,10 +109,10 @@ To create the connection between the `Exchange` and the `Producer`, the connecti
 
 <script src="https://gist.github.com/StefanescuEduard/3e301b944e453a58e924a21d394a6077.js"></script>
 
-Then the `BasicProperties` are created for starting an elementary channel. These properties can be used to specify the `Persistence` type or the `Expiration` time until the message will be deleted if no `Consumer` will receive it; but there are many more and you can check them all here: https://www.rabbitmq.com/dotnet-api-guide.html.
+Then the `BasicProperties` are created for starting an elementary channel. These properties can be used to specify the `Persistence` type or the `Expiration` time until the message will be deleted if no `Consumer` will receive it; but there are many more and you can check them all here: <https://www.rabbitmq.com/dotnet-api-guide.html>.
 On line 9 the message is published to the `Exchange` with the `routing key` and with the `BasicProperties` that were created. I preferred to choose a constant name for the `Exchange` just for this article, this `Exchange` name will be also used for the other nodes.
 
-All code from this article can also be found on my Github account: https://github.com/StefanescuEduard/RabbitMQ_POC. There is the entire Solution, but stay close, there will be an article with explanations for each project.
+All code from this article can also be found on my Github account: <https://github.com/StefanescuEduard/RabbitMQ_POC>. There is the entire Solution, but stay close, there will be an article with explanations for each project.
 On the next article I will explain the `Exchange`.
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.

@@ -9,18 +9,22 @@ tags:
   - dotnetcore
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 This article contains another approach of consuming messages. The first part will be a comparison between the several types of consuming messages and in the second part, each line of code will be explained.
 The entire environment setup with Docker can be found in the first article from the RabbitMQ series. In this series, there are also explained some core principles about each RabbitMQ node. I highly recommend that, if you are at the beginning with RabbitMQ or with the AMQP standard, to start with these articles:
-1. https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/
-2. https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/
-3. https://stefanescueduard.github.io/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/
-4. https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/
+
+1. <https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/>
+2. <https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/>
+3. <https://stefanescueduard.github.io/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/>
+4. <https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/>
 
 ## Introduction
 
 The RabbitMQ Client provides a `Received` event that will be used to consume the messages coming from one or more `Queues`. In the `Consumer` article, the messages are consumed and acknowledged using the `BasicGet` and the `BackAck` methods in a while loop, waiting for the `CancellationToken`. The advantage of that method is that a message can be consumed when needed. So, care must be taken when using this method. It's not recommended to use it in an infinite while loop if the `Received` event exists, and it's a good replacement for that type of approach.
 The advantage of the `Received` event is obvious, that will no longer consume unnecessary resources, but the "disadvantage" is that the messages will be consumed whenever they are raised based on the `routing key`.
 But this depends on the different scenarios which way to choose. A useful tip that may help when you must choose between these two ways of consuming messages is:
+
 - `BasicGet` method can be used when there are more messages to get or it needs to be consumed at a certain time;
 - `Received` event can be used when the raised message needs to be consumed immediately;
 
@@ -37,7 +41,7 @@ To bind the `Consumer` to the `Channel`, a new `EventingBasicConsumer` instance 
 
 An important note here is that there is no need to surround the `IConnection` and the `IChannel` into a using statement, the reason for this is that the `Connection` and the `Channel` need to exist as long as the app. If these two variables were disposed too early, then no message would be received.
 You may notice that in this RabbitMQ series, I used the `Channel` word instead of the official name `Model`, that's because it's easier to understand. For me, a `Model` is too generic, instead, a `Channel` makes me think to a communication channel, which in fact it really is.
-The official documentation for `EventingBasicConsumer` can be found here: https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.1.1/rabbitmq-dotnet-client-3.1.1-client-htmldoc/html/type-RabbitMQ.Client.Events.EventingBasicConsumer.html.
+The official documentation for `EventingBasicConsumer` can be found here: <https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.1.1/rabbitmq-dotnet-client-3.1.1-client-htmldoc/html/type-RabbitMQ.Client.Events.EventingBasicConsumer.html>.
 
 ### Subscribing to the event
 
@@ -53,6 +57,7 @@ This event handler will display the received message and another message to info
 
 To start consuming messages, the `Consumer` will be bind to the queue. In the following code, there is an iteration through the queues count entered previously. Then the user is asked to enter the `Queue` name that will be bound to the `Consumer`.
 The `BasicConsume` method takes three parameters:
+
 - the first one is the `Queue` name;
 - the second is used for auto acknowledgment, in this case, is set to `true`, but if it was set to `false` then the acknowledgment had to be done manually if this is wanted;
 - and the third one is the `Consumer`;
@@ -79,6 +84,6 @@ In the picture below, the sent message by the `Producer` using a specific `routi
 
 ---
 
-All the code for this `Consumer` and for the entire topology is available on my GitHub account: https://github.com/StefanescuEduard/RabbitMQ_POC
+All the code for this `Consumer` and for the entire topology is available on my GitHub account: <https://github.com/StefanescuEduard/RabbitMQ_POC>
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.

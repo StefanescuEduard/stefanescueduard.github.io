@@ -31,7 +31,7 @@ The presented scenario was an [ASP.NET](http://asp.NET) Core application and man
 
 The communication between web service and diag app is the communication that can be made with every .NET application starting with .NET Core 3.0.
 
-The library recommended is [https://github.com/raffaeler/PowerDiagnostics](https://github.com/raffaeler/PowerDiagnostics). 
+The library recommended is [https://github.com/raffaeler/PowerDiagnostics](https://github.com/raffaeler/PowerDiagnostics).
 
 Diagnostic Demo app was used to capture snapshots and also run different queries to display the root cause of the problem. For example, discovering a big byte array that uses too much memory. Or querying duplicate strings, getting strings by size, list of modules or threads stacks.
 
@@ -55,7 +55,7 @@ The architect is not about the title, he or she has a flexible role, that can co
 
 ## Telemetry in .NET distributed applications - March 25 16:00 - 16:45 - Constantin-Ariton Lazar  /  Mihai Detesan
 
-The presentation was focusing on automotive telemetry by using Bosch sensors. 
+The presentation was focusing on automotive telemetry by using Bosch sensors.
 
 There was a comparison between the Monolith application and the new way of developing products with microservices.
 
@@ -67,7 +67,7 @@ In monolith application scaling represents adding more hardware resources, inste
 
 The "telemetry" word comes from Greek, tele = distance and metron = measure. The "sum" of this to words can be translated as a process of recording and transmitting some logs or reading of a sensor or even a machine.
 
-OpenTelemtry is an observability framework that combines traces and metrics.
+OpenTelemetry is an observability framework that combines traces and metrics.
 
 Jaeger and Zipkin were used for tracing.
 
@@ -83,10 +83,10 @@ Elasticsearch was used to store the logs with Timestamp, Service context like IP
 
 ## What's New in C# - March 25 17:00 - 17:45 - Chris Sienkiewicz  /  Fred Silberberg
 
-In C# there are top-level statements, before declaring usings, namespace, and declaring classes. And those lines are executed. The compiler will take it and put it in a form to execute it.
+In C# there are top-level statements, before declaring the usings, namespace, and declaring classes. And those lines are executed. The compiler will take it and put it in a form to execute it.
 Even async calls will work in top-level statements because the main method that runs these lines is an async one.
 For not including the namespace in the statements we can use using before them.
-In top-level statements functions can also be declared. But the functions can be used only in the local top statements. So for example, if there are classes under, those top functions can't be called in. 
+In top-level statements functions can also be declared. But the functions can be used only in the local top statements. So for example, if there are classes under, those top functions can't be called in.
 
 {% zoom Untitled1.png %}
 
@@ -131,9 +131,9 @@ There can be semi-auto properties that have a backing field, that doesn't need t
 
 The records can be also structs (record struct), similar to the current record for classes.
 
-There can be required properties that uses the *required* keyword that requires the user to set it. 
+There can be required properties that uses the *required* keyword that requires the user to set it.
 
-The IAddable interface can be used to "override" the plus sign to perform add operation with which type is needed. 
+The IAddable interface can be used to "override" the plus sign to perform add operation with which type is needed.
 
 ## Recipe for Modern Applications: .NET, Azure SQL, Functions, Geospatial, JSON - March 25 18:00 - 18:45 - Anna Hoffman
 

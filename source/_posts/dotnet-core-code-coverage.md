@@ -7,6 +7,8 @@ tags:
   - code coverage
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 Code coverage tools are a great way to improve the code quality, but there are a lot of tools that require a paid license to use it like dotCover, the Enterprise version of Visual Studio or Visual Studio extensions. After some research, I found out that two free tools that combined can generate code coverage reports. The first tool is called [Coverlet](https://github.com/tonerdo/coverlet) which generates the code coverage as I wanted and it's also working with .NET Framework. Essentially is creating an `XML` report file that covers the lines, branches, and methods. And the second tool is [ReportGenerator](https://github.com/danielpalme/ReportGenerator) which is used for parsing the generated `XML` and expose the data in a friendly format.
 
 For this article, I created a small project to demonstrate how is working.
@@ -50,6 +52,6 @@ The color code is the same as in the other tools, but what I like is that it als
 
 In conclusion, these two tools are great and don't cost anything, also can be configured to run through all test projects and generate more comprehensive code coverage.
 
-Here is the repository link with all the code from this article: https://github.com/StefanescuEduard/NetCoreCodeCoverage. I kept the Coverage folder on the repository just for testing purposes.
+Here is the repository link with all the code from this article: <https://github.com/StefanescuEduard/NetCoreCodeCoverage>. I kept the Coverage folder on the repository just for testing purposes.
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.

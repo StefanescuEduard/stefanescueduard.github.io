@@ -9,11 +9,15 @@ tags:
   - encryption
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 JWT Authentication is becoming one of the most used authentication types in modern web applications or services. This article covers the JWT Authentication with a Symmetric Key in ASP.NET Core. In the first part, there will be a short introduction into what Symmetric Key represents and the second part contains the prerequisites for this project and the actual implementation of this authentication type.
 This article is the first article from of series of two, the second one will contain the authentication with an Asymmetric Key using a certificate.
 
 ## Introduction
+
 JWT Token is a common way of creating access tokens that can contain several claims (e.g. Username, Roles). JWT Token means JSON (JavaScript Object Notation) Web Token. Every JWT Token has the following structure:
+
 - Header, containing the encryption algorithm;
 - Payload, containing custom Claims, plus at least two required claims:
   - `exp` representing the expiration time when the Token will become unavailable;
@@ -21,7 +25,7 @@ JWT Token is a common way of creating access tokens that can contain several cla
   The times are formatted using the Unix Timestamp format (e.g. 1582784721).
 - Signature, representing the encoded header, plus `a dot`, plus the encoded payload, plus a secret key. The concatenated result will be run through the encryption algorithm specified on the Header to validate the Token.
 
-If you want to read more about JWT Token, this comprehensive paper covers all the concepts: https://tools.ietf.org/html/rfc7519.
+If you want to read more about JWT Token, this comprehensive paper covers all the concepts: <https://tools.ietf.org/html/rfc7519>.
 
 ### Symmetric Key
 
@@ -31,10 +35,11 @@ The Symmetric Key is used both for signing and validation. For example, let's sa
 
 ## Setup
 
-ASP.NET Core 3.1 will be used for this project. Microsoft also offers a great package that provides all that is needed to create a JWT Token-based authentication. The package is called `Microsoft.AspNetCore.Authentication.JwtBearer`, this is the only package that the project needs, and can be found here: https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer.
+ASP.NET Core 3.1 will be used for this project. Microsoft also offers a great package that provides all that is needed to create a JWT Token-based authentication. The package is called `Microsoft.AspNetCore.Authentication.JwtBearer`, this is the only package that the project needs, and can be found here: <https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer>.
 
 ## Creating a secret key
-The signing and validation key will be a user secret key. ASP.NET provides the user secret key feature to store all the confidential data that doesn't have to be committed or shared outside the user or developer environment. For the production or testing environments, the keys need to be store in a cloud vault, like Microsoft Azure offers through Key Vault - https://azure.microsoft.com/en-us/services/key-vault/ -, but this will be a topic for another article.
+
+The signing and validation key will be a user secret key. ASP.NET provides the user secret key feature to store all the confidential data that doesn't have to be committed or shared outside the user or developer environment. For the production or testing environments, the keys need to be store in a cloud vault, like Microsoft Azure offers through Key Vault - <https://azure.microsoft.com/en-us/services/key-vault/> -, but this will be a topic for another article.
 Firstly, the project needs to be initiated for using user secrets, by running the following command in the project folder:
 <script src="https://gist.github.com/StefanescuEduard/95c685ba92b5068bd7fbfe970e32c0e4.js"></script>
 Then the user secret key is added, using the following command:
@@ -45,6 +50,7 @@ If there are multiple values for the `AppSettings` then this key can become more
 The `POWERFULENCRYPTIONKEY` will be encoded in an array of bytes and then this binary will be Base64 encoded, this is required for both signing and validation.
 
 ## Startup
+
 In the `ConfigureServices` method from the `Startup` class, the `AppSettings` section needs to be read. To read a type from the configuration file, a class must be created, so for the `AppSettings` section an equivalent class needs to exists, as is shown below. This class can be seen as a Data Transfer Object, which contains plain properties.
 <script src="https://gist.github.com/StefanescuEduard/4fc78f767647bb27f6dfacf2534f34a7.js"></script>
 After the section is read, the `EncryptionKey` needs to be converted into bytes.
@@ -57,13 +63,14 @@ Let's return to the `AddAuthentication` method:
 <script src="https://gist.github.com/StefanescuEduard/001c342d1f1b6a52faf2aa0709cd1ecb.js"></script>
 The `authenticationOptions` need to configure the `Authenticate` and `Challenge` Schemes, in order to verify that the endpoint(s) which receives a JWT Token will go through the validation step, as is described below starting from `line 12`. The same Schema will be seen on the endpoints that use the `AuthorizeAttribute`.
 Then the `JwtBearer` is added to the `Authentication` process, using the following properties:
+
 - `SaveToken` is self-explanatory. It's used to persist the Token into a local storage. The token will be valid even if the service restarts, so its lifetime is different from the application;
 - `ValidateAudience` and `ValidateIssuer` must be used for the service to skip or to validate the Audience or the Issuer. The Audience refers to the server or the Identity Provider, in this case our ASP.NET Service. And the `Issuer` refers to the client(s) that makes HTTP request(s). For the sake of this example, both are set `false`. Please note that even if you don't want to validate the `Audience` or/and the `Issuer` these values must be set;
 - `ValidateIssuerSigningKey` needs to be set to `true`, in order to validate the received Token;
 - For `IssuerSigningKey` will use the `SymmetricSecurityKey`, the same approach will be also used when the Token will be created.
 - `LifeTimeValidator` is important if the generated `Token` has set an expiration time.
 
-All the JWT Bearer Options can be found on the Microsoft website: https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.jwtbearer.jwtbeareroptions.
+All the JWT Bearer Options can be found on the Microsoft website: <https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.jwtbearer.jwtbeareroptions>.
 
 The `LifeTimeValidator` handler is checking if the expiration date is greater than the current Date, as follows:
 <script src="https://gist.github.com/StefanescuEduard/9179957eaf0cc9765c02ccf9dc391637.js"></script>
@@ -72,14 +79,17 @@ After the services were configured, the `Authentication` and `Authorization` mid
 <script src="https://gist.github.com/StefanescuEduard/3b7f8d14b342b24609d32d519976d391.js"></script>
 
 ## `UserCredentials`
+
 User's Credentials will be used as a Data Transfer Object, this class will be received on the authentication endpoint and sent to the `AuthenticationService`. It's a plain class that contains only the `Username` and the `Password` of the user.
 <script src="https://gist.github.com/StefanescuEduard/221e8de96fe412ebf143346d02df389b.js"></script>
 
 ## `AuthenticationService`
+
 The `AuthenticationService` is used like a middleware which receives the `UserCredentials` from the `Controller`, validate them using the `UserService` and if the credentials are valid, it creates a Token using the `TokenService`. Both the `User` and `Token` services are injected on the constructor.
 <script src="https://gist.github.com/StefanescuEduard/fc8c8776b5b10c235d0ec90a03baddf3.js"></script>
 
 ## `UserService`
+
 For the sake of this example, the `UserService` contains a list of users created on the constructor. In a real-life scenario, this will be read from a storage or from a service.
 <script src="https://gist.github.com/StefanescuEduard/42b61657f6c727d39d2a988a88613b6f.js"></script>
 This is more like a `UserValidation` service, but to better illustrate that it also reads the users, the `UserService` name will be kept.
@@ -87,6 +97,7 @@ This is more like a `UserValidation` service, but to better illustrate that it a
 The `ValidateCredentials` method checks if the `username` and `password` pair exists, and if it doesn't it will throw the `InvalidCredentialsException` which will be caught on the `Controller`.
 
 ## `TokenService`
+
 `TokenService` is receiving on the constructor the `AppSettings`, which will be used on the `GetTokenDescriptor` method to set up the Token.
 <script src="https://gist.github.com/StefanescuEduard/f60ae2f42b5149c9c0042e8cc472f9e7.js"></script>
 
@@ -95,9 +106,10 @@ The public `GetToken` method is used to get the token description, to create the
 
 On the `GetTokenDescriptor` method, the token is constructed. In this method, the `ExpirationTime` and `SigningCredentials` are set. Because the Claims are not in the main focus of this article, I will create another one, in which I will explain how the Claims can be set on the Token and how they can be used.
 <script src="https://gist.github.com/StefanescuEduard/f38f48801ddaf2af33ce4804840f4de8.js"></script>
-All the Token Descriptors can be found on the Microsoft website: https://docs.microsoft.com/en-us/dotnet/api/system.identitymodel.tokens.securitytokendescriptor.
+All the Token Descriptors can be found on the Microsoft website: <https://docs.microsoft.com/en-us/dotnet/api/system.identitymodel.tokens.securitytokendescriptor>.
 
 ## `AuthenticationController`
+
 Now, all we have to do, is to create an `AuthenticationController` which receives the `UserCredentials` and uses the previously created `AuthenticationService`.
 On the constructor the `AuthenticationService` is injected, to be used on the `Authentication` endpoint.
 <script src="https://gist.github.com/StefanescuEduard/c98a7bc5ad4142c939ad54334d8d8955.js"></script>
@@ -106,11 +118,13 @@ The authentication endpoint accepts HTTP Post requests, receives the `UserCreden
 If the credentials are valid, then the endpoint will return an `OK` HTTP Status code and the generated token. Otherwise, if the `InvalidCredentialsException` is thrown, the `Unauthorized` HTTP Status code is returned.
 
 ## `ValidationController`
+
 The purpose of the `ValidationController` is to check that the signing process is working, in order to validate the Token.
 <script src="https://gist.github.com/StefanescuEduard/0469aa49ff0516acbd0d3c4ef8afec82.js"></script>
 You may notice that the `Validate` endpoint has the `AuthorizeAttribute` which has on its constructor the same `AuthenticationSchemes` as was set on the `Authentication` service.
 
 ## The result
+
 Firstly, the happy flow for the `AuthenticationController` is tested, so we'll provide the correct combination of the username and password, in order to receive the token.
 {% zoom happy-flow-authentication.png Happy flow authentication %}
 Let's test with credentials that are not correct, the response should be Unauthorized.
@@ -123,6 +137,6 @@ And the second test is when the wrong token is provided for validation.
 
 ---
 
-The source code from this article can be found on my GitHub account: https://github.com/StefanescuEduard/JwtAuthentication.
+The source code from this article can be found on my GitHub account: <https://github.com/StefanescuEduard/JwtAuthentication>.
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.

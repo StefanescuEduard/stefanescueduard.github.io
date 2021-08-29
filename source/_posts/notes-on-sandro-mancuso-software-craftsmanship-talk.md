@@ -4,11 +4,12 @@ date: 2020-05-05 17:25:12
 tags:
 ---
 
-Talk: https://www.youtube.com/watch?v=9OhXqBlCmrM
+Talk: <https://www.youtube.com/watch?v=9OhXqBlCmrM>
 
 ---
 
 ## Highlights
+
 * The attitude of software craftsmanship should be: passion, career ownership, “perfect” practice and boy scout rule;
 * We should produce more to receive more, and not waiting to receive something from our company because we are owning our career;
 * When we are working on an organization don’t excuse, like “No one does that, so I’m not going to do it also”. Either you do it or you leave the company;
@@ -17,6 +18,7 @@ Talk: https://www.youtube.com/watch?v=9OhXqBlCmrM
 ---
 
 ## Notes
+
 * In February 2001, 17 people meet in a ski resort in Utah to create an Agile Methodology. The people there were people like Uncle Bob, Martin Fowler;
 * In agile processes and tools became more important than technical practices and excellence;
 * In the beginning there, were more “shits” scrum masters than developers. Some of those scrum masters know nothing about software development;

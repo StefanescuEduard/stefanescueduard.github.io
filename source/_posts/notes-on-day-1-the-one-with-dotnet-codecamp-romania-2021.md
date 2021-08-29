@@ -34,8 +34,8 @@ Data Science is only an umbrella because we need engineering to apply the scienc
 * The professional is also about an individual but has the skills to cover a given role.
 * The ML Engineer should write good software, applying best practices, and being comfortable with web services technologies like API or gRPC. The ML engineer should also incorporate a trained model into a client application.
 * Two interesting ideas about how knowledge can be spread:
-  - T-shaped knowledge is a deep vertical in one area and basic knowledge of several other side areas.
-  - Y-shaped is a deep vertical in one area and good knowledge good enough in a small number of side areas. 
+  * T-shaped knowledge is a deep vertical in one area and basic knowledge of several other side areas.
+  * Y-shaped is a deep vertical in one area and good knowledge good enough in a small number of side areas.
 * ML.NET comes as a framework to be helpful to data engineers and ML engineers rather than data scientists. ML.NET can manage up to 1TB of data. Is a tool that helps to integrate ML solution inside of existing or new .NET application. ML.NET is not a Microsoft version of Python is a tool for Data Scientists and Data Engineers.
 
 ## Single-tenant to multi-tenant, a real world example - March 24 15:00 - 15:45 - Iris Classon
@@ -44,20 +44,23 @@ Data Science is only an umbrella because we need engineering to apply the scienc
 
 Sneak peek:
 {% zoom tenant.png %}
+
 * Was a discussion about multiple clients that access a load balancer, which redirects them to a cluster that contains an app, and that app shares multiple databases (tenants) to each client.
 * The old version of this was by creating an app for each client, that involves too many resources.
 * The new architecture looks something like in the above picture.
-* The problem with this architecture is that it should be too many instances of the Web API and also the deployment takes half a week. The deployment for aproximetely 120 customers takes 2 to 3 hours.
+* The problem with this architecture is that it should be too many instances of the Web API and also the deployment takes half a week. The deployment for approximately 120 customers takes 2 to 3 hours.
 * To being fixing that problem, she started with the Web API by using multiple tenants. The tenant can be identified by the subdomain, the domain, or a path.
 * The later you do it, the easier it is to get it wrong.
 * On a previous company all that logic was on-premises and then to a local cloud provider. But now on the current company, the application became tenant agnostic that runs on the cloud and also has a load balancer.
 
 The pros:
+
 * Cost saving for scaling.
 * Simplified and faster deploying process.
 * Logs should be treated differently because we're not going to have logs per customer.
 
 The cons:
+
 * Clients are not isolated, so the connection should be encrypted.
 
 ## Trailblazor: Building Dynamic Applications with Blazor - March 24 16:00 - 16:45 - Shaun Walker
@@ -104,5 +107,5 @@ The cons:
 * To understand software, we should not look at the code because it is time-consuming. We should look at the traffic pattern, such as HTTP requests, load balancing, how many requests supports.
 * We need to ask the right question to be turned into meaningful metrics. For example knowing who to protect, for multiple-factor authentication.
 * Before reinventing the wheel search for an existing library, for example from nuget.
-* Diagrams should be clear, showing exactly what each of the entries should look like. Add more details to the diagrams to be easily understood. 
-* I recommend following Dylan Beattie on Twitter (https://twitter.com/dylanbeattie) and the conferences he is attending.
+* Diagrams should be clear, showing exactly what each of the entries should look like. Add more details to the diagrams to be easily understood.
+* I recommend following Dylan Beattie on Twitter (<https://twitter.com/dylanbeattie>) and the conferences he is attending.

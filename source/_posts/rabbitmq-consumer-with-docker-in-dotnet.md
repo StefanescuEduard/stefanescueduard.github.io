@@ -9,30 +9,36 @@ tags:
   - dotnetcore
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 This is the last article from the RabbitMQ series. In this series, I explained all the RabbitMQ nodes using .NET and Docker. There will be other two articles, the first one is dedicated just for the `Headers Exchange`, because this type of `Exchange` needs more attention, considering that the sent messages need to be binding to the `Exchange` using `x-match` property and to the `Queue` using defined properties. And in the second one, I will explain a safer way of consuming messages and closing the connection, because this series is more educational oriented and plain methods were used for a better understanding.
 
 In this article the `Consumer` node of the RabbitMQ topology will be presented, in the first part the core concepts will be cover, and in the second part, each line of code will be explained.
 The first article from this series contains the environment setup with Docker and core fundamentals of RabbitMQ. You can check the other three articles here:
-1. https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/ (environment setup)
-2. https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/
-3. https://stefanescueduard.github.io/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/
+
+1. <https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/> (environment setup)
+2. <https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/>
+3. <https://stefanescueduard.github.io/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/>
 
 ## Introduction
+
 The RabbitMQ `Consumer` it's the node to which the `Queues` are connected. This will receive all the messages sent by the `Producer` and followed some path to be consumed. A real-life example for the `Consumer` it will be, a logging system, where the `Producer` is the app that sent the log message and the `Consumer` is the Console or the API that will process the received message.
 
 ### Useful tips
+
 Here are some tips that I found useful:
+
 - The lifetime of a `Consumer` is as long as the application lifetime;
 - It's not recommended to have a `Consumer` that consume only one message, but it's totally fine to have a `Consumer` subscribed to a `Queue` as long as it sent multiple messages. That's because, for obvious reasons, it's not necessary to have this entire system to send only one message;
 - A `Consumer` has a uniquely identifiable tag and a subscription ID, which is the connection link with the `Queue`;
 - The exclusivity to the `Consumer` can be made using the `exclusive` flag, that means that the `Consumer` will receive messages from only one `Queue`;
 - And some `Consumers` can have a higher priority to the same messages over other `Consumers`;
 
-All the `Consumers`'s properties can be read on the RabbitMQ website: https://www.rabbitmq.com/consumers.html.
+All the `Consumers`'s properties can be read on the RabbitMQ website: <https://www.rabbitmq.com/consumers.html>.
 
 ## Creating the `Consumer`
 
-First of all, we need to know how many queues are listening to this consumer, so a message is prompt to enter the number of queues. After that, a connection to the RabbitMQ Server is made using a URI and specifying the `ConnectionTimeout` to its maximum value. This value is used just for this article purposes, also all the `ConnectionFactory` properties with few examples can be found here: https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.4/rabbitmq-dotnet-client-3.2.4-client-htmldoc/html/type-RabbitMQ.Client.ConnectionFactory.html.
+First of all, we need to know how many queues are listening to this consumer, so a message is prompt to enter the number of queues. After that, a connection to the RabbitMQ Server is made using a URI and specifying the `ConnectionTimeout` to its maximum value. This value is used just for this article purposes, also all the `ConnectionFactory` properties with few examples can be found here: <https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.4/rabbitmq-dotnet-client-3.2.4-client-htmldoc/html/type-RabbitMQ.Client.ConnectionFactory.html>.
 You can check the first article where is another approach of creating the `ConnectionFactory` using the properties `Hostname`, `UserName` and `Password`.
 <script src="https://gist.github.com/StefanescuEduard/2ec14bb22789a00f6bd2364f60767cda.js"></script>
 
@@ -48,8 +54,10 @@ Then for each `Queue`, a thread is created and start listening to it.
 ### Displaying the received message
 
 The `DisplayQueueMessage` has the following parameters:
+
 - The `queueName` which will listen to;
 - And the `cancellationToken` which represents the listener thread lifetime;
+
 <script src="https://gist.github.com/StefanescuEduard/c84eb5e70cd2ae7dc41a0f16fd5aac1c.js"></script>
 
 #### `DisplayQueueMessage` method explanation
@@ -68,11 +76,11 @@ After the thread was created for each `Queue`, a message is prompt in order to d
 Then the `cancellationTokenSource` is cancelled, in order to stop the listening threads, after that the connection and channel are closed and disposed.
 The `WaitHandle` is used to end the connection and the channel safely after the cancellation is signalled.
 
-You can find the solution, with all four nodes on my Github account: https://github.com/StefanescuEduard/RabbitMQ_POC.
+You can find the solution, with all four nodes on my Github account: <https://github.com/StefanescuEduard/RabbitMQ_POC>.
 
 ### Topology result
 
-By following the http://tryrabbitmq.com/ topology described in the previous articles, firstly the `Exchange` is created:
+By following the <http://tryrabbitmq.com/> topology described in the previous articles, firstly the `Exchange` is created:
 {% zoom exchange-creation.png Exchange creation %}
 
 Then two `Queues` are created:

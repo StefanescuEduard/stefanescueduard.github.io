@@ -9,6 +9,8 @@ tags:
   - benchmark
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 Angular announces their new Ivy compiler, with smaller bundle sizes, so I wanted to find out on a real project how much the bundle size and the overall application performance were improved.
 
 After seeing the Angular 9 release notes, I asked if the bundle size can be improved more. I found out that is possible by using compressing algorithms. After a little research, there are two libraries [zlib](https://www.npmjs.com/package/zlib) and [brotli](https://www.npmjs.com/package/brotli), which run through all `.js`, `.html` and `.css` files and compress them using `gzip` and `brotli` compressing algorithms. I will create an article to show how this can be done.
@@ -29,10 +31,11 @@ The explanation for this is due to the Tree Shaking process, where the unused li
 Smaller page size means faster download which will decrease the page loading time. I will expect on a large application the time to be much more improved.
 
 {% zoom time-to-build.png Time to build %}
-From a developer point of view, this is nice, Angular Ivy builds faster, and that is a nice advantage where the project is quite large. I want to mention that the times for the two compressing algorithm samples shouldn't be here. In fact it's the compressing time, it would have been unusual if the building plus the compressing time were smaller.<br/>
-Let's calculate the building time for this two compressing algorithms:
+From a developer point of view, this is nice, Angular Ivy builds faster, and that is a nice advantage where the project is quite large. I want to mention that the times for the two compressing algorithm samples shouldn't be here. In fact it's the compressing time, it would have been unusual if the building plus the compressing time were smaller.
 
-##### gzip:
+Let's calculate the building time for this two compressing algorithms.
+
+##### gzip
 
 <pre>
 Building time:    17481ms
@@ -40,7 +43,7 @@ Compressing time: 14913ms
 Total:            32394ms
 </pre>
 
-##### brotli:
+##### brotli
 
 <pre>
 Building time:    14913ms

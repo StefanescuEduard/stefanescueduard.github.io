@@ -8,6 +8,8 @@ tags:
   - documentation
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 Documentation is one of the most effective methods for transferring knowledge about an entire project or a subset of it. The documentation can assist others in comprehending how it works and can also be used as a reference for when someone want to verify that his or her assumptions are right.
 However, the primary advantage of documenting before or throughout the development process is that it can bring to light issues or ideas that no one else would have considered.
 

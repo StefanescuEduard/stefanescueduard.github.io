@@ -9,15 +9,17 @@ tags:
   - dotnetcore
 ---
 
+<!-- markdownlint-disable MD033 -->
 
 This article is about `Headers Exchange`, I chose to create an article just for this type of `Exchange` because it needs a little more attention compared to the other three types (i.e. fanout, direct, topic).
-In this article, I will use the setup environment with Docker from the first article, so if you want a good starting point, you can begin with the first article: https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/.
+In this article, I will use the setup environment with Docker from the first article, so if you want a good starting point, you can begin with the first article: <https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/>.
 
 ## Introduction
 
 `Headers Exchange` is routing the messages based on the bindings that are applied to the `Producer` and `Queue`.
 In order to produce a message, that message should be published with defined properties that are also bound to the `Queue` - this is why it's called `Headers Exchange` - and can also be seen as the `routing key`.
 Another mandatory property that must be bound to the `Queue` is `x-match`. This property specifies the matching criteria, as follows:
+
 - `x-match=all` means that all the header pairs must match;
 - `x-match=any` means that at least one header pairs must match;
 
@@ -77,6 +79,6 @@ Now the messages can be produced. There will be two messages for the `informatio
 
 In the picture above can be seen, that the first two messages which had the headers bound correctly were received by the consumer, but the final messages which don't have any headers were not received.
 
-The entire code for this topology and the RabbitMQ series can be found on my GitHub account: https://github.com/StefanescuEduard/RabbitMQ_POC.
+The entire code for this topology and the RabbitMQ series can be found on my GitHub account: <https://github.com/StefanescuEduard/RabbitMQ_POC>.
 
 Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.
