@@ -3,6 +3,8 @@ title: Newsletter
 date: 2021-02-28 14:30:05
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 <div id="revue-embed">
   <form action="https://www.getrevue.co/profile/edstefanescu/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank">
   <div class="revue-form-group">

@@ -5,6 +5,7 @@ tags:
 - dotnet
 - conference
 - codecamp
+- notes
 ---
 
 ## 13:45 - 14:00

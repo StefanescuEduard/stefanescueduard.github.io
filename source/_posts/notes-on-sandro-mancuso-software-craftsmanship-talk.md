@@ -2,6 +2,7 @@
 title: Notes on Sandro Mancuso — Software Craftsmanship @Talk
 date: 2020-05-05 17:25:12
 tags:
+  - notes
 ---
 
 Talk: <https://www.youtube.com/watch?v=9OhXqBlCmrM>

@@ -5,6 +5,7 @@ tags:
 - dotnet
 - conference
 - codecamp
+- notes
 ---
 
 There was a small talk when Raffaele told us what he did in this corona time. So he started working with ML and also Code Generation driven by ML.
