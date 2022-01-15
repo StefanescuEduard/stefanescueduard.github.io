@@ -78,7 +78,7 @@ options.AddSecurityRequirement(new OpenApiSecurityRequirement
 
 The parameters above are required to setup the Security Requirement, but there are more. So Microsoft did a great job by defining all these fields and properties on the `OpenAPI.NET` GitHub page <a href="#reference2">[2]</a> <a href="#reference3">[3]</a>.
 
-## Demo
+## The result
 
 The Swagger Documentation API page, can be accessed locally using the following URL: <http://localhost:5000/swagger/index.html>. In the top part of this page, you will notice the "Authorize" button, as in the picture below.
 {% zoom authorize-button.png %}
