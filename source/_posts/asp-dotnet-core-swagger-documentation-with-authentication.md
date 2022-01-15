@@ -76,7 +76,7 @@ options.AddSecurityRequirement(new OpenApiSecurityRequirement
   - **`Id`** is the identifier of the reusable component;
   - **`Type`** is the element type referenced;
 
-The parameters above are required to setup the Security Requirement, but there are more. So Microsoft did a great job by defining all these fields and properties on the `OpenAPI.NET` GitHub page <a href="#reference2">[2]</a> <a href="#reference2">[3]</a>.
+The parameters above are required to setup the Security Requirement, but there are more. So Microsoft did a great job by defining all these fields and properties on the `OpenAPI.NET` GitHub page <a href="#reference2">[2]</a> <a href="#reference3">[3]</a>.
 
 ## Demo
 
