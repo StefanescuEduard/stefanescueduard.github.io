@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://stefanescueduard.github.io/2022/01/15/asp-dotnet-core-swagger-documentation-with-authentication/</loc>
+    
+    <lastmod>2022-01-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://stefanescueduard.github.io/2021/03/26/notes-on-day-1-the-one-with-dotnet-codecamp-romania-2021/</loc>
     
     <lastmod>2021-08-29</lastmod>
@@ -229,14 +238,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
+    <loc>https://stefanescueduard.github.io/tags/authentication/</loc>
     <lastmod>2022-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/authentication/</loc>
+    <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
     <lastmod>2022-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -341,14 +350,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/producer/</loc>
+    <loc>https://stefanescueduard.github.io/tags/exchange/</loc>
     <lastmod>2022-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/exchange/</loc>
+    <loc>https://stefanescueduard.github.io/tags/producer/</loc>
     <lastmod>2022-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
