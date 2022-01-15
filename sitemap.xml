@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://stefanescueduard.github.io/2020/04/25/jwt-authentication-with-asymmetric-encryption-in-asp-dotnet-core/</loc>
+    <loc>https://stefanescueduard.github.io/2022/01/15/asp-dotnet-core-swagger-documentation-with-authentication/</loc>
     
     <lastmod>2022-01-15</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/2022/01/15/asp-dotnet-core-swagger-documentation-with-authentication/</loc>
+    <loc>https://stefanescueduard.github.io/2020/04/25/jwt-authentication-with-asymmetric-encryption-in-asp-dotnet-core/</loc>
     
     <lastmod>2022-01-15</lastmod>
     
@@ -357,14 +357,14 @@
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/queue/</loc>
+    <loc>https://stefanescueduard.github.io/tags/producer/</loc>
     <lastmod>2022-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://stefanescueduard.github.io/tags/producer/</loc>
+    <loc>https://stefanescueduard.github.io/tags/queue/</loc>
     <lastmod>2022-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
