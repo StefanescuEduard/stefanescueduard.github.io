@@ -49,7 +49,7 @@ This five parameters are required in order to define how the security key will a
 
 ## Adding the Security Requirement
 
-The `AddSecurityRequirement` extension method will add an authorization header to each endpoint when the request is sent. This method takes a dictionary of type `Dictionary<OpenApiSecurityScheme, IList>` as a parameter, because the endpoints can have different authentication types (e.g. `Basic`, `Saml`). The value of the dictionary is a required list of scope names for the execution only if the security scheme is `oauth2` or `openIdConnect. In our case, this list will be an empty one <a href="#reference1">[1]</a>.
+The `AddSecurityRequirement` extension method will add an authorization header to each endpoint when the request is sent. This method takes a dictionary of type `Dictionary<OpenApiSecurityScheme, IList>` as a parameter, because the endpoints can have different authentication types (e.g. `Basic`, `Saml`). The value of the dictionary is a required list of scope names for the execution only if the security scheme is `oauth2` or `openIdConnect`. In our case, this list will be an empty one <a href="#reference1">[1]</a>.
 
 ```csharp
 options.AddSecurityRequirement(new OpenApiSecurityRequirement
