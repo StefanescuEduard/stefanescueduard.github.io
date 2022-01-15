@@ -61,7 +61,7 @@
   
   <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
   <body class="max-width mx-auto px3 ltr">
     <div class="container">
@@ -69,7 +69,7 @@
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
   <span id="menu">
     <span id="nav">
       <ul>
@@ -92,13 +92,13 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(&apos;#i-prev&apos;).toggle();" onmouseout="$(&apos;#i-prev&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$(&apos;#i-next&apos;).toggle();" onmouseout="$(&apos;#i-next&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
-        <li><a class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$(&apos;#i-top&apos;).toggle();" onmouseout="$(&apos;#i-top&apos;).toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$(&apos;#i-share&apos;).toggle();" onmouseout="$(&apos;#i-share&apos;).toggle();" onclick="$(&apos;#share&apos;).toggle();return false;"></i></a></li>
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
@@ -131,7 +131,7 @@
       
       <div class="content index py4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -141,7 +141,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Eduard Stefanescu</span>
       </span>
       
@@ -176,7 +176,7 @@
 <li><a href="https://stefanescueduard.github.io/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/">https://stefanescueduard.github.io/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/</a></li>
 <li><a href="https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/">https://stefanescueduard.github.io/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/</a></li>
 </ol>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The RabbitMQ Client provides a <code>Received</code> event that will be used to consume the messages coming from one or more <code>Queues</code>. In the <code>Consumer</code> article, the messages are consumed and acknowledged using the <code>BasicGet</code> and the <code>BackAck</code> methods in a while loop, waiting for the <code>CancellationToken</code>. The advantage of that method is that a message can be consumed when needed. So, care must be taken when using this method. It&#x2019;s not recommended to use it in an infinite while loop if the <code>Received</code> event exists, and it&#x2019;s a good replacement for that type of approach.<br>The advantage of the <code>Received</code> event is obvious, that will no longer consume unnecessary resources, but the &#x201C;disadvantage&#x201D; is that the messages will be consumed whenever they are raised based on the <code>routing key</code>.<br>But this depends on the different scenarios which way to choose. A useful tip that may help when you must choose between these two ways of consuming messages is:</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The RabbitMQ Client provides a <code>Received</code> event that will be used to consume the messages coming from one or more <code>Queues</code>. In the <code>Consumer</code> article, the messages are consumed and acknowledged using the <code>BasicGet</code> and the <code>BackAck</code> methods in a while loop, waiting for the <code>CancellationToken</code>. The advantage of that method is that a message can be consumed when needed. So, care must be taken when using this method. It’s not recommended to use it in an infinite while loop if the <code>Received</code> event exists, and it’s a good replacement for that type of approach.<br>The advantage of the <code>Received</code> event is obvious, that will no longer consume unnecessary resources, but the “disadvantage” is that the messages will be consumed whenever they are raised based on the <code>routing key</code>.<br>But this depends on the different scenarios which way to choose. A useful tip that may help when you must choose between these two ways of consuming messages is:</p>
 <ul>
 <li><code>BasicGet</code> method can be used when there are more messages to get or it needs to be consumed at a certain time;</li>
 <li><code>Received</code> event can be used when the raised message needs to be consumed immediately;</li>
@@ -187,7 +187,7 @@
 <p>To bind the <code>Consumer</code> to the <code>Channel</code>, a new <code>EventingBasicConsumer</code> instance is made by passing the <code>Channel</code> as parameter.</p>
 <script src="https://gist.github.com/StefanescuEduard/e2c8b47c6acdbd68d1b1250053417f76.js"></script>
 
-<p>An important note here is that there is no need to surround the <code>IConnection</code> and the <code>IChannel</code> into a using statement, the reason for this is that the <code>Connection</code> and the <code>Channel</code> need to exist as long as the app. If these two variables were disposed too early, then no message would be received.<br>You may notice that in this RabbitMQ series, I used the <code>Channel</code> word instead of the official name <code>Model</code>, that&#x2019;s because it&#x2019;s easier to understand. For me, a <code>Model</code> is too generic, instead, a <code>Channel</code> makes me think to a communication channel, which in fact it really is.<br>The official documentation for <code>EventingBasicConsumer</code> can be found here: <a target="_blank" rel="noopener" href="https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.1.1/rabbitmq-dotnet-client-3.1.1-client-htmldoc/html/type-RabbitMQ.Client.Events.EventingBasicConsumer.html">https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.1.1/rabbitmq-dotnet-client-3.1.1-client-htmldoc/html/type-RabbitMQ.Client.Events.EventingBasicConsumer.html</a>.</p>
+<p>An important note here is that there is no need to surround the <code>IConnection</code> and the <code>IChannel</code> into a using statement, the reason for this is that the <code>Connection</code> and the <code>Channel</code> need to exist as long as the app. If these two variables were disposed too early, then no message would be received.<br>You may notice that in this RabbitMQ series, I used the <code>Channel</code> word instead of the official name <code>Model</code>, that’s because it’s easier to understand. For me, a <code>Model</code> is too generic, instead, a <code>Channel</code> makes me think to a communication channel, which in fact it really is.<br>The official documentation for <code>EventingBasicConsumer</code> can be found here: <a target="_blank" rel="noopener" href="https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.1.1/rabbitmq-dotnet-client-3.1.1-client-htmldoc/html/type-RabbitMQ.Client.Events.EventingBasicConsumer.html">https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.1.1/rabbitmq-dotnet-client-3.1.1-client-htmldoc/html/type-RabbitMQ.Client.Events.EventingBasicConsumer.html</a>.</p>
 <h3 id="Subscribing-to-the-event"><a href="#Subscribing-to-the-event" class="headerlink" title="Subscribing to the event"></a>Subscribing to the event</h3><p>Using the <code>Consumer</code> created earlier, we subscribe to the <code>Received</code> event the <code>OnNewMessageReceived</code> handler.</p>
 <script src="https://gist.github.com/StefanescuEduard/f52c65f4e85caab49614b6072a94b25c.js"></script>
 
@@ -206,7 +206,7 @@
 <h3 id="Disposing-resources"><a href="#Disposing-resources" class="headerlink" title="Disposing resources"></a>Disposing resources</h3><p>After the user indicates that no longer wants to receive messages, or in a real-life scenario, when the application ends, all the created resources need to be disposed.</p>
 <script src="https://gist.github.com/StefanescuEduard/be8d01bb086ce8331d780cfb5ca6a499.js"></script>
 
-<p>Firstly the <code>OnNewMessageReceived</code> event handler needs to be unsubscribed from the <code>Received</code> to stop displaying messages after the program finishes its execution. It can be possible that reference to event handler can still exist after the resources are disposed and the program closes. So, I highly recommend that all the time when it&#x2019;s needed, to unsubscribe the event handlers.<br>After that, the <code>Channel</code> and the <code>Connection</code> are closed and disposed.</p>
+<p>Firstly the <code>OnNewMessageReceived</code> event handler needs to be unsubscribed from the <code>Received</code> to stop displaying messages after the program finishes its execution. It can be possible that reference to event handler can still exist after the resources are disposed and the program closes. So, I highly recommend that all the time when it’s needed, to unsubscribe the event handlers.<br>After that, the <code>Channel</code> and the <code>Connection</code> are closed and disposed.</p>
 <h3 id="The-result"><a href="#The-result" class="headerlink" title="The result"></a>The result</h3><p>Using the <code>Producer</code>, the direct <code>Exchange</code> and one <code>Queue</code> created in the previous articles, the topology will be created and the <code>Consumer</code> will be connected to it.<br>In the picture below, the sent message by the <code>Producer</code> using a specific <code>routing key</code> bound to the <code>Queue</code> reached the event handler, and this displayed the message.</p>
 
     <div>
@@ -272,10 +272,10 @@
     </div>
 
     <div id="actions-footer">
-      <a id="menu" class="icon" href="#" onclick="$(&apos;#nav-footer&apos;).toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-      <a id="toc" class="icon" href="#" onclick="$(&apos;#toc-footer&apos;).toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-      <a id="share" class="icon" href="#" onclick="$(&apos;#share-footer&apos;).toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-      <a id="top" style="display:none" class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+      <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+      <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+      <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -295,7 +295,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &#xA9; 2021 Eduard Stefanescu
+    Copyright © 2022 Eduard Stefanescu
   </div>
   <div class="footer-right">
     <nav>

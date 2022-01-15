@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="Z6yCtJdtAEJhoqcK8R36N2xR5ULTuk3G4NcUGqdTqyc">
   <meta name="specificfeeds-verification-code" content="wVuTRqQ9R0Ez1dk7HVKj">
-  <meta name="description" content="This is the first article from a series of four, where I will explain each RabbitMQ graph node, the environment setup with Docker and the Producer creation in .NET. IntroductionRabbitMQ it&#x2019;s a messa">
+  <meta name="description" content="This is the first article from a series of four, where I will explain each RabbitMQ graph node, the environment setup with Docker and the Producer creation in .NET. IntroductionRabbitMQ it’s a messa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ Producer with Docker in .NET">
 <meta property="og:url" content="https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/index.html">
 <meta property="og:site_name" content="Eduard Stefanescu">
-<meta property="og:description" content="This is the first article from a series of four, where I will explain each RabbitMQ graph node, the environment setup with Docker and the Producer creation in .NET. IntroductionRabbitMQ it&#x2019;s a messa">
+<meta property="og:description" content="This is the first article from a series of four, where I will explain each RabbitMQ graph node, the environment setup with Docker and the Producer creation in .NET. IntroductionRabbitMQ it’s a messa">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://eduardstefanescu.dev/images/social-preview.jpg">
 <meta property="article:published_time" content="2020-02-29T19:07:28.000Z">
@@ -61,7 +61,7 @@
   
   <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
   <body class="max-width mx-auto px3 ltr">
     <div class="container">
@@ -69,7 +69,7 @@
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
   <span id="menu">
     <span id="nav">
       <ul>
@@ -92,13 +92,13 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(&apos;#i-prev&apos;).toggle();" onmouseout="$(&apos;#i-prev&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2020/02/22/dotnet-core-code-coverage/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$(&apos;#i-next&apos;).toggle();" onmouseout="$(&apos;#i-next&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/02/22/dotnet-core-code-coverage/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
-        <li><a class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$(&apos;#i-top&apos;).toggle();" onmouseout="$(&apos;#i-top&apos;).toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$(&apos;#i-share&apos;).toggle();" onmouseout="$(&apos;#i-share&apos;).toggle();" onclick="$(&apos;#share&apos;).toggle();return false;"></i></a></li>
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
@@ -131,7 +131,7 @@
       
       <div class="content index py4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -141,7 +141,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Eduard Stefanescu</span>
       </span>
       
@@ -170,8 +170,8 @@
     <!-- markdownlint-disable MD033 -->
 
 <p>This is the first article from a series of four, where I will explain each RabbitMQ graph node, the environment setup with Docker and the <code>Producer</code> creation in .NET.</p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>RabbitMQ it&#x2019;s a messaging system that uses AMQP (Advanced Message Queue Protocol) to deliver messages between communication levels. The main idea is that RabbitMQ uses the following 4 layers: <code>Producer</code>, <code>Exchange</code>, <code>Queue</code> and <code>Consumer</code> to send messages over AMQP.</p>
-<p>The AMQP it&#x2019;s delimited in the following three zones:</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>RabbitMQ it’s a messaging system that uses AMQP (Advanced Message Queue Protocol) to deliver messages between communication levels. The main idea is that RabbitMQ uses the following 4 layers: <code>Producer</code>, <code>Exchange</code>, <code>Queue</code> and <code>Consumer</code> to send messages over AMQP.</p>
+<p>The AMQP it’s delimited in the following three zones:</p>
 <ol>
 <li><p>The <code>Producer</code> sends a message to the <code>Message Broker</code>.</p>
 </li>
@@ -180,7 +180,7 @@
 <li><p>And the <code>Consumer</code> receives the message from the <code>Queue</code>.</p>
 </li>
 </ol>
-<p>The <code>Exchange</code> can be one of four types in order to control the messages to the <code>Queues</code>. That&#x2019;s a great way to handle messages when the system has multiple <code>Exchanges</code> and uses a <code>Queue</code> for multiple purposes (i.e. a Logger(<code>Producer</code>) send a log using a Service(<code>Exchange</code>) to a PersistenceAPI and an AuditAPI both using the same <code>Queue</code>, but both APIs saving the log in the same Database(<code>Consumer</code>)). Maybe that&#x2019;s a silly example but I want to describe a possible way of using a single <code>Queue</code> with multiple <code>Exchanges</code>. And the can be easily reversed, the configuration can be whatever you wish, at least it will also have sense and respects the RabbitMQ&#x2019;s concepts.</p>
+<p>The <code>Exchange</code> can be one of four types in order to control the messages to the <code>Queues</code>. That’s a great way to handle messages when the system has multiple <code>Exchanges</code> and uses a <code>Queue</code> for multiple purposes (i.e. a Logger(<code>Producer</code>) send a log using a Service(<code>Exchange</code>) to a PersistenceAPI and an AuditAPI both using the same <code>Queue</code>, but both APIs saving the log in the same Database(<code>Consumer</code>)). Maybe that’s a silly example but I want to describe a possible way of using a single <code>Queue</code> with multiple <code>Exchanges</code>. And the can be easily reversed, the configuration can be whatever you wish, at least it will also have sense and respects the RabbitMQ’s concepts.</p>
 <p>To understand how messages are sent in this system, firstly the roles of the <code>routing</code> and <code>binding</code> keys needs to be explained. So the <code>routing key</code> will be attached to message and sent to the <code>Exchange</code>, the <code>Exchange</code> will determine in which direction to send the received message based on its <code>routing key</code> and the <code>binding key</code> between the <code>Exchange</code> and the <code>Queue</code>. The <code>binding key</code> is also known as the routing pattern.</p>
 <h3 id="Topology"><a href="#Topology" class="headerlink" title="Topology"></a>Topology</h3><p>In the image below is the topology created with <a target="_blank" rel="noopener" href="http://tryrabbitmq.com/">http://tryrabbitmq.com</a>, which is a nice tool that helped me understand the core concepts of RabbitMQ.</p>
 
@@ -190,7 +190,7 @@
     </div>
 
 <p>This example will also be used to create the RabbitMQ topology using .NET Core.</p>
-<h2 id="Docker-setup"><a href="#Docker-setup" class="headerlink" title="Docker setup"></a>Docker setup</h2><p>RabbitMQ can be installed locally without Docker, but I like to use Docker because is much faster and it&#x2019;s a lot easier to make changes without breaking too many things.</p>
+<h2 id="Docker-setup"><a href="#Docker-setup" class="headerlink" title="Docker setup"></a>Docker setup</h2><p>RabbitMQ can be installed locally without Docker, but I like to use Docker because is much faster and it’s a lot easier to make changes without breaking too many things.</p>
 <p>In order to run RabbitMQ on Docker, we need the RabbitMQ Server and the Management Plugin, more information about the RabbitMQ images can be found here: <a target="_blank" rel="noopener" href="https://hub.docker.com/_/rabbitmq">https://hub.docker.com/_/rabbitmq</a>.</p>
 <p>Firstly the RabbitMQ image needs to be downloaded locally with the following command:</p>
 <script src="https://gist.github.com/StefanescuEduard/fe30e3486887ae34592816e1c48fc7fb.js"></script>
@@ -221,7 +221,7 @@
       
     </div>
 
-<p>RabbitMQ Management it&#x2019;s a nice tool to monitor and manage the entire topology, it can be accessed from <a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080</a>.</p>
+<p>RabbitMQ Management it’s a nice tool to monitor and manage the entire topology, it can be accessed from <a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080</a>.</p>
 
     <div>
       <img src="rabbitmq-management-login.png" alt="RabbitMQ Management Login" data-action="zoom" class="photozoom">
@@ -229,16 +229,16 @@
     </div>
 
 <p>The credentials are <code>guest</code> and <code>guest</code>, those can be changed later.</p>
-<p>After I will show how the <code>Exchange</code> can be created in .NET, I will return to the Management page, because the <code>Producer</code> can&#x2019;t be seen on the Management page. The message published will be seen when will be received by the <code>Exchange</code>.</p>
+<p>After I will show how the <code>Exchange</code> can be created in .NET, I will return to the Management page, because the <code>Producer</code> can’t be seen on the Management page. The message published will be seen when will be received by the <code>Exchange</code>.</p>
 <h2 id="Creating-the-Producer"><a href="#Creating-the-Producer" class="headerlink" title="Creating the Producer"></a>Creating the <code>Producer</code></h2><p>All the RabbitMQ nodes will be created as a Console App in .NET Core. The project only needs the <a target="_blank" rel="noopener" href="https://www.nuget.org/packages/RabbitMQ.Client">RabbitMQ.Client</a> package available on nuget, but will also install some dependencies that are required as well.</p>
 <h3 id="Setting-the-connection"><a href="#Setting-the-connection" class="headerlink" title="Setting the connection"></a>Setting the connection</h3><p>Firstly the connection to the RabbitMQ Server must be established using the container hostname and the default credentials.</p>
 <script src="https://gist.github.com/StefanescuEduard/a065c80c82fd9f7a1e1b68fdf7885c00.js"></script>
 
-<p>The <code>ConnectionTimeout</code> property is used to avoid the protocol operations time out, that&#x2019;s why the following code is running in an infinite loop, I wanted to produce a message every time on a new or on the same <code>routing key</code>.</p>
+<p>The <code>ConnectionTimeout</code> property is used to avoid the protocol operations time out, that’s why the following code is running in an infinite loop, I wanted to produce a message every time on a new or on the same <code>routing key</code>.</p>
 <h3 id="User-interaction"><a href="#User-interaction" class="headerlink" title="User interaction"></a>User interaction</h3><p>Then, in the <code>while</code> loop, the user is constantly asked to introduce the <code>routing key</code> and the message that will be published.</p>
 <script src="https://gist.github.com/StefanescuEduard/0f4ec653ae405a3ae9cd4c0b522b3d30.js"></script>
 
-<h3 id="Creating-the-communication-channel"><a href="#Creating-the-communication-channel" class="headerlink" title="Creating the communication channel"></a>Creating the communication channel</h3><p>To create the connection between the <code>Exchange</code> and the <code>Producer</code>, the connection that was set earlier must be created and the communication channel needs to be opened, that&#x2019;s what the first and the second line does.</p>
+<h3 id="Creating-the-communication-channel"><a href="#Creating-the-communication-channel" class="headerlink" title="Creating the communication channel"></a>Creating the communication channel</h3><p>To create the connection between the <code>Exchange</code> and the <code>Producer</code>, the connection that was set earlier must be created and the communication channel needs to be opened, that’s what the first and the second line does.</p>
 <script src="https://gist.github.com/StefanescuEduard/3e301b944e453a58e924a21d394a6077.js"></script>
 
 <p>Then the <code>BasicProperties</code> are created for starting an elementary channel. These properties can be used to specify the <code>Persistence</code> type or the <code>Expiration</code> time until the message will be deleted if no <code>Consumer</code> will receive it; but there are many more and you can check them all here: <a target="_blank" rel="noopener" href="https://www.rabbitmq.com/dotnet-api-guide.html">https://www.rabbitmq.com/dotnet-api-guide.html</a>.<br>On line 9 the message is published to the <code>Exchange</code> with the <code>routing key</code> and with the <code>BasicProperties</code> that were created. I preferred to choose a constant name for the <code>Exchange</code> just for this article, this <code>Exchange</code> name will be also used for the other nodes.</p>
@@ -299,10 +299,10 @@
     </div>
 
     <div id="actions-footer">
-      <a id="menu" class="icon" href="#" onclick="$(&apos;#nav-footer&apos;).toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-      <a id="toc" class="icon" href="#" onclick="$(&apos;#toc-footer&apos;).toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-      <a id="share" class="icon" href="#" onclick="$(&apos;#share-footer&apos;).toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-      <a id="top" style="display:none" class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+      <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+      <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+      <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -322,7 +322,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &#xA9; 2021 Eduard Stefanescu
+    Copyright © 2022 Eduard Stefanescu
   </div>
   <div class="footer-right">
     <nav>

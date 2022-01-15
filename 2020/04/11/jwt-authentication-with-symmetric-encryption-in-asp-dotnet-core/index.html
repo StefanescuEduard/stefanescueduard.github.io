@@ -61,7 +61,7 @@
   
   <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
   <body class="max-width mx-auto px3 ltr">
     <div class="container">
@@ -69,7 +69,7 @@
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
   <span id="menu">
     <span id="nav">
       <ul>
@@ -92,13 +92,13 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2020/04/25/jwt-authentication-with-asymmetric-encryption-in-asp-dotnet-core/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(&apos;#i-prev&apos;).toggle();" onmouseout="$(&apos;#i-prev&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/04/25/jwt-authentication-with-asymmetric-encryption-in-asp-dotnet-core/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$(&apos;#i-next&apos;).toggle();" onmouseout="$(&apos;#i-next&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
-        <li><a class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$(&apos;#i-top&apos;).toggle();" onmouseout="$(&apos;#i-top&apos;).toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$(&apos;#i-share&apos;).toggle();" onmouseout="$(&apos;#i-share&apos;).toggle();" onclick="$(&apos;#share&apos;).toggle();return false;"></i></a></li>
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
@@ -131,7 +131,7 @@
       
       <div class="content index py4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -141,7 +141,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Eduard Stefanescu</span>
       </span>
       
@@ -181,7 +181,7 @@
 <li>Signature, representing the encoded header, plus <code>a dot</code>, plus the encoded payload, plus a secret key. The concatenated result will be run through the encryption algorithm specified on the Header to validate the Token.</li>
 </ul>
 <p>If you want to read more about JWT Token, this comprehensive paper covers all the concepts: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc7519">https://tools.ietf.org/html/rfc7519</a>.</p>
-<h3 id="Symmetric-Key"><a href="#Symmetric-Key" class="headerlink" title="Symmetric Key"></a>Symmetric Key</h3><p>The Symmetric Key is used both for signing and validation. For example, let&#x2019;s say the John wants to share a secret with Jane, when the secret is told, John also tells Jane a password - the key - in order for the secret to be understood. In this way, John - the identity provider or the service - ensures that his secret is well kept by using the given password.</p>
+<h3 id="Symmetric-Key"><a href="#Symmetric-Key" class="headerlink" title="Symmetric Key"></a>Symmetric Key</h3><p>The Symmetric Key is used both for signing and validation. For example, let’s say the John wants to share a secret with Jane, when the secret is told, John also tells Jane a password - the key - in order for the secret to be understood. In this way, John - the identity provider or the service - ensures that his secret is well kept by using the given password.</p>
 
     <div>
       <img src="symmetric-key.svg" alt="Symmetric Key" data-action="zoom" class="photozoom">
@@ -189,7 +189,7 @@
     </div>
 
 <h2 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>ASP.NET Core 3.1 will be used for this project. Microsoft also offers a great package that provides all that is needed to create a JWT Token-based authentication. The package is called <code>Microsoft.AspNetCore.Authentication.JwtBearer</code>, this is the only package that the project needs, and can be found here: <a target="_blank" rel="noopener" href="https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer">https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer</a>.</p>
-<h2 id="Creating-a-secret-key"><a href="#Creating-a-secret-key" class="headerlink" title="Creating a secret key"></a>Creating a secret key</h2><p>The signing and validation key will be a user secret key. ASP.NET provides the user secret key feature to store all the confidential data that doesn&#x2019;t have to be committed or shared outside the user or developer environment. For the production or testing environments, the keys need to be store in a cloud vault, like Microsoft Azure offers through Key Vault - <a target="_blank" rel="noopener" href="https://azure.microsoft.com/en-us/services/key-vault/">https://azure.microsoft.com/en-us/services/key-vault/</a> -, but this will be a topic for another article.<br>Firstly, the project needs to be initiated for using user secrets, by running the following command in the project folder:</p>
+<h2 id="Creating-a-secret-key"><a href="#Creating-a-secret-key" class="headerlink" title="Creating a secret key"></a>Creating a secret key</h2><p>The signing and validation key will be a user secret key. ASP.NET provides the user secret key feature to store all the confidential data that doesn’t have to be committed or shared outside the user or developer environment. For the production or testing environments, the keys need to be store in a cloud vault, like Microsoft Azure offers through Key Vault - <a target="_blank" rel="noopener" href="https://azure.microsoft.com/en-us/services/key-vault/">https://azure.microsoft.com/en-us/services/key-vault/</a> -, but this will be a topic for another article.<br>Firstly, the project needs to be initiated for using user secrets, by running the following command in the project folder:</p>
 <script src="https://gist.github.com/StefanescuEduard/95c685ba92b5068bd7fbfe970e32c0e4.js"></script>
 <p>Then the user secret key is added, using the following command:</p>
 <script src="https://gist.github.com/StefanescuEduard/de3edb36cecfc650b434206fd7c5eda4.js"></script>
@@ -201,12 +201,12 @@
 <p>After the section is read, the <code>EncryptionKey</code> needs to be converted into bytes.</p>
 <script src="https://gist.github.com/StefanescuEduard/84b4039f2f5ff38bb154003eb093867c.js"></script>
 <p>On <code>line 9</code> the <code>Authentication</code> service is added into the App container, this service is responsible, with the managing <code>Authentication</code> settings, like <code>IssuerSigningKey</code> or <code>LifeTimeValidation</code>.<br>For this step, an extension method is created called <code>AddAuthentication</code>, which receives the <code>service</code> and the <code>signingKey</code> converted earlier.<br>From <code>line 11</code> to <code>14</code>, the services are configured for the Dependency Injection, we will return to the implementation of these services in a moment.</p>
-<p>Let&#x2019;s return to the <code>AddAuthentication</code> method:</p>
+<p>Let’s return to the <code>AddAuthentication</code> method:</p>
 <script src="https://gist.github.com/StefanescuEduard/001c342d1f1b6a52faf2aa0709cd1ecb.js"></script>
 <p>The <code>authenticationOptions</code> need to configure the <code>Authenticate</code> and <code>Challenge</code> Schemes, in order to verify that the endpoint(s) which receives a JWT Token will go through the validation step, as is described below starting from <code>line 12</code>. The same Schema will be seen on the endpoints that use the <code>AuthorizeAttribute</code>.<br>Then the <code>JwtBearer</code> is added to the <code>Authentication</code> process, using the following properties:</p>
 <ul>
-<li><code>SaveToken</code> is self-explanatory. It&#x2019;s used to persist the Token into a local storage. The token will be valid even if the service restarts, so its lifetime is different from the application;</li>
-<li><code>ValidateAudience</code> and <code>ValidateIssuer</code> must be used for the service to skip or to validate the Audience or the Issuer. The Audience refers to the server or the Identity Provider, in this case our ASP.NET Service. And the <code>Issuer</code> refers to the client(s) that makes HTTP request(s). For the sake of this example, both are set <code>false</code>. Please note that even if you don&#x2019;t want to validate the <code>Audience</code> or/and the <code>Issuer</code> these values must be set;</li>
+<li><code>SaveToken</code> is self-explanatory. It’s used to persist the Token into a local storage. The token will be valid even if the service restarts, so its lifetime is different from the application;</li>
+<li><code>ValidateAudience</code> and <code>ValidateIssuer</code> must be used for the service to skip or to validate the Audience or the Issuer. The Audience refers to the server or the Identity Provider, in this case our ASP.NET Service. And the <code>Issuer</code> refers to the client(s) that makes HTTP request(s). For the sake of this example, both are set <code>false</code>. Please note that even if you don’t want to validate the <code>Audience</code> or/and the <code>Issuer</code> these values must be set;</li>
 <li><code>ValidateIssuerSigningKey</code> needs to be set to <code>true</code>, in order to validate the received Token;</li>
 <li>For <code>IssuerSigningKey</code> will use the <code>SymmetricSecurityKey</code>, the same approach will be also used when the Token will be created.</li>
 <li><code>LifeTimeValidator</code> is important if the generated <code>Token</code> has set an expiration time.</li>
@@ -218,7 +218,7 @@
 <p>After the services were configured, the <code>Authentication</code> and <code>Authorization</code> middleware must be added to the App pipeline in the <code>Configure</code> method.</p>
 <script src="https://gist.github.com/StefanescuEduard/3b7f8d14b342b24609d32d519976d391.js"></script>
 
-<h2 id="UserCredentials"><a href="#UserCredentials" class="headerlink" title="UserCredentials"></a><code>UserCredentials</code></h2><p>User&#x2019;s Credentials will be used as a Data Transfer Object, this class will be received on the authentication endpoint and sent to the <code>AuthenticationService</code>. It&#x2019;s a plain class that contains only the <code>Username</code> and the <code>Password</code> of the user.</p>
+<h2 id="UserCredentials"><a href="#UserCredentials" class="headerlink" title="UserCredentials"></a><code>UserCredentials</code></h2><p>User’s Credentials will be used as a Data Transfer Object, this class will be received on the authentication endpoint and sent to the <code>AuthenticationService</code>. It’s a plain class that contains only the <code>Username</code> and the <code>Password</code> of the user.</p>
 <script src="https://gist.github.com/StefanescuEduard/221e8de96fe412ebf143346d02df389b.js"></script>
 
 <h2 id="AuthenticationService"><a href="#AuthenticationService" class="headerlink" title="AuthenticationService"></a><code>AuthenticationService</code></h2><p>The <code>AuthenticationService</code> is used like a middleware which receives the <code>UserCredentials</code> from the <code>Controller</code>, validate them using the <code>UserService</code> and if the credentials are valid, it creates a Token using the <code>TokenService</code>. Both the <code>User</code> and <code>Token</code> services are injected on the constructor.</p>
@@ -228,7 +228,7 @@
 <script src="https://gist.github.com/StefanescuEduard/42b61657f6c727d39d2a988a88613b6f.js"></script>
 <p>This is more like a <code>UserValidation</code> service, but to better illustrate that it also reads the users, the <code>UserService</code> name will be kept.</p>
 <script src="https://gist.github.com/StefanescuEduard/75dd9668eab79fd03e2a0450819cef5b.js"></script>
-<p>The <code>ValidateCredentials</code> method checks if the <code>username</code> and <code>password</code> pair exists, and if it doesn&#x2019;t it will throw the <code>InvalidCredentialsException</code> which will be caught on the <code>Controller</code>.</p>
+<p>The <code>ValidateCredentials</code> method checks if the <code>username</code> and <code>password</code> pair exists, and if it doesn’t it will throw the <code>InvalidCredentialsException</code> which will be caught on the <code>Controller</code>.</p>
 <h2 id="TokenService"><a href="#TokenService" class="headerlink" title="TokenService"></a><code>TokenService</code></h2><p><code>TokenService</code> is receiving on the constructor the <code>AppSettings</code>, which will be used on the <code>GetTokenDescriptor</code> method to set up the Token.</p>
 <script src="https://gist.github.com/StefanescuEduard/f60ae2f42b5149c9c0042e8cc472f9e7.js"></script>
 
@@ -246,13 +246,13 @@
 <h2 id="ValidationController"><a href="#ValidationController" class="headerlink" title="ValidationController"></a><code>ValidationController</code></h2><p>The purpose of the <code>ValidationController</code> is to check that the signing process is working, in order to validate the Token.</p>
 <script src="https://gist.github.com/StefanescuEduard/0469aa49ff0516acbd0d3c4ef8afec82.js"></script>
 <p>You may notice that the <code>Validate</code> endpoint has the <code>AuthorizeAttribute</code> which has on its constructor the same <code>AuthenticationSchemes</code> as was set on the <code>Authentication</code> service.</p>
-<h2 id="The-result"><a href="#The-result" class="headerlink" title="The result"></a>The result</h2><p>Firstly, the happy flow for the <code>AuthenticationController</code> is tested, so we&#x2019;ll provide the correct combination of the username and password, in order to receive the token.</p>
+<h2 id="The-result"><a href="#The-result" class="headerlink" title="The result"></a>The result</h2><p>Firstly, the happy flow for the <code>AuthenticationController</code> is tested, so we’ll provide the correct combination of the username and password, in order to receive the token.</p>
 
     <div>
       <img src="happy-flow-authentication.png" alt="Happy flow authentication" data-action="zoom" class="photozoom">
       
     </div>
-<p>Let&#x2019;s test with credentials that are not correct, the response should be Unauthorized.</p>
+<p>Let’s test with credentials that are not correct, the response should be Unauthorized.</p>
 
     <div>
       <img src="unauthorized-authentication.png" alt="Unauthorized authentication" data-action="zoom" class="photozoom">
@@ -330,10 +330,10 @@
     </div>
 
     <div id="actions-footer">
-      <a id="menu" class="icon" href="#" onclick="$(&apos;#nav-footer&apos;).toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-      <a id="toc" class="icon" href="#" onclick="$(&apos;#toc-footer&apos;).toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-      <a id="share" class="icon" href="#" onclick="$(&apos;#share-footer&apos;).toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-      <a id="top" style="display:none" class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+      <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+      <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+      <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -353,7 +353,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &#xA9; 2021 Eduard Stefanescu
+    Copyright © 2022 Eduard Stefanescu
   </div>
   <div class="footer-right">
     <nav>

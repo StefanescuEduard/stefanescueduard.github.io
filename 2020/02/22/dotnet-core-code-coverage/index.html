@@ -59,7 +59,7 @@
   
   <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
   <body class="max-width mx-auto px3 ltr">
     <div class="container">
@@ -67,7 +67,7 @@
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
   <span id="menu">
     <span id="nav">
       <ul>
@@ -90,13 +90,13 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(&apos;#i-prev&apos;).toggle();" onmouseout="$(&apos;#i-prev&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2020/02/19/angular-ivy-perfomance-comparison/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$(&apos;#i-next&apos;).toggle();" onmouseout="$(&apos;#i-next&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/02/19/angular-ivy-perfomance-comparison/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
-        <li><a class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$(&apos;#i-top&apos;).toggle();" onmouseout="$(&apos;#i-top&apos;).toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$(&apos;#i-share&apos;).toggle();" onmouseout="$(&apos;#i-share&apos;).toggle();" onclick="$(&apos;#share&apos;).toggle();return false;"></i></a></li>
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
@@ -129,7 +129,7 @@
       
       <div class="content index py4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -139,7 +139,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Eduard Stefanescu</span>
       </span>
       
@@ -167,8 +167,8 @@
   <div class="content" itemprop="articleBody">
     <!-- markdownlint-disable MD033 -->
 
-<p>Code coverage tools are a great way to improve the code quality, but there are a lot of tools that require a paid license to use it like dotCover, the Enterprise version of Visual Studio or Visual Studio extensions. After some research, I found out that two free tools that combined can generate code coverage reports. The first tool is called <a target="_blank" rel="noopener" href="https://github.com/tonerdo/coverlet">Coverlet</a> which generates the code coverage as I wanted and it&#x2019;s also working with .NET Framework. Essentially is creating an <code>XML</code> report file that covers the lines, branches, and methods. And the second tool is <a target="_blank" rel="noopener" href="https://github.com/danielpalme/ReportGenerator">ReportGenerator</a> which is used for parsing the generated <code>XML</code> and expose the data in a friendly format.</p>
-<p>For this article, I created a small project to demonstrate how is working.<br>Let&#x2019;s begin with the Business layer; which contains two classes, a dummy <code>User</code> that only has two properties <code>Roles</code> and <code>ManagedCountries</code>.</p>
+<p>Code coverage tools are a great way to improve the code quality, but there are a lot of tools that require a paid license to use it like dotCover, the Enterprise version of Visual Studio or Visual Studio extensions. After some research, I found out that two free tools that combined can generate code coverage reports. The first tool is called <a target="_blank" rel="noopener" href="https://github.com/tonerdo/coverlet">Coverlet</a> which generates the code coverage as I wanted and it’s also working with .NET Framework. Essentially is creating an <code>XML</code> report file that covers the lines, branches, and methods. And the second tool is <a target="_blank" rel="noopener" href="https://github.com/danielpalme/ReportGenerator">ReportGenerator</a> which is used for parsing the generated <code>XML</code> and expose the data in a friendly format.</p>
+<p>For this article, I created a small project to demonstrate how is working.<br>Let’s begin with the Business layer; which contains two classes, a dummy <code>User</code> that only has two properties <code>Roles</code> and <code>ManagedCountries</code>.</p>
 <script src="https://gist.github.com/StefanescuEduard/dcbeb1fcdaa4e019c9764ab5ec8df0fb.js"></script>
 
 <p>And a <code>UserService</code> that checks if the <code>User</code> has sufficient rights to delete a country.</p>
@@ -188,11 +188,11 @@
 <p>In order to get the code coverage, a script is needed that will run the tests, create the <code>XML</code> file report and generate an <code>HTML</code> file with the reports.</p>
 <script src="https://gist.github.com/StefanescuEduard/d7b91fa0c49c422b22b5911de2bd9566.js"></script>
 
-<p>I&#x2019;ve created a batch file to be more easy to run all the commands in a single unit. Also please note that if you are using Mac or Linux, the <code>nuget</code> packages path, it would be: <code>~/.nuget/packages</code>.<br>The first command will run the tests and will generate the <code>XML</code> file used by the second command to generate the report. And the third command will open <code>index.html</code>.<br>Please consider adding the <code>Coverage</code> folder into <code>.gitignore</code> if you are working on a team, this is just for local purposes and it would be nice if the project you are working on has on the CI build process a step where the code coverage is generated.</p>
-<p>So now, with all that in place, let&#x2019;s see the results. I wanted to test only if the <code>User</code> is not a <code>CountryManager</code> and skip the other conditions that will also check for the managed countries because I wanted to generate a report with all the available covered areas.</p>
+<p>I’ve created a batch file to be more easy to run all the commands in a single unit. Also please note that if you are using Mac or Linux, the <code>nuget</code> packages path, it would be: <code>~/.nuget/packages</code>.<br>The first command will run the tests and will generate the <code>XML</code> file used by the second command to generate the report. And the third command will open <code>index.html</code>.<br>Please consider adding the <code>Coverage</code> folder into <code>.gitignore</code> if you are working on a team, this is just for local purposes and it would be nice if the project you are working on has on the CI build process a step where the code coverage is generated.</p>
+<p>So now, with all that in place, let’s see the results. I wanted to test only if the <code>User</code> is not a <code>CountryManager</code> and skip the other conditions that will also check for the managed countries because I wanted to generate a report with all the available covered areas.</p>
 <script src="https://gist.github.com/StefanescuEduard/efe808ad09dfbbd596fcc7afc2219f76.js"></script>
 
-<p>Let&#x2019;s take a look at the code coverage report. When the <code>index.html</code> file is open, the first page contains an overview of the ran tests, it offers a brief summary of the report and a grouping feature, that can be used to view the files on different layers (i.e. No grouping, By assembly, By namespace, Level: 1 and By namespace, Level: 2).</p>
+<p>Let’s take a look at the code coverage report. When the <code>index.html</code> file is open, the first page contains an overview of the ran tests, it offers a brief summary of the report and a grouping feature, that can be used to view the files on different layers (i.e. No grouping, By assembly, By namespace, Level: 1 and By namespace, Level: 2).</p>
 
     <div>
       <img src="code-coverage-overview.png" alt="Code coverage overview" data-action="zoom" class="photozoom">
@@ -205,7 +205,7 @@
       
     </div>
 <p>The color code is the same as in the other tools, but what I like is that it also have the branch coverage, which in the above picture is the yellow area.</p>
-<p>In conclusion, these two tools are great and don&#x2019;t cost anything, also can be configured to run through all test projects and generate more comprehensive code coverage.</p>
+<p>In conclusion, these two tools are great and don’t cost anything, also can be configured to run through all test projects and generate more comprehensive code coverage.</p>
 <p>Here is the repository link with all the code from this article: <a target="_blank" rel="noopener" href="https://github.com/StefanescuEduard/NetCoreCodeCoverage">https://github.com/StefanescuEduard/NetCoreCodeCoverage</a>. I kept the Coverage folder on the repository just for testing purposes.</p>
 <p>Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.</p>
 
@@ -263,10 +263,10 @@
     </div>
 
     <div id="actions-footer">
-      <a id="menu" class="icon" href="#" onclick="$(&apos;#nav-footer&apos;).toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-      <a id="toc" class="icon" href="#" onclick="$(&apos;#toc-footer&apos;).toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-      <a id="share" class="icon" href="#" onclick="$(&apos;#share-footer&apos;).toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-      <a id="top" style="display:none" class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+      <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+      <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+      <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -286,7 +286,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &#xA9; 2021 Eduard Stefanescu
+    Copyright © 2022 Eduard Stefanescu
   </div>
   <div class="footer-right">
     <nav>

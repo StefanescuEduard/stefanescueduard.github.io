@@ -61,7 +61,7 @@
   
   <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
   <body class="max-width mx-auto px3 ltr">
     <div class="container">
@@ -69,7 +69,7 @@
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
   <span id="menu">
     <span id="nav">
       <ul>
@@ -92,13 +92,13 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(&apos;#i-prev&apos;).toggle();" onmouseout="$(&apos;#i-prev&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/03/28/rabbitmq-headers-exchange-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$(&apos;#i-next&apos;).toggle();" onmouseout="$(&apos;#i-next&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
-        <li><a class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$(&apos;#i-top&apos;).toggle();" onmouseout="$(&apos;#i-top&apos;).toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$(&apos;#i-share&apos;).toggle();" onmouseout="$(&apos;#i-share&apos;).toggle();" onclick="$(&apos;#share&apos;).toggle();return false;"></i></a></li>
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
@@ -131,7 +131,7 @@
       
       <div class="content index py4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -141,7 +141,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Eduard Stefanescu</span>
       </span>
       
@@ -176,21 +176,21 @@
 <li><a href="https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/">https://stefanescueduard.github.io/2020/03/07/rabbitmq-exchange-with-docker-in-dotnet/</a></li>
 <li><a href="https://stefanescueduard.github.io/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/">https://stefanescueduard.github.io/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/</a></li>
 </ol>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The RabbitMQ <code>Consumer</code> it&#x2019;s the node to which the <code>Queues</code> are connected. This will receive all the messages sent by the <code>Producer</code> and followed some path to be consumed. A real-life example for the <code>Consumer</code> it will be, a logging system, where the <code>Producer</code> is the app that sent the log message and the <code>Consumer</code> is the Console or the API that will process the received message.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The RabbitMQ <code>Consumer</code> it’s the node to which the <code>Queues</code> are connected. This will receive all the messages sent by the <code>Producer</code> and followed some path to be consumed. A real-life example for the <code>Consumer</code> it will be, a logging system, where the <code>Producer</code> is the app that sent the log message and the <code>Consumer</code> is the Console or the API that will process the received message.</p>
 <h3 id="Useful-tips"><a href="#Useful-tips" class="headerlink" title="Useful tips"></a>Useful tips</h3><p>Here are some tips that I found useful:</p>
 <ul>
 <li>The lifetime of a <code>Consumer</code> is as long as the application lifetime;</li>
-<li>It&#x2019;s not recommended to have a <code>Consumer</code> that consume only one message, but it&#x2019;s totally fine to have a <code>Consumer</code> subscribed to a <code>Queue</code> as long as it sent multiple messages. That&#x2019;s because, for obvious reasons, it&#x2019;s not necessary to have this entire system to send only one message;</li>
+<li>It’s not recommended to have a <code>Consumer</code> that consume only one message, but it’s totally fine to have a <code>Consumer</code> subscribed to a <code>Queue</code> as long as it sent multiple messages. That’s because, for obvious reasons, it’s not necessary to have this entire system to send only one message;</li>
 <li>A <code>Consumer</code> has a uniquely identifiable tag and a subscription ID, which is the connection link with the <code>Queue</code>;</li>
 <li>The exclusivity to the <code>Consumer</code> can be made using the <code>exclusive</code> flag, that means that the <code>Consumer</code> will receive messages from only one <code>Queue</code>;</li>
 <li>And some <code>Consumers</code> can have a higher priority to the same messages over other <code>Consumers</code>;</li>
 </ul>
-<p>All the <code>Consumers</code>&#x2018;s properties can be read on the RabbitMQ website: <a target="_blank" rel="noopener" href="https://www.rabbitmq.com/consumers.html">https://www.rabbitmq.com/consumers.html</a>.</p>
+<p>All the <code>Consumers</code>‘s properties can be read on the RabbitMQ website: <a target="_blank" rel="noopener" href="https://www.rabbitmq.com/consumers.html">https://www.rabbitmq.com/consumers.html</a>.</p>
 <h2 id="Creating-the-Consumer"><a href="#Creating-the-Consumer" class="headerlink" title="Creating the Consumer"></a>Creating the <code>Consumer</code></h2><p>First of all, we need to know how many queues are listening to this consumer, so a message is prompt to enter the number of queues. After that, a connection to the RabbitMQ Server is made using a URI and specifying the <code>ConnectionTimeout</code> to its maximum value. This value is used just for this article purposes, also all the <code>ConnectionFactory</code> properties with few examples can be found here: <a target="_blank" rel="noopener" href="https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.4/rabbitmq-dotnet-client-3.2.4-client-htmldoc/html/type-RabbitMQ.Client.ConnectionFactory.html">https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.4/rabbitmq-dotnet-client-3.2.4-client-htmldoc/html/type-RabbitMQ.Client.ConnectionFactory.html</a>.<br>You can check the first article where is another approach of creating the <code>ConnectionFactory</code> using the properties <code>Hostname</code>, <code>UserName</code> and <code>Password</code>.</p>
 <script src="https://gist.github.com/StefanescuEduard/2ec14bb22789a00f6bd2364f60767cda.js"></script>
 
-<p>You may notice that the <code>IConnection</code> and <code>IModel</code> fields are static, that&#x2019;s because this is a Console App, and these two fields are used inside of each thread that is listening to a <code>Queue</code>. But these fields will be closed and disposed before the application finishes its execution.</p>
-<h3 id="Listening-to-the-Queue-s"><a href="#Listening-to-the-Queue-s" class="headerlink" title="Listening to the Queue(s)"></a>Listening to the <code>Queue(s)</code></h3><p>Before start listening to the <code>Queue(s)</code>, a <code>CancellationTokenSource</code> is created in order to be passed on each execution thread that will display a message, that&#x2019;s because the thread will have the same lifetime as the application, and it&#x2019;s also a safety check to cancel the <code>Consumer</code> subscription once the application ends.<br>According to the number of <code>Queues</code> entered, this <code>Consumer</code> is listening to, the <code>Queue</code> name is asked in order to create the connection between the <code>Consumer</code> and the <code>Queue</code>.<br>Then for each <code>Queue</code>, a thread is created and start listening to it.</p>
+<p>You may notice that the <code>IConnection</code> and <code>IModel</code> fields are static, that’s because this is a Console App, and these two fields are used inside of each thread that is listening to a <code>Queue</code>. But these fields will be closed and disposed before the application finishes its execution.</p>
+<h3 id="Listening-to-the-Queue-s"><a href="#Listening-to-the-Queue-s" class="headerlink" title="Listening to the Queue(s)"></a>Listening to the <code>Queue(s)</code></h3><p>Before start listening to the <code>Queue(s)</code>, a <code>CancellationTokenSource</code> is created in order to be passed on each execution thread that will display a message, that’s because the thread will have the same lifetime as the application, and it’s also a safety check to cancel the <code>Consumer</code> subscription once the application ends.<br>According to the number of <code>Queues</code> entered, this <code>Consumer</code> is listening to, the <code>Queue</code> name is asked in order to create the connection between the <code>Consumer</code> and the <code>Queue</code>.<br>Then for each <code>Queue</code>, a thread is created and start listening to it.</p>
 <script src="https://gist.github.com/StefanescuEduard/abe0560836b659b37edf04f26ee70354.js"></script>
 
 <h3 id="Displaying-the-received-message"><a href="#Displaying-the-received-message" class="headerlink" title="Displaying the received message"></a>Displaying the received message</h3><p>The <code>DisplayQueueMessage</code> has the following parameters:</p>
@@ -200,7 +200,7 @@
 </ul>
 <script src="https://gist.github.com/StefanescuEduard/c84eb5e70cd2ae7dc41a0f16fd5aac1c.js"></script>
 
-<h4 id="DisplayQueueMessage-method-explanation"><a href="#DisplayQueueMessage-method-explanation" class="headerlink" title="DisplayQueueMessage method explanation"></a><code>DisplayQueueMessage</code> method explanation</h4><p>As is described earlier, the listener will exist until the <code>cancellationToken</code> is not requested.<br>On line 5 the message is retrieved from the <code>Queue</code> and is checked if it&#x2019;s <code>null</code>. If it&#x2019;s not <code>null</code>, the message body which is an array of bytes will be decoded using the same encoding format as it was used to encode the message.<br>After displaying the retrieved message, the result is acknowledged in order to be deleted from the <code>Queue</code> and to display the next message.<br>This is not the nicest way to listen to the messages and can cause performance issues, that&#x2019;s why I will create another article about listening events, that will be raised only when a message is published and redirected to a specific <code>Queue</code>.</p>
+<h4 id="DisplayQueueMessage-method-explanation"><a href="#DisplayQueueMessage-method-explanation" class="headerlink" title="DisplayQueueMessage method explanation"></a><code>DisplayQueueMessage</code> method explanation</h4><p>As is described earlier, the listener will exist until the <code>cancellationToken</code> is not requested.<br>On line 5 the message is retrieved from the <code>Queue</code> and is checked if it’s <code>null</code>. If it’s not <code>null</code>, the message body which is an array of bytes will be decoded using the same encoding format as it was used to encode the message.<br>After displaying the retrieved message, the result is acknowledged in order to be deleted from the <code>Queue</code> and to display the next message.<br>This is not the nicest way to listen to the messages and can cause performance issues, that’s why I will create another article about listening events, that will be raised only when a message is published and redirected to a specific <code>Queue</code>.</p>
 <h3 id="Ending-the-connection"><a href="#Ending-the-connection" class="headerlink" title="Ending the connection"></a>Ending the connection</h3><p>After the thread was created for each <code>Queue</code>, a message is prompt in order to display how many <code>Queues</code> are listening to the <code>Consumer</code>.</p>
 <script src="https://gist.github.com/StefanescuEduard/bfe025f32b5cd5fabfaf7af89fecf6fc.js"></script>
 
@@ -298,10 +298,10 @@
     </div>
 
     <div id="actions-footer">
-      <a id="menu" class="icon" href="#" onclick="$(&apos;#nav-footer&apos;).toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-      <a id="toc" class="icon" href="#" onclick="$(&apos;#toc-footer&apos;).toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-      <a id="share" class="icon" href="#" onclick="$(&apos;#share-footer&apos;).toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-      <a id="top" style="display:none" class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+      <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+      <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+      <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -321,7 +321,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &#xA9; 2021 Eduard Stefanescu
+    Copyright © 2022 Eduard Stefanescu
   </div>
   <div class="footer-right">
     <nav>

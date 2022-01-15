@@ -61,7 +61,7 @@
   
   <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
   <body class="max-width mx-auto px3 ltr">
     <div class="container">
@@ -69,7 +69,7 @@
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
   <span id="menu">
     <span id="nav">
       <ul>
@@ -92,13 +92,13 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(&apos;#i-prev&apos;).toggle();" onmouseout="$(&apos;#i-prev&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/03/14/rabbitmq-queue-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$(&apos;#i-next&apos;).toggle();" onmouseout="$(&apos;#i-next&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
-        <li><a class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$(&apos;#i-top&apos;).toggle();" onmouseout="$(&apos;#i-top&apos;).toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$(&apos;#i-share&apos;).toggle();" onmouseout="$(&apos;#i-share&apos;).toggle();" onclick="$(&apos;#share&apos;).toggle();return false;"></i></a></li>
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
@@ -131,7 +131,7 @@
       
       <div class="content index py4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -141,7 +141,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Eduard Stefanescu</span>
       </span>
       
@@ -177,7 +177,7 @@
 <li><p><code>Fanout Exchange</code> send messages to all the <code>Queues</code>, in an indiscriminate way. It uses the Publish-Subscribe Pattern, which means that all <code>Queues</code> that are subscribed to an <code>Exchange</code> will receive the message, like a newsletter. Also, it will not take into account the <code>binding</code> or the <code>routing</code> key.</p>
 </li>
 <li><p><code>Topic Exchange</code> send messages to the <code>Queues</code> using a pattern. The pattern can contain <code>*</code> or <code>#</code>. The first wildcard <code>*</code> means that it can match any word, and the second one <code>#</code> represents that no word is expected in that place.</p>
-<p> For example, if there are three <code>Queues</code>, and each one expects to get a &#x2018;word&#x2019; based on the <code>binding key</code>, as follows:</p>
+<p> For example, if there are three <code>Queues</code>, and each one expects to get a ‘word’ based on the <code>binding key</code>, as follows:</p>
  <pre> Queue1 &gt; word1._._
 
  Queue2 &gt; _.word2._
@@ -188,7 +188,7 @@
 <p> If the <code>Producer</code> sends the message <code>word1.word2.word3</code>, each <code>Queue</code> will receive only the expected message.</p>
 <p> A real-life example for this type of <code>Exchange</code> can be the different levels of logging (i.e. the errors and warns can be sent to the Database, and the info ones sent to a file).</p>
 </li>
-<li><p><code>Headers Exchange</code> send messages based on a header, this header is represented by a required property <code>x-match</code> and one or more properties that will be bound to the <code>Queue</code> like a <code>routing-key</code>. This type of <code>Exchange</code> is useful when the message should follow the header values and not the <code>routing keys</code>. It&#x2019;s also associated with the <code>Topic Exchange</code>, but it&#x2019;s much more flexible, with the disadvantage that the message should be an object.</p>
+<li><p><code>Headers Exchange</code> send messages based on a header, this header is represented by a required property <code>x-match</code> and one or more properties that will be bound to the <code>Queue</code> like a <code>routing-key</code>. This type of <code>Exchange</code> is useful when the message should follow the header values and not the <code>routing keys</code>. It’s also associated with the <code>Topic Exchange</code>, but it’s much more flexible, with the disadvantage that the message should be an object.</p>
 </li>
 </ol>
 <p>A topology can have multiple <code>Exchanges</code> connected to the multiple <code>Producers</code> and <code>Queues</code>, as in the example below, made using <a target="_blank" rel="noopener" href="http://tryrabbitmq.com/">http://tryrabbitmq.com</a>.</p>
@@ -211,15 +211,15 @@
 <script src="https://gist.github.com/StefanescuEduard/28993423b205b545df54dca70d3c92a1.js"></script>
 
 <p>The exchange name will have the same name for all four projects but is just for this article presentation purposes. On line 6 a safety deletion is executed in order, to ensure that on the next line when the Exchange will be created, there is no other <code>Exchange</code> with the same name. The <code>ExchangeDeclare</code> method will create an instance of an <code>Exchange</code> based on what type of <code>Exchange</code> the user has chosen.</p>
-<h3 id="Prompting-the-definition-result"><a href="#Prompting-the-definition-result" class="headerlink" title="Prompting the definition result"></a>Prompting the definition result</h3><p>On the last section of the code, the user is informed that the required <code>Exchange</code> was created. You may notice that I didn&#x2019;t do any type of exception handling, that&#x2019;s because it&#x2019;s only for this article presentation. But in a real-world application, I recommend to implement a strong exception handling system and make the other services involved aware if that happens.</p>
-<h3 id="The-result"><a href="#The-result" class="headerlink" title="The result"></a>The result</h3><p>Let&#x2019;s create a <code>Direct Exchange</code>, which will also appear on the RabbitMQ Management plugin.</p>
+<h3 id="Prompting-the-definition-result"><a href="#Prompting-the-definition-result" class="headerlink" title="Prompting the definition result"></a>Prompting the definition result</h3><p>On the last section of the code, the user is informed that the required <code>Exchange</code> was created. You may notice that I didn’t do any type of exception handling, that’s because it’s only for this article presentation. But in a real-world application, I recommend to implement a strong exception handling system and make the other services involved aware if that happens.</p>
+<h3 id="The-result"><a href="#The-result" class="headerlink" title="The result"></a>The result</h3><p>Let’s create a <code>Direct Exchange</code>, which will also appear on the RabbitMQ Management plugin.</p>
 
     <div>
       <img src="exchange-created-successfully.png" alt="Exchange Created Successfully" data-action="zoom" class="photozoom">
       
     </div>
 
-<p>And now let&#x2019;s check the Management Exchange page.</p>
+<p>And now let’s check the Management Exchange page.</p>
 
     <div>
       <img src="rabbitmq-management-exchange-created.png" alt="RabbitMQ Management Exchange Created" data-action="zoom" class="photozoom">
@@ -234,7 +234,7 @@
       
     </div>
 
-<p>Because the topology currently doesn&#x2019;t have connected all needed components, on the <code>Message rates</code> the <code>Idle</code> message is displayed, but we&#x2019;ll see that after the entire system is running, there will be a chart that will show the messages flow, as Publish (In) and Publish (Out).</p>
+<p>Because the topology currently doesn’t have connected all needed components, on the <code>Message rates</code> the <code>Idle</code> message is displayed, but we’ll see that after the entire system is running, there will be a chart that will show the messages flow, as Publish (In) and Publish (Out).</p>
 <p>All the code from the entire solution is available on my Github account: <a target="_blank" rel="noopener" href="https://github.com/StefanescuEduard/RabbitMQ_POC">https://github.com/StefanescuEduard/RabbitMQ_POC</a>. But stay close because in the next articles I will explain the core concepts about each RabbitMQ node.</p>
 <p>Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.</p>
 
@@ -292,10 +292,10 @@
     </div>
 
     <div id="actions-footer">
-      <a id="menu" class="icon" href="#" onclick="$(&apos;#nav-footer&apos;).toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-      <a id="toc" class="icon" href="#" onclick="$(&apos;#toc-footer&apos;).toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-      <a id="share" class="icon" href="#" onclick="$(&apos;#share-footer&apos;).toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-      <a id="top" style="display:none" class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+      <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+      <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+      <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -315,7 +315,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &#xA9; 2021 Eduard Stefanescu
+    Copyright © 2022 Eduard Stefanescu
   </div>
   <div class="footer-right">
     <nav>

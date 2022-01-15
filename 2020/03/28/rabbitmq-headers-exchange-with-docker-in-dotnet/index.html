@@ -61,7 +61,7 @@
   
   <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
   <body class="max-width mx-auto px3 ltr">
     <div class="container">
@@ -69,7 +69,7 @@
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
   <span id="menu">
     <span id="nav">
       <ul>
@@ -92,13 +92,13 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(&apos;#i-prev&apos;).toggle();" onmouseout="$(&apos;#i-prev&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/04/04/rabbitmq-consumer-events-with-docker-in-dotnet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$(&apos;#i-next&apos;).toggle();" onmouseout="$(&apos;#i-next&apos;).toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/03/21/rabbitmq-consumer-with-docker-in-dotnet/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
-        <li><a class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$(&apos;#i-top&apos;).toggle();" onmouseout="$(&apos;#i-top&apos;).toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$(&apos;#i-share&apos;).toggle();" onmouseout="$(&apos;#i-share&apos;).toggle();" onclick="$(&apos;#share&apos;).toggle();return false;"></i></a></li>
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">Previous post</span>
       <span id="i-next" class="info" style="display:none;">Next post</span>
@@ -131,7 +131,7 @@
       
       <div class="content index py4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -141,7 +141,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Eduard Stefanescu</span>
       </span>
       
@@ -170,12 +170,12 @@
     <!-- markdownlint-disable MD033 -->
 
 <p>This article is about <code>Headers Exchange</code>, I chose to create an article just for this type of <code>Exchange</code> because it needs a little more attention compared to the other three types (i.e. fanout, direct, topic).<br>In this article, I will use the setup environment with Docker from the first article, so if you want a good starting point, you can begin with the first article: <a href="https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/">https://stefanescueduard.github.io/2020/02/29/rabbitmq-producer-with-docker-in-dotnet/</a>.</p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><code>Headers Exchange</code> is routing the messages based on the bindings that are applied to the <code>Producer</code> and <code>Queue</code>.<br>In order to produce a message, that message should be published with defined properties that are also bound to the <code>Queue</code> - this is why it&#x2019;s called <code>Headers Exchange</code> - and can also be seen as the <code>routing key</code>.<br>Another mandatory property that must be bound to the <code>Queue</code> is <code>x-match</code>. This property specifies the matching criteria, as follows:</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><code>Headers Exchange</code> is routing the messages based on the bindings that are applied to the <code>Producer</code> and <code>Queue</code>.<br>In order to produce a message, that message should be published with defined properties that are also bound to the <code>Queue</code> - this is why it’s called <code>Headers Exchange</code> - and can also be seen as the <code>routing key</code>.<br>Another mandatory property that must be bound to the <code>Queue</code> is <code>x-match</code>. This property specifies the matching criteria, as follows:</p>
 <ul>
 <li><code>x-match=all</code> means that all the header pairs must match;</li>
 <li><code>x-match=any</code> means that at least one header pairs must match;</li>
 </ul>
-<p>A quick example, that will be also implemented using .NET Core:<br>Let&#x2019;s say that a Windows Application produces two logging types, information and error, and the server process these log messages based on its types.<br>So for each log type, will be a <code>Queue</code> that will have a property <code>log-level</code> equals to the type of logging that will receive. To send log information, the <code>Producer</code> must set to that message a property <code>log-level=information</code> so that the <code>Exchange</code> will forward the message to the correct <code>Queue</code>.</p>
+<p>A quick example, that will be also implemented using .NET Core:<br>Let’s say that a Windows Application produces two logging types, information and error, and the server process these log messages based on its types.<br>So for each log type, will be a <code>Queue</code> that will have a property <code>log-level</code> equals to the type of logging that will receive. To send log information, the <code>Producer</code> must set to that message a property <code>log-level=information</code> so that the <code>Exchange</code> will forward the message to the correct <code>Queue</code>.</p>
 <p>If this is still unclear, then a brief explanation for <code>Headers Exchange</code> is that the messages contain a <strong>header</strong> in order to be bound correctly.<br>I hope now the whole typology is a little bit clearer, and why this type of <code>Exchange</code> is called <code>Headers</code>.</p>
 <p>Now we can start implementing these concepts, the following part will contain code chunks that are required in order to use <code>Headers Exchange</code>, these chunks were applied to existing code from the previous four articles about RabbitMQ.</p>
 <h2 id="Producer"><a href="#Producer" class="headerlink" title="Producer"></a><code>Producer</code></h2><p>To bind the logging type to the <code>Producer</code> properties, a <code>Dictionary</code> of type <code>string, object</code> is used as the properties headers. In this case, the <code>key</code> will be <code>log-level</code> and the <code>value</code> will be the actual log level (i.e. information or error). For this scenario, the log level is entered by the user, but in a real-life scenario, there will be a logging system that will serve this scope.</p>
@@ -225,7 +225,7 @@
       
     </div>
 
-<p>In the picture above can be seen, that the first two messages which had the headers bound correctly were received by the consumer, but the final messages which don&#x2019;t have any headers were not received.</p>
+<p>In the picture above can be seen, that the first two messages which had the headers bound correctly were received by the consumer, but the final messages which don’t have any headers were not received.</p>
 <p>The entire code for this topology and the RabbitMQ series can be found on my GitHub account: <a target="_blank" rel="noopener" href="https://github.com/StefanescuEduard/RabbitMQ_POC">https://github.com/StefanescuEduard/RabbitMQ_POC</a>.</p>
 <p>Thanks for reading this article, if you find it interesting please share it with your colleagues and friends. Or if you find something that can be improved please let me know.</p>
 
@@ -283,10 +283,10 @@
     </div>
 
     <div id="actions-footer">
-      <a id="menu" class="icon" href="#" onclick="$(&apos;#nav-footer&apos;).toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-      <a id="toc" class="icon" href="#" onclick="$(&apos;#toc-footer&apos;).toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-      <a id="share" class="icon" href="#" onclick="$(&apos;#share-footer&apos;).toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-      <a id="top" style="display:none" class="icon" href="#" onclick="$(&apos;html, body&apos;).animate({ scrollTop: 0 }, &apos;fast&apos;);"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+      <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+      <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+      <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -306,7 +306,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &#xA9; 2021 Eduard Stefanescu
+    Copyright © 2022 Eduard Stefanescu
   </div>
   <div class="footer-right">
     <nav>
