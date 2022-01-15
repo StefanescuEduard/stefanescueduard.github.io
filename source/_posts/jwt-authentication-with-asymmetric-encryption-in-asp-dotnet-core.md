@@ -17,7 +17,7 @@ In the first part of this article, the Asymmetric Encryption concept will be exp
 ## Introduction
 
 The JWT Token concepts were explained in the previous article, so if you want to find more before continuing reading this article, check out the introduction of the previous one: <https://stefanescueduard.github.io/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/#Introduction>.
-Asymmetric Encryption is based on two keys, a public key, and a private key. The public key is used to encrypt, in this case, the JWT Token. And the private key is used to decrypt the received Token. Maybe the previous statement is a little bit fuzzy, but I hope that will make sense in a moment.
+Asymmetric Encryption is based on two keys, a public key, and a private key. The public key is used to validate, in this case, the JWT Token. And the private key is used to sign the Token. Maybe the previous statement is a little bit fuzzy, but I hope that will make sense in a moment.
 {% zoom asymmetric-key.svg %}
 For using the Asymmetric Encryption, two keys have to be generated, these two keys have to come from the same root. In this case for this article there will be a certificate &ndash;&ndash; the root &ndash;&ndash; from which the private and the public key will be generated. These keys will be also certificates, so the first thing that has to be done is to generate the private certificate &ndash;&ndash; key &ndash;&ndash; and the second one to generate the public certificate &ndash;&ndash; key &ndash;&ndash; from the private certificate.
 
