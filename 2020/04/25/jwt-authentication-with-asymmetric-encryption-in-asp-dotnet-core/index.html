@@ -61,7 +61,7 @@
   
   <link rel="alternate" href="/feed.xml" title="Eduard Stefanescu" type="application/atom+xml">
   
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
   <body class="max-width mx-auto px3 ltr">
     <div class="container">
@@ -176,7 +176,7 @@
       <img src="asymmetric-key.svg" alt="" data-action="zoom" class="photozoom">
       
     </div>
-<p>For using the Asymmetric Encryption, two keys have to be generated, these two keys have to come from the same root. In this case for this article there will be a certificate –– the root –– from which the private and the public key will be generated. These keys will be also certificates, so the first thing that has to be done is to generate the private certificate –– key –– and the second one to generate the public certificate –– key –– from the private certificate.</p>
+<p>For using the Asymmetric Encryption, two keys have to be generated, these two keys have to come from the same root. In this case for this article there will be a certificate &amp;ndash;&amp;ndash; the root &amp;ndash;&amp;ndash; from which the private and the public key will be generated. These keys will be also certificates, so the first thing that has to be done is to generate the private certificate &amp;ndash;&amp;ndash; key &amp;ndash;&amp;ndash; and the second one to generate the public certificate &amp;ndash;&amp;ndash; key &amp;ndash;&amp;ndash; from the private certificate.</p>
 <h2 id="Generating-the-keys"><a href="#Generating-the-keys" class="headerlink" title="Generating the keys"></a>Generating the keys</h2><p>To generate certificates I chose to use the OpenSSL toolkit. If you are on Windows, OpenSSL can be downloaded as an executable and installed where ever you want. I recommend being installed on the C:\ root.<br>OpenSSL download link: <a target="_blank" rel="noopener" href="https://slproweb.com/products/Win32OpenSSL.html">https://slproweb.com/products/Win32OpenSSL.html</a><br>The tool has to be used from the Terminal, so there are two choices:</p>
 <ol>
 <li>Run the executable from where the tool was installed.</li>
@@ -215,7 +215,7 @@
 <script src="https://gist.github.com/StefanescuEduard/c766ed9e3e9ac416c8f483e088840f0d.js"></script>
 <p><code>FromXmlString</code> initializes the <code>rsa</code> object with parameters from the XML files.</p>
 <!-- markdownlint-disable no-bare-urls -->
-<p>If we dig down in this method –– <a target="_blank" rel="noopener" href="https://git.io/JvbVm">https://git.io/JvbVm</a> –– we can see that the <code>RSAParameters</code> are the same as they are in the XML file converted before.</p>
+<p>If we dig down in this method &amp;ndash;&amp;ndash; <a target="_blank" rel="noopener" href="https://git.io/JvbVm">https://git.io/JvbVm</a> &amp;ndash;&amp;ndash; we can see that the <code>RSAParameters</code> are the same as they are in the XML file converted before.</p>
 <p>The <code>rsa</code> is created on the constructor, this object must be disposed because there might be some resources that will run after the process ends.</p>
 <script src="https://gist.github.com/StefanescuEduard/e104237af473b67124c0c6cf2cfe79c4.js"></script>
 
