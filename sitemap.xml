@@ -245,6 +245,13 @@
   </url>
   
   <url>
+    <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
+    <lastmod>2022-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://stefanescueduard.github.io/tags/asp/</loc>
     <lastmod>2022-11-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -260,13 +267,6 @@
   
   <url>
     <loc>https://stefanescueduard.github.io/tags/encryption/</loc>
-    <lastmod>2022-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://stefanescueduard.github.io/tags/code-coverage/</loc>
     <lastmod>2022-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
